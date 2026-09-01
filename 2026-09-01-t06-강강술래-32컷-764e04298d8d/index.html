@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T06 강강술래 — 32컷</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@300;400;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#F6F4F8; --surface:#FFF; --line:#E2DEE8; --ink:#1B1620; --dim:#6B6474;
+  --accent:#B3277E; --sky:#5A87A8;
+  --ok:#2E7D5B; --warn:#9A6B12; --bad:#B3352F; --seam:#6D4AD4; --info:#5A87A8;
+  --okbg:#E7F3ED; --warnbg:#FBF2DE; --badbg:#FBECEA; --seambg:#EDE9FA; --infobg:#E8EFF5;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#141019; --surface:#1D1826; --line:#302938; --ink:#EFEAF2; --dim:#9C93A8;
+  --accent:#E86BB8; --sky:#8FBEDD;
+  --ok:#6FD3A4; --warn:#E8BC63; --bad:#F08A82; --seam:#A98BF0; --info:#8FBEDD;
+  --okbg:#16281F; --warnbg:#2B2313; --badbg:#2C1A19; --seambg:#221C33; --infobg:#182530;
+}}
+:root[data-theme="dark"]{
+  --bg:#141019; --surface:#1D1826; --line:#302938; --ink:#EFEAF2; --dim:#9C93A8;
+  --accent:#E86BB8; --sky:#8FBEDD;
+  --ok:#6FD3A4; --warn:#E8BC63; --bad:#F08A82; --seam:#A98BF0; --info:#8FBEDD;
+  --okbg:#16281F; --warnbg:#2B2313; --badbg:#2C1A19; --seambg:#221C33; --infobg:#182530;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"IBM Plex Sans KR",-apple-system,sans-serif;font-weight:300;line-height:1.6}
+.wrap{max-width:1080px;margin:0 auto;padding:28px 16px 80px;display:flex;flex-direction:column;gap:30px}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--accent)}
+h1{font-family:"Gowun Batang",serif;font-weight:700;font-size:clamp(27px,7vw,40px);margin:6px 0 0;line-height:1.2}
+.sub{color:var(--dim);font-size:14px;margin:8px 0 0;max-width:60ch}
+h2{font-family:"Gowun Batang",serif;font-size:20px;font-weight:700;margin:0 0 10px;
+  padding-bottom:8px;border-bottom:1px solid var(--line)}
+.rough{background:var(--surface);border:1px solid var(--accent);border-radius:14px;overflow:hidden}
+.rough video{width:100%;display:block;background:#000}
+.rough .cap{padding:12px 15px;font-size:13.5px;color:var(--dim)}
+.rough .cap b{color:var(--ink)}
+.tally{display:grid;grid-template-columns:repeat(auto-fit,minmax(88px,1fr));gap:1px;
+  background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.tally div{background:var(--surface);padding:13px 11px;display:flex;flex-direction:column;gap:2px}
+.tally b{font-family:"IBM Plex Mono",monospace;font-size:21px;font-weight:500;line-height:1;
+  font-variant-numeric:tabular-nums}
+.tally span{font-size:11px;color:var(--dim)}
+.n-ok b{color:var(--ok)} .n-bad b{color:var(--bad)} .n-warn b{color:var(--warn)}
+.n-seam b{color:var(--seam)} .n-info b{color:var(--info)}
+.grid{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:720px){.grid{grid-template-columns:1fr 1fr}}
+.cut{background:var(--surface);border:1px solid var(--line);border-radius:13px;overflow:hidden;
+  display:flex;flex-direction:column}
+.cut.bad{border-color:var(--bad)}
+.cut video{width:100%;display:block;background:#000;aspect-ratio:16/9}
+.info{padding:11px 14px 14px;display:flex;flex-direction:column;gap:5px}
+.hd{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.hd b{font-family:"IBM Plex Mono",monospace;font-size:14px;font-weight:600}
+.t{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--dim);
+  font-variant-numeric:tabular-nums}
+.tag{font-size:11px;color:var(--accent)}
+.chip{font-family:"IBM Plex Mono",monospace;font-size:10.5px;padding:2px 8px;border-radius:99px;
+  margin-left:auto;white-space:nowrap}
+.chip.ok{background:var(--okbg);color:var(--ok)}
+.chip.bad{background:var(--badbg);color:var(--bad)}
+.chip.warn{background:var(--warnbg);color:var(--warn)}
+.chip.seam{background:var(--seambg);color:var(--seam)}
+.chip.info{background:var(--infobg);color:var(--info)}
+.ly{font-family:"Gowun Batang",serif;font-size:15px;margin:0;line-height:1.45}
+.ly.dim{color:var(--dim);font-size:13px;font-family:"IBM Plex Sans KR",sans-serif}
+.meta{font-size:12px;color:var(--dim);margin:0}
+.note{font-size:12.5px;color:var(--ink);margin:0;font-family:"IBM Plex Mono",monospace}
+.cut.bad .note{color:var(--bad)}
+.body{font-size:14.5px;color:var(--dim);margin:0 0 10px;max-width:64ch}
+.body b{color:var(--ink);font-weight:600}
+section{display:flex;flex-direction:column}
+.ledger{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--dim);
+  display:flex;flex-wrap:wrap;gap:14px;font-variant-numeric:tabular-nums}
+</style></head><body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">T06 · 강강술래 · 32컷</div>
+  <h1>다 붙여 봤습니다</h1>
+  <p class="sub">아래 첫 영상이 <b>32컷을 순서대로 이어붙인 것</b>입니다(179.6초, 곡 전체). 그 아래는 컷 하나씩입니다. 모든 영상에 <b>원곡을 얹어</b> 두었으니 입이 맞는지 바로 보실 수 있습니다.</p>
+</header>
+
+<section>
+  <h2>러프 조립본 — 곡 전체</h2>
+  <div class="rough">
+    <video src="v/rough.mp4" controls preload="metadata" playsinline></video>
+    <div class="cap"><b>179.6초 · 32컷</b> — 자막·색보정·전환 없는 날것입니다. 컷 순서와 흐름만 보십시오.</div>
+  </div>
+</section>
+
+<section>
+  <h2>기계가 잰 것</h2>
+  <div class="tally">
+    <div class="n-ok"><b>16</b><span>통과</span></div>
+    <div class="n-bad"><b>2</b><span>다시</span></div>
+    <div class="n-warn"><b>1</b><span>경계</span></div>
+    <div class="n-seam"><b>5</b><span>이음매</span></div>
+    <div class="n-info"><b>8</b><span>무해</span></div>
+  </div>
+  <p class="body" style="margin-top:14px">🔴 <b>「다시」 둘이 진짜입니다</b> — C15·C21 은 립싱크 컷인데 입과 노래의 상관이 <b>0에 가깝습니다</b>. 화면에서 눈으로 보입니다.</p>
+  <p class="body">🔵 <b>「무해」 아홉은 기계의 한계입니다</b> — 인서트·와이드·풍경이라 <b>입이 화면에 없습니다.</b> 검사기는 그걸 안 보고 오디오 상관만 잽니다. H3 소리는 어차피 버리고 원곡을 깔기 때문에 문제가 되지 않습니다.</p>
+  <p class="body">🟣 <b>「이음매」 다섯은 예외로 열어 둔 자리입니다</b> — T06 은 컷마다 자기 무대에서 시작하고 이음매는 <b>연출로</b> 만듭니다(대표님 «연속성은 버려야해 / 연출로 해결해야해»).</p>
+</section>
+
+<section>
+  <h2>컷 서른둘</h2>
+  <div class="grid">
+<article class="cut ok" id="C01">
+  <video src="v/C01.mp4" controls preload="none" playsinline poster=""></video>
+  <div class="info">
+    <div class="hd"><b>C01</b><span class="t">0.00–5.49</span><span class="chip ok">통과</span></div>
+    <p class="ly dim">(연주)</p>
+    <p class="meta">인트로 · 와이드 · Static Shot · 무대 A · 아래 거리 · 국악 행사 등불</p>
+    
+  </div>
+</article>
+<article class="cut ok" id="C02">
+  <video src="v/C02.mp4" controls preload="none" playsinline poster=""></video>
+  <div class="info">
+    <div class="hd"><b>C02</b><span class="t">5.49–10.98</span><span class="tag">인서트</span><span class="chip ok">통과</span></div>
+    <p class="ly dim">(연주)</p>
+    <p class="meta">인트로 · 클로즈업 · Pan Right · 무대 A · 등불 클로즈업 · 행렬이 지나간다</p>
+    
+  </div>
+</article>
+<article class="cut info" id="C03">
+  <video src="v/C03.mp4" controls preload="none" playsinline poster=""></video>
+  <div class="info">
+    <div class="hd"><b>C03</b><span class="t">10.98–16.60</span><span class="tag">인서트</span><span class="chip info">무해</span></div>
+    <p class="ly dim">(연주)</p>
+    <p class="meta">인트로 · 익스클로즈업 · Push In · 무대 B1 · 대금 부는 손</p>
+    <p class="note">r 0.72 · 얼굴 없는 인서트</p>
+  </div>
+</article>
+<article class="cut ok" id="C04">
+  <video src="v/C04.mp4" controls preload="none" playsinline poster=""></video>
+  <div class="info">
+    <div class="hd"><b>C04</b><span class="t">16.60–22.22</span><span class="chip ok">통과</span></div>
+    <p class="ly dim">(연주)</p>
+    <p class="meta">인트로 · 와이드 · Tilt Down · 무대 A · 국악패 행렬 부감 · 다른 각도</p>
+    
+  </div>
+</article>
+<article class="cut info" id="C05">
+  <video src="v/C05.mp4" controls preload="none" playsinline poster=""></video>
+  <div class="info">
+    <div class="hd"><b>C05</b><span class="t">22.22–28.40</span><span class="chip info">무해</span></div>
+    <p class="ly dim">(연주)</p>
+    <p class="meta">인트로 · 미디엄 · Truck Left · 무대 C · DJ 부스 뒤에서 관중 쪽</p>
+    <p class="note">r 0.30 · 얼굴 없음</p>
+  </div>
+</article>
+<article class="cut info" id="C06">
+  <video src="v/C06.mp4" controls preload="none" playsinline poster=""></video>
+  <div class="info">
+    <div class="hd"><b>C06</b><span class="t">28.40–35.30</span><span class="chip info">무해</span></div>
+    <p class="ly">불 꺼진다 사람 찬다 / 처음 보는 얼굴 사이</p>
+    <p class="meta">벌스1 · 와이드 · Pedestal Down · 무대 D · 플로어 전경</p>
+    <p class="note">r 0.67 · 와이드</p>
+  </div>
+</article>
+<article class="cut info" id="C07">
+  <video src="v/C07.mp4" controls preload="none" playsinline poster=""></video>
+  <div class="info">
+    <div class="hd"><b>C07</b><span class="t">35.30–42.20</span><span class="chip info">무해</span></div>
+    <p class="ly">손은 아직 비어 있다 / 바닥이 먼저 말 건다</p>
+    <p class="meta">벌스1 · 바스트 · Static Shot · 무대 E · 관중 속 여자</p>
+    <p class="note">r 0.65 · 뒷모습</p>
+  </div>
+</article>
+<article class="cut ok" id="C08">
+  <video src="v/C08.mp4" controls preload="none" playsinline poster=""></video>
+  <div class="info">
+    <div class="hd"><b>C08</b><span class="t">42.20–49.20</span><span class="tag">인서트</span><span class="chip ok">통과</span></div>
+    <p class="ly">누가 먼저랄 것 없이 / 몸이 먼저 알아챈다</p>
+    <p class="meta">벌스1 · 클로즈업 · Push In · 무대 E · 여자의 빈 손</p>
+    <p class="note">r 0.97</p>
+  </div>
+</article>
+<article class="cut info" id="C09">
+  <video src="v/C09.mp4" controls preload="none" playsinline poster=""></video>
+  <div class="info">
+    <div class="hd"><b>C09</b><span class="t">49.20–56.10</span><span class="chip info">무해</span></div>
+    <p class="ly">낯설다는 말은 접자 / 밤은 길지 않다</p>
+    <p class="meta">벌스1 · 와이드 · Pan Right · 무대 F · 난간에서 도시 야경</p>
+    <p class="note">r 0.82 · 사람 없음</p>
+  </div>
+</article>
+<article class="cut ok" id="C10">
+  <video src="v/C10.mp4" controls preload="none" playsinline poster=""></video>
+  <div class="info">
+    <div class="hd"><b>C10</b><span class="t">56.10–63.28</span><span class="chip ok">통과</span></div>
+    <p class="ly">손 하나 내밀면 된다 / 뒤로 갈 데가 없다</p>
+    <p class="meta">빌드1 · 미디엄 · Tracking Shot · 무대 D · 관중을 헤치고 무대로</p>
+    <p class="note">r 0.99</p>
+  </div>
+</article>
+<article class="cut seam" id="C11">
+  <video src="v/C11.mp4" controls preload="none" playsinline poster=""></video>
+  <div class="info">
+    <div class="hd"><b>C11</b><span class="t">63.28–70.12</span><span class="tag">2인</span><span class="chip seam">이음매</span></div>
+    <p class="ly">숨 들이켜라 터진다 / 셋 둘 하나</p>
+    <p class="meta">빌드1 · 미디엄 · Pedestal Up · 무대 G · 투샷 — 무대 위 여자 · 돌아보는 DJ</p>
+    <p class="note">이음매</p>
+  </div>
+</article>
+<article class="cut ok" id="C12">
+  <video src="v/C12.mp4" controls preload="none" playsinline poster=""></video>
+  <div class="info">
+    <div class="hd"><b>C12</b><span class="t">70.12–74.12</span><span class="tag">🎤</span><span class="chip ok">통과</span></div>
+    <p class="ly">강강술래 / 손 잡으면 원이다</p>
+    <p class="meta">드랍1 · 클로즈업 · Static Shot · 무대 H · 여자 정면</p>
+    <p class="note">r 0.99</p>
+  </div>
+</article>
+<article class="cut ok" id="C13">
+  <video src="v/C13.mp4" controls preload="none" playsinline poster=""></video>
+  <div class="info">
+    <div class="hd"><b>C13</b><span class="t">74.12–77.68</span><span class="tag">🎤2인</span><span class="chip ok">통과</span></div>
+    <p class="ly">강강술래 / 돌아라 밤이 짧다</p>
+    <p class="meta">드랍1 · 바스트 · Push In · 무대 GO1 · OTS — DJ 어깨 너머로 여자</p>
+    <p class="note">r 1.00</p>
+  </div>
+</article>
+<article class="cut info" id="C14">
+  <video src="v/C14.mp4" controls preload="none" playsinline poster=""></video>
+  <div class="info">
+    <div class="hd"><b>C14</b><span class="t">77.68–81.52</span><span class="chip info">무해</span></div>
+    <p class="ly">강강술래 / 달도 우리랑 돈다</p>
+    <p class="meta">드랍1 · 와이드 · Tilt Up · 무대 I · 🌙 달 · 하늘을 크게</p>
+    <p class="note">r 0.34 · 사람 없음</p>
+  </div>
+</article>
+<article class="cut bad" id="C15">
+  <video src="v/C15.mp4" controls preload="none" playsinline poster=""></video>
+  <div class="info">
+    <div class="hd"><b>C15</b><span class="t">81.52–85.57</span><span class="tag">🎤</span><span class="chip bad">다시</span></div>
+    <p class="ly">강강술래 / 손 놓지 말고 돌자</p>
+    <p class="meta">드랍1 · 미디엄 · Arc Shot · 무대 J · 손이 잡힌다 · 원이 생긴다</p>
+    <p class="note">🎤 r 0.00 — 입이 안 맞는다</p>
+  </div>
+</article>
+<article class="cut ok" id="C16">
+  <video src="v/C16.mp4" controls preload="none" playsinline poster=""></video>
+  <div class="info">
+    <div class="hd"><b>C16</b><span class="t">85.57–91.78</span><span class="tag">인서트</span><span class="chip ok">통과</span></div>
+    <p class="ly dim">(연주)</p>
+    <p class="meta">간주 · 익스클로즈업 · Static Shot · 무대 B2 · 태평소 리드</p>
+    
+  </div>
+</article>
+<article class="cut ok" id="C17">
+  <video src="v/C17.mp4" controls preload="none" playsinline poster=""></video>
+  <div class="info">
+    <div class="hd"><b>C17</b><span class="t">91.78–98.00</span><span class="chip ok">통과</span></div>
+    <p class="ly dim">(연주)</p>
+    <p class="meta">간주 · 와이드 · Arc Shot · 무대 J · 원이 돌기 시작</p>
+    
+  </div>
+</article>
+<article class="cut ok" id="C18">
+  <video src="v/C18.mp4" controls preload="none" playsinline poster=""></video>
+  <div class="info">
+    <div class="hd"><b>C18</b><span class="t">98.00–105.46</span><span class="tag">🎤</span><span class="chip ok">통과</span></div>
+    <p class="ly">이름 모르는 사람과 / 같은 쪽으로 발 간다</p>
+    <p class="meta">벌스2 · 미디엄 · Truck Right · 무대 J · 관중 사이 여자</p>
+    <p class="note">r 1.00</p>
+  </div>
+</article>
+<article class="cut seam" id="C19">
+  <video src="v/C19.mp4" controls preload="none" playsinline poster=""></video>
+  <div class="info">
+    <div class="hd"><b>C19</b><span class="t">105.46–112.46</span><span class="tag">🎤2인</span><span class="chip seam">이음매</span></div>
+    <p class="ly">처음인 게 안 보인다 / 여기선 다 처음</p>
+    <p class="meta">벌스2 · 미디엄 · Static Shot · 무대 G · 투샷 — DJ 와 여자가 주고받는다</p>
+    <p class="note">r 1.00 · 이음매</p>
+  </div>
+</article>
+<article class="cut info" id="C20">
+  <video src="v/C20.mp4" controls preload="none" playsinline poster=""></video>
+  <div class="info">
+    <div class="hd"><b>C20</b><span class="t">112.46–117.84</span><span class="tag">인서트</span><span class="chip info">무해</span></div>
+    <p class="ly dim">(연주)</p>
+    <p class="meta">벌스2 · 클로즈업 · Tilt Down · 무대 J · 치맛자락 · 발이 돈다</p>
+    <p class="note">r 0.38 · 인서트</p>
+  </div>
+</article>
+<article class="cut bad" id="C21">
+  <video src="v/C21.mp4" controls preload="none" playsinline poster=""></video>
+  <div class="info">
+    <div class="hd"><b>C21</b><span class="t">117.84–123.22</span><span class="tag">🎤</span><span class="chip bad">다시</span></div>
+    <p class="ly">헐거운 원이 조인다 / 아무도 안 빠진다</p>
+    <p class="meta">벌스2 · 미디엄 · Truck Right · 무대 J · 여자 · 원 안에서</p>
+    <p class="note">🎤 r 0.07 — 입이 안 맞는다</p>
+  </div>
+</article>
+<article class="cut ok" id="C22">
+  <video src="v/C22.mp4" controls preload="none" playsinline poster=""></video>
+  <div class="info">
+    <div class="hd"><b>C22</b><span class="t">123.22–130.22</span><span class="tag">인서트</span><span class="chip ok">통과</span></div>
+    <p class="ly">발이 더 빨라진다 / 숨이 목까지 찬다</p>
+    <p class="meta">빌드2 · 클로즈업 · Push In · 무대 B3 · 장구 치는 손</p>
+    <p class="note">r 1.00</p>
+  </div>
+</article>
+<article class="cut seam" id="C23">
+  <video src="v/C23.mp4" controls preload="none" playsinline poster=""></video>
+  <div class="info">
+    <div class="hd"><b>C23</b><span class="t">130.22–137.10</span><span class="tag">🎤2인</span><span class="chip seam">이음매</span></div>
+    <p class="ly">여기서 멈추면 안돼 / 지금부터 진짜다</p>
+    <p class="meta">빌드2 · 클로즈업 · Zoom In · 무대 GO2 · OTS — 여자 너머로 DJ</p>
+    <p class="note">🎤 r 0.90 · 이음매</p>
+  </div>
+</article>
+<article class="cut ok" id="C24">
+  <video src="v/C24.mp4" controls preload="none" playsinline poster=""></video>
+  <div class="info">
+    <div class="hd"><b>C24</b><span class="t">137.10–140.70</span><span class="chip ok">통과</span></div>
+    <p class="ly">강강술래 / 손 잡으면 원이다</p>
+    <p class="meta">파이널드랍 · 와이드 · Pedestal Up · 무대 J · 원 전체</p>
+    <p class="note">r 0.99</p>
+  </div>
+</article>
+<article class="cut warn" id="C25">
+  <video src="v/C25.mp4" controls preload="none" playsinline poster=""></video>
+  <div class="info">
+    <div class="hd"><b>C25</b><span class="t">140.70–144.60</span><span class="tag">🎤</span><span class="chip warn">경계</span></div>
+    <p class="ly">강강술래 / 밤이 다 가도 된다</p>
+    <p class="meta">파이널드랍 · 익스클로즈업 · Static Shot · 무대 H · 여자 정면</p>
+    <p class="note">🎤 r 0.81 — 통과선 0.90 아래</p>
+  </div>
+</article>
+<article class="cut ok" id="C26">
+  <video src="v/C26.mp4" controls preload="none" playsinline poster=""></video>
+  <div class="info">
+    <div class="hd"><b>C26</b><span class="t">144.60–147.98</span><span class="chip ok">통과</span></div>
+    <p class="ly">강강술래 / 하나 빠져도 돈다</p>
+    <p class="meta">파이널드랍 · 클로즈업 · Truck Left · 무대 J · 관중의 손들</p>
+    <p class="note">r 0.94</p>
+  </div>
+</article>
+<article class="cut ok" id="C27">
+  <video src="v/C27.mp4" controls preload="none" playsinline poster=""></video>
+  <div class="info">
+    <div class="hd"><b>C27</b><span class="t">147.98–151.20</span><span class="tag">🎤2인</span><span class="chip ok">통과</span></div>
+    <p class="ly">강강술래 / 더 크게 더 빠르게</p>
+    <p class="meta">파이널드랍 · 미디엄 · Static Shot · 무대 G · 투샷 + 관중</p>
+    <p class="note">r 0.99</p>
+  </div>
+</article>
+<article class="cut seam" id="C28">
+  <video src="v/C28.mp4" controls preload="none" playsinline poster=""></video>
+  <div class="info">
+    <div class="hd"><b>C28</b><span class="t">151.20–155.78</span><span class="tag">🎤</span><span class="chip seam">이음매</span></div>
+    <p class="ly">강강술래 / 해 뜰 때까지 돌자</p>
+    <p class="meta">파이널드랍 · 미디엄 · Pull Out · 무대 F · 여자가 난간 쪽으로 걸어간다</p>
+    <p class="note">🎤 r 0.99 · 이음매</p>
+  </div>
+</article>
+<article class="cut info" id="C29">
+  <video src="v/C29.mp4" controls preload="none" playsinline poster=""></video>
+  <div class="info">
+    <div class="hd"><b>C29</b><span class="t">155.78–160.36</span><span class="chip info">무해</span></div>
+    <p class="ly dim">(연주)</p>
+    <p class="meta">파이널드랍 · 와이드 · Tilt Up · 무대 K · 🌅 해가 뜬다</p>
+    <p class="note">r 0.07 · 사람 없음</p>
+  </div>
+</article>
+<article class="cut seam" id="C30">
+  <video src="v/C30.mp4" controls preload="none" playsinline poster=""></video>
+  <div class="info">
+    <div class="hd"><b>C30</b><span class="t">160.36–166.84</span><span class="chip seam">이음매</span></div>
+    <p class="ly dim">(연주)</p>
+    <p class="meta">아웃트로 · 와이드 · Static Shot · 무대 A2 · 아래 거리가 비어 간다</p>
+    <p class="note">이음매</p>
+  </div>
+</article>
+<article class="cut ok" id="C31">
+  <video src="v/C31.mp4" controls preload="none" playsinline poster=""></video>
+  <div class="info">
+    <div class="hd"><b>C31</b><span class="t">166.84–173.32</span><span class="tag">인서트</span><span class="chip ok">통과</span></div>
+    <p class="ly dim">(연주)</p>
+    <p class="meta">아웃트로 · 익스클로즈업 · Push In · 무대 B1 · 대금 지공 위의 손가락</p>
+    
+  </div>
+</article>
+<article class="cut ok" id="C32">
+  <video src="v/C32.mp4" controls preload="none" playsinline poster=""></video>
+  <div class="info">
+    <div class="hd"><b>C32</b><span class="t">173.32–179.80</span><span class="chip ok">통과</span></div>
+    <p class="ly dim">(연주)</p>
+    <p class="meta">아웃트로 · 와이드 · Tilt Up · 무대 K · 새벽 하늘 · 빈 옥상</p>
+    
+  </div>
+</article>
+  </div>
+</section>
+
+<section>
+  <h2>대표님이 정하실 것</h2>
+  <p class="body">기계가 못 재는 것은 <b>입 개폐·연기·표정·흐름</b>입니다. 반려할 컷 번호만 짚어 주시면 그것만 다시 뽑습니다(컷당 $0.30~0.48).</p>
+  <p class="body">특히 봐 주실 곳 — <b>C15·C21</b>(입이 안 맞습니다) · <b>C25</b>(경계) · 그리고 <b>러프 조립본 전체 흐름</b>입니다.</p>
+</section>
+
+<section>
+  <h2>쓴 돈</h2>
+  <div class="ledger">
+    <span>이미지 88cr</span><span>영상 $17.52</span><span>잔액 356.69cr</span>
+    <span>버린 것 $5.2 (계절 어긋남)</span>
+  </div>
+</section>
+
+</div><div style="max-width:820px;margin:48px auto 24px;padding:12px 16px;border-top:1px solid rgba(128,128,128,.28);font:13px/1.6 -apple-system,'Apple SD Gothic Neo',sans-serif;color:#8a8a8a;">주소를 아는 사람은 열람할 수 있는 페이지입니다 · 2026-10-01 이후 자동 삭제</div>
+</body></html>

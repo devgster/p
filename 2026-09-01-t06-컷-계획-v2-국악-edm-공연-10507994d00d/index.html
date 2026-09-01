@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T06 컷 계획 v2 — 국악 EDM 공연</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@300;400;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#F6F4F8;--surface:#FFF;--line:#E2DEE8;--ink:#1B1620;--dim:#6B6474;--accent:#B3277E;
+  --face:#B3277E;--wide:#2E6E8E;--dj:#6D4AD4;--gugak:#9A6B12;
+  --facebg:#FAECF4;--widebg:#E8F0F5;--djbg:#EDE9FA;--gugakbg:#FBF2DE;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#141019;--surface:#1D1826;--line:#302938;--ink:#EFEAF2;--dim:#9C93A8;--accent:#E86BB8;
+  --face:#E86BB8;--wide:#7FB6D4;--dj:#A98BF0;--gugak:#E8BC63;
+  --facebg:#2B1725;--widebg:#152530;--djbg:#221C33;--gugakbg:#2B2313;
+}}
+:root[data-theme="dark"]{
+  --bg:#141019;--surface:#1D1826;--line:#302938;--ink:#EFEAF2;--dim:#9C93A8;--accent:#E86BB8;
+  --face:#E86BB8;--wide:#7FB6D4;--dj:#A98BF0;--gugak:#E8BC63;
+  --facebg:#2B1725;--widebg:#152530;--djbg:#221C33;--gugakbg:#2B2313;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"IBM Plex Sans KR",-apple-system,sans-serif;font-weight:300;line-height:1.6}
+.wrap{max-width:1080px;margin:0 auto;padding:28px 16px 80px;display:flex;flex-direction:column;gap:30px}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--accent)}
+h1{font-family:"Gowun Batang",serif;font-weight:700;font-size:clamp(27px,7vw,40px);margin:6px 0 0;line-height:1.2}
+.sub{color:var(--dim);font-size:14px;margin:8px 0 0;max-width:62ch}
+h2{font-family:"Gowun Batang",serif;font-size:20px;font-weight:700;margin:0 0 12px;
+  padding-bottom:8px;border-bottom:1px solid var(--line)}
+section{display:flex;flex-direction:column}
+.body{font-size:14.5px;color:var(--dim);margin:0 0 10px;max-width:66ch}
+.body b{color:var(--ink);font-weight:600}
+
+.stage{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px 18px;
+  display:flex;flex-direction:column;gap:14px;align-items:center;text-align:center}
+.stage .lights{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--accent);
+  letter-spacing:.1em}
+.stage .back{display:flex;gap:26px;flex-wrap:wrap;justify-content:center}
+.stage .box{border:1px dashed var(--line);border-radius:9px;padding:9px 15px;font-size:13.5px}
+.stage .front{border:2px solid var(--face);border-radius:9px;padding:11px 22px;
+  font-family:"Gowun Batang",serif;font-size:17px;font-weight:700;color:var(--face)}
+.stage .aud{font-size:12.5px;color:var(--dim)}
+.stage .arrow{color:var(--dim);font-size:11px}
+
+.tally{display:grid;grid-template-columns:repeat(auto-fit,minmax(92px,1fr));gap:1px;
+  background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.tally div{background:var(--surface);padding:13px 11px;display:flex;flex-direction:column;gap:2px}
+.tally b{font-family:"IBM Plex Mono",monospace;font-size:21px;font-weight:500;line-height:1;
+  font-variant-numeric:tabular-nums}
+.tally span{font-size:11px;color:var(--dim)}
+.t-face b{color:var(--face)} .t-wide b{color:var(--wide)}
+.t-dj b{color:var(--dj)} .t-gugak b{color:var(--gugak)}
+
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+table{width:100%;border-collapse:collapse;font-size:13px;min-width:720px}
+th{background:var(--bg);color:var(--dim);font-weight:600;font-size:11.5px;text-align:left;
+  padding:9px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+tr.lip{background:var(--facebg)}
+.blk{font-size:11.5px;color:var(--dim);white-space:nowrap}
+.id{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:12.5px}
+.t{font-family:"IBM Plex Mono",monospace;font-size:11.5px;white-space:nowrap;
+  font-variant-numeric:tabular-nums}
+.dim{color:var(--dim)}
+.st{font-size:11.5px;padding:2px 8px;border-radius:99px;white-space:nowrap}
+.st.face{background:var(--facebg);color:var(--face)}
+.st.wide{background:var(--widebg);color:var(--wide)}
+.st.dj{background:var(--djbg);color:var(--dj)}
+.st.gugak{background:var(--gugakbg);color:var(--gugak)}
+.mic{font-size:11px}
+.cam{font-size:11.5px;white-space:nowrap}
+.cam b{font-family:"IBM Plex Mono",monospace;font-size:11.5px;font-weight:500}
+.what{font-size:12.5px;color:var(--dim);min-width:150px}
+.ly{font-family:"Gowun Batang",serif;font-size:13.5px;line-height:1.4;min-width:140px}
+
+.cards{display:grid;grid-template-columns:1fr;gap:11px}
+@media(min-width:640px){.cards{grid-template-columns:1fr 1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:11px;padding:13px 15px}
+.card h3{font-family:"Gowun Batang",serif;font-size:16px;margin:0 0 5px}
+.card p{font-size:13px;color:var(--dim);margin:0}
+.ledger{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--dim);
+  display:flex;flex-wrap:wrap;gap:14px;font-variant-numeric:tabular-nums}
+</style></head><body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">T06 · 강강술래 · 컷 계획 v2</div>
+  <h1>국악 EDM 콜라보 공연</h1>
+  <p class="sub">무대 하나, 컷 스물넷. 앞선 판은 무대 열여섯에 컷 서른둘이었고, 관리하다 <b>정해진 것이 조용히 빠졌습니다</b> — 회식 · 일반 옥상 · 겨울 패딩 · 마이크 · 낮밤 튐. 대표님 말씀대로 <b>연출을 줄입니다.</b></p>
+</header>
+
+<section>
+  <h2>무대</h2>
+  <div class="stage">
+    <div class="lights">◆ ◆ ◆   화려한 EDM 조명 · 레이저 · 헤이즈   ◆ ◆ ◆</div>
+    <div class="back">
+      <div class="box">DJ 턴테이블</div>
+      <div class="box">국악기 연주자들</div>
+    </div>
+    <div class="arrow">▼</div>
+    <div class="front">여자가 노래한다</div>
+    <div class="arrow">▼</div>
+    <div class="aud">관중</div>
+  </div>
+</section>
+
+<section>
+  <h2>컷 스물넷 — 어디를 보나</h2>
+  <div class="tally">
+    <div class="t-face"><b>10</b><span>여자 정면</span></div>
+    <div class="t-wide"><b>7</b><span>무대 와이드</span></div>
+    <div class="t-gugak"><b>4</b><span>국악기</span></div>
+    <div class="t-dj"><b>3</b><span>디제잉</span></div>
+    <div><b>10</b><span>립싱크</span></div>
+    <div><b>7.5초</b><span>컷 평균</span></div>
+  </div>
+  <p class="body" style="margin-top:14px">앞선 판은 컷 평균 <b>5.6초</b>였습니다. <b>7.5초</b>로 늘린 것이 「모션이 단조롭다」에 대한 답입니다 — 5초에 팔 한 번 드는 걸로는 신이 안 납니다. 컷이 길어야 동작이 <b>끝까지</b> 갑니다.</p>
+</section>
+
+<section>
+  <h2>카메라 — 아이돌 음악방송 문법</h2>
+  <div class="cards">
+    <div class="card"><h3>페이스캠</h3><p>얼굴 고정. 표정·눈·입이 주인공입니다. 립싱크 컷의 기본이고, 음악방송이 가장 많이 쓰는 그림입니다.</p></div>
+    <div class="card"><h3>스웁</h3><p>부드럽게 다가갑니다. 소절이 올라갈 때 씁니다.</p></div>
+    <div class="card"><h3>지미집</h3><p>무대를 크게 훑고 내려오거나 올라갑니다. 와이드에서만 씁니다.</p></div>
+    <div class="card"><h3>슬라이더</h3><p>좌우로 밀어 갑니다. 벌스에서 씁니다.</p></div>
+    <div class="card"><h3>당김(줌)</h3><p>후렴 직전에 확 당깁니다.</p></div>
+    <div class="card"><h3>원형 트래킹</h3><p>인물 주위를 돕니다. 후렴에서 씁니다.</p></div>
+  </div>
+  <p class="body" style="margin-top:12px">🔒 <b>흔들지 않습니다.</b> 음악방송 카메라는 크고 부드럽습니다. 그리고 <b>비트에 맞춰</b> 움직입니다 — 컷마다 「어느 소리에 무엇이 움직이나」를 실측으로 박아 둡니다.</p>
+</section>
+
+<section>
+  <h2>컷 표</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>블록</th><th>컷</th><th>시각</th><th>무대</th><th>카메라</th><th>무엇을 보나</th><th>가사</th></tr></thead>
+    <tbody>
+<tr class="wide">
+<td class="blk">인트로</td><td class="id">C01</td>
+<td class="t">0.00–10.98<br><span class="dim">10.98초</span></td>
+<td><span class="st wide">무대 와이드</span></td>
+<td class="cam"><b>Pedestal Down</b><br><span class="dim">지미집 — 무대를 훑고 내려온다</span></td>
+<td class="what">무대 전체 · 조명이 살아난다</td>
+<td class="ly"><span class="dim">(연주)</span></td></tr>
+<tr class="gugak">
+<td class="blk"></td><td class="id">C02</td>
+<td class="t">10.98–22.22<br><span class="dim">11.24초</span></td>
+<td><span class="st gugak">국악기</span></td>
+<td class="cam"><b>Push In</b><br><span class="dim">스웁 — 부드럽게 다가간다</span></td>
+<td class="what">대금 부는 손</td>
+<td class="ly"><span class="dim">(연주)</span></td></tr>
+<tr class="dj">
+<td class="blk"></td><td class="id">C03</td>
+<td class="t">22.22–28.40<br><span class="dim">6.18초</span></td>
+<td><span class="st dj">디제잉</span></td>
+<td class="cam"><b>Truck Left</b><br><span class="dim">슬라이더 — 왼쪽으로 민다</span></td>
+<td class="what">턴테이블 위 손</td>
+<td class="ly"><span class="dim">(연주)</span></td></tr>
+<tr class="face lip">
+<td class="blk">벌스1</td><td class="id">C04</td>
+<td class="t">28.40–35.30<br><span class="dim">6.90초</span></td>
+<td><span class="st face">여자 정면</span> <span class="mic">🎤</span></td>
+<td class="cam"><b>Static Shot</b><br><span class="dim">페이스캠 — 고정, 표정이 주인공</span></td>
+<td class="what">여자 정면 · 첫 소절</td>
+<td class="ly">불 꺼진다 사람 찬다<br>처음 보는 얼굴 사이</td></tr>
+<tr class="face lip">
+<td class="blk"></td><td class="id">C05</td>
+<td class="t">35.30–42.20<br><span class="dim">6.90초</span></td>
+<td><span class="st face">여자 정면</span> <span class="mic">🎤</span></td>
+<td class="cam"><b>Truck Right</b><br><span class="dim">슬라이더 — 오른쪽으로 민다</span></td>
+<td class="what">여자 바스트 · 옆으로 밀며</td>
+<td class="ly">손은 아직 비어 있다<br>바닥이 먼저 말 건다</td></tr>
+<tr class="wide">
+<td class="blk"></td><td class="id">C06</td>
+<td class="t">42.20–49.20<br><span class="dim">7.00초</span></td>
+<td><span class="st wide">무대 와이드</span></td>
+<td class="cam"><b>Arc Shot</b><br><span class="dim">원형 트래킹 — 주위를 돈다</span></td>
+<td class="what">무대 전체 · 앞에 여자, 뒤에 DJ·국악패</td>
+<td class="ly">누가 먼저랄 것 없이<br>몸이 먼저 알아챈다</td></tr>
+<tr class="face lip">
+<td class="blk"></td><td class="id">C07</td>
+<td class="t">49.20–56.10<br><span class="dim">6.90초</span></td>
+<td><span class="st face">여자 정면</span> <span class="mic">🎤</span></td>
+<td class="cam"><b>Push In</b><br><span class="dim">스웁 — 부드럽게 다가간다</span></td>
+<td class="what">여자 정면 · 다가간다</td>
+<td class="ly">낯설다는 말은 접자<br>밤은 길지 않다</td></tr>
+<tr class="face lip">
+<td class="blk">빌드1</td><td class="id">C08</td>
+<td class="t">56.10–63.28<br><span class="dim">7.18초</span></td>
+<td><span class="st face">여자 정면</span> <span class="mic">🎤</span></td>
+<td class="cam"><b>Zoom In</b><br><span class="dim">당긴다 — 후렴 직전</span></td>
+<td class="what">여자 · 후렴 직전 당긴다</td>
+<td class="ly">손 하나 내밀면 된다<br>뒤로 갈 데가 없다</td></tr>
+<tr class="dj">
+<td class="blk"></td><td class="id">C09</td>
+<td class="t">63.28–70.12<br><span class="dim">6.84초</span></td>
+<td><span class="st dj">디제잉</span></td>
+<td class="cam"><b>Pedestal Up</b><br><span class="dim">지미집 — 올라간다</span></td>
+<td class="what">DJ 상반신 · 페이더를 올린다</td>
+<td class="ly">숨 들이켜라 터진다<br>셋 둘 하나</td></tr>
+<tr class="face lip">
+<td class="blk">드랍1</td><td class="id">C10</td>
+<td class="t">70.12–77.68<br><span class="dim">7.56초</span></td>
+<td><span class="st face">여자 정면</span> <span class="mic">🎤</span></td>
+<td class="cam"><b>Arc Shot</b><br><span class="dim">원형 트래킹 — 주위를 돈다</span></td>
+<td class="what">여자 정면 · 후렴 · 주위를 돈다</td>
+<td class="ly">강강술래<br>손 잡으면 원이다<br>강강술래<br>돌아라 밤이 짧다</td></tr>
+<tr class="wide">
+<td class="blk"></td><td class="id">C11</td>
+<td class="t">77.68–85.57<br><span class="dim">7.89초</span></td>
+<td><span class="st wide">무대 와이드</span></td>
+<td class="cam"><b>Pedestal Down</b><br><span class="dim">지미집 — 무대를 훑고 내려온다</span></td>
+<td class="what">무대 전체 · 관중이 뛴다</td>
+<td class="ly">강강술래<br>달도 우리랑 돈다<br>강강술래<br>손 놓지 말고 돌자</td></tr>
+<tr class="gugak">
+<td class="blk">간주</td><td class="id">C12</td>
+<td class="t">85.57–91.78<br><span class="dim">6.21초</span></td>
+<td><span class="st gugak">국악기</span></td>
+<td class="cam"><b>Push In</b><br><span class="dim">스웁 — 부드럽게 다가간다</span></td>
+<td class="what">태평소 · 간주</td>
+<td class="ly"><span class="dim">(연주)</span></td></tr>
+<tr class="dj">
+<td class="blk"></td><td class="id">C13</td>
+<td class="t">91.78–98.00<br><span class="dim">6.22초</span></td>
+<td><span class="st dj">디제잉</span></td>
+<td class="cam"><b>Zoom In</b><br><span class="dim">당긴다 — 후렴 직전</span></td>
+<td class="what">디제잉 · 간주</td>
+<td class="ly"><span class="dim">(연주)</span></td></tr>
+<tr class="face lip">
+<td class="blk">벌스2</td><td class="id">C14</td>
+<td class="t">98.00–105.46<br><span class="dim">7.46초</span></td>
+<td><span class="st face">여자 정면</span> <span class="mic">🎤</span></td>
+<td class="cam"><b>Static Shot</b><br><span class="dim">페이스캠 — 고정, 표정이 주인공</span></td>
+<td class="what">여자 정면 · 벌스2</td>
+<td class="ly">이름 모르는 사람과<br>같은 쪽으로 발 간다</td></tr>
+<tr class="face lip">
+<td class="blk"></td><td class="id">C15</td>
+<td class="t">105.46–112.46<br><span class="dim">7.00초</span></td>
+<td><span class="st face">여자 정면</span> <span class="mic">🎤</span></td>
+<td class="cam"><b>Truck Left</b><br><span class="dim">슬라이더 — 왼쪽으로 민다</span></td>
+<td class="what">여자 바스트</td>
+<td class="ly">처음인 게 안 보인다<br>여기선 다 처음</td></tr>
+<tr class="wide">
+<td class="blk"></td><td class="id">C16</td>
+<td class="t">112.46–123.22<br><span class="dim">10.76초</span></td>
+<td><span class="st wide">무대 와이드</span></td>
+<td class="cam"><b>Arc Shot</b><br><span class="dim">원형 트래킹 — 주위를 돈다</span></td>
+<td class="what">무대 전체 · 관중과 함께</td>
+<td class="ly">헐거운 원이 조인다<br>아무도 안 빠진다</td></tr>
+<tr class="gugak">
+<td class="blk">빌드2</td><td class="id">C17</td>
+<td class="t">123.22–130.22<br><span class="dim">7.00초</span></td>
+<td><span class="st gugak">국악기</span></td>
+<td class="cam"><b>Push In</b><br><span class="dim">스웁 — 부드럽게 다가간다</span></td>
+<td class="what">장구 치는 손</td>
+<td class="ly">발이 더 빨라진다<br>숨이 목까지 찬다</td></tr>
+<tr class="face lip">
+<td class="blk"></td><td class="id">C18</td>
+<td class="t">130.22–137.10<br><span class="dim">6.88초</span></td>
+<td><span class="st face">여자 정면</span> <span class="mic">🎤</span></td>
+<td class="cam"><b>Zoom In</b><br><span class="dim">당긴다 — 후렴 직전</span></td>
+<td class="what">여자 · 마지막 후렴 직전</td>
+<td class="ly">여기서 멈추면 안돼<br>지금부터 진짜다</td></tr>
+<tr class="face lip">
+<td class="blk">파이널드랍</td><td class="id">C19</td>
+<td class="t">137.10–144.60<br><span class="dim">7.50초</span></td>
+<td><span class="st face">여자 정면</span> <span class="mic">🎤</span></td>
+<td class="cam"><b>Static Shot</b><br><span class="dim">페이스캠 — 고정, 표정이 주인공</span></td>
+<td class="what">여자 정면 · 파이널드랍</td>
+<td class="ly">강강술래<br>손 잡으면 원이다<br>강강술래<br>밤이 다 가도 된다</td></tr>
+<tr class="wide">
+<td class="blk"></td><td class="id">C20</td>
+<td class="t">144.60–151.20<br><span class="dim">6.60초</span></td>
+<td><span class="st wide">무대 와이드</span></td>
+<td class="cam"><b>Pedestal Down</b><br><span class="dim">지미집 — 무대를 훑고 내려온다</span></td>
+<td class="what">무대 전체 · 관중이 한꺼번에 뛴다</td>
+<td class="ly">강강술래<br>하나 빠져도 돈다<br>강강술래<br>더 크게 더 빠르게</td></tr>
+<tr class="face lip">
+<td class="blk"></td><td class="id">C21</td>
+<td class="t">151.20–160.36<br><span class="dim">9.16초</span></td>
+<td><span class="st face">여자 정면</span> <span class="mic">🎤</span></td>
+<td class="cam"><b>Push In</b><br><span class="dim">스웁 — 부드럽게 다가간다</span></td>
+<td class="what">여자 정면 · 끝까지 간다</td>
+<td class="ly">강강술래<br>해 뜰 때까지 돌자</td></tr>
+<tr class="wide">
+<td class="blk">아웃트로</td><td class="id">C22</td>
+<td class="t">160.36–166.84<br><span class="dim">6.48초</span></td>
+<td><span class="st wide">무대 와이드</span></td>
+<td class="cam"><b>Pull Out</b><br><span class="dim">물러난다</span></td>
+<td class="what">무대 전체 · 물러난다</td>
+<td class="ly"><span class="dim">(연주)</span></td></tr>
+<tr class="gugak">
+<td class="blk"></td><td class="id">C23</td>
+<td class="t">166.84–173.32<br><span class="dim">6.48초</span></td>
+<td><span class="st gugak">국악기</span></td>
+<td class="cam"><b>Static Shot</b><br><span class="dim">페이스캠 — 고정, 표정이 주인공</span></td>
+<td class="what">대금 지공 위의 손가락</td>
+<td class="ly"><span class="dim">(연주)</span></td></tr>
+<tr class="wide">
+<td class="blk"></td><td class="id">C24</td>
+<td class="t">173.32–179.80<br><span class="dim">6.48초</span></td>
+<td><span class="st wide">무대 와이드</span></td>
+<td class="cam"><b>Pedestal Up</b><br><span class="dim">지미집 — 올라간다</span></td>
+<td class="what">무대 전체 · 조명이 잦아든다</td>
+<td class="ly"><span class="dim">(연주)</span></td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>돈</h2>
+  <div class="ledger">
+    <span>무대 키프레임 6장 · 12cr</span><span>컷 24개 · $11.34</span>
+    <span>이미 쓴 것: 이미지 88cr · 영상 $17.52</span>
+  </div>
+  <p class="body" style="margin-top:12px">배우 시트(얼굴 정본)는 그대로 씁니다. 무대는 옥상이 아니라 <b>공연 무대</b>라 다시 뽑습니다 — 여자 정면 · 와이드 · 디제잉 · 국악기 셋(대금·태평소·장구).</p>
+</section>
+
+<section>
+  <h2>승인해 주시면</h2>
+  <p class="body">① 무대 6장을 뽑아 <b>먼저 보여 드리고</b> ② 통과하면 24컷을 발주합니다. 무대에서 걸리면 컷은 안 나갑니다.</p>
+</section>
+
+</div><div style="max-width:820px;margin:48px auto 24px;padding:12px 16px;border-top:1px solid rgba(128,128,128,.28);font:13px/1.6 -apple-system,'Apple SD Gothic Neo',sans-serif;color:#8a8a8a;">주소를 아는 사람은 열람할 수 있는 페이지입니다 · 2026-10-01 이후 자동 삭제</div>
+</body></html>

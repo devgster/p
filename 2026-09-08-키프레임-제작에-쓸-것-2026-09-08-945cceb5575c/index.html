@@ -1,0 +1,88 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>키프레임 — 제작에 쓸 것</title>
+<style>
+:root{--bg:#faf9f7;--fg:#1c1a17;--dim:#6b6660;--line:#e2ddd6;--card:#fff;--accent:#c2410c;--ok:#15803d;--warn:#a16207}
+@media(prefers-color-scheme:dark){:root{--bg:#16150f;--fg:#ece8e1;--dim:#9a938a;--line:#2f2c26;--card:#1e1c16;--accent:#fb923c;--ok:#4ade80;--warn:#fbbf24}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo",Pretendard,sans-serif;-webkit-text-size-adjust:100%}
+.wrap{max-width:1080px;margin:0 auto;padding:26px 18px 70px}
+h1{font-size:1.5rem;margin:0 0 4px;letter-spacing:-.02em}
+.sub{color:var(--dim);font-size:.9rem;margin:0 0 20px}
+h2{font-size:1.2rem;margin:38px 0 12px;padding-top:18px;border-top:1px solid var(--line)}
+.cnt{font-weight:400;color:var(--dim);font-size:.8em;margin-left:8px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(290px,1fr))}
+figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:11px;overflow:hidden}
+figure.base{border-color:var(--dim);border-style:dashed}
+figure img{width:100%;display:block;background:#000}
+figcaption{padding:10px 13px 12px;font-size:.84rem}
+.num{display:inline-block;min-width:24px;height:24px;line-height:24px;text-align:center;background:var(--accent);color:#fff;border-radius:6px;font-weight:700;font-size:.8rem;margin-right:7px;padding:0 6px}
+.num.nb{background:var(--dim)}
+.axes{color:var(--dim);margin-top:4px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:14px 0}
+ul{padding-left:19px;margin:6px 0}li{margin:4px 0}
+</style></head><body><div class="wrap">
+<h1>키프레임 — 제작에 쓸 것</h1>
+<p class="sub">2026-09-08 · 네 판 · 18장 · 추가 집행 $0</p>
+<div class="box">
+<b>판마다 「참조 원판 1장 + 자가 뽑은 것」입니다.</b> 원판이 이미 차지한 각도는 추출에서 뺐습니다 —
+같은 그림을 두 번 세지 않으려고요.
+<ul>
+<li>눈 감음·얼굴 가림·프레임 잘림은 <b>걸러 냈습니다</b></li>
+<li>서로 <b>1.5초 이상</b> 떨어지고, 샷 크기·몸 방향 조합이 <b>겹치지 않게</b> 골랐습니다</li>
+</ul>
+</div>
+<div class="box" style="border-color:var(--warn)">
+<b style="color:var(--warn)">⚠️ 아직 축 하나가 비어 있습니다 — 「팔」</b>
+<div style="margin-top:6px;font-size:.9rem">자세를 재는 모델(<code>pose_landmarker.task</code> · 9MB)이 레포에 없어
+<b>팔이 어떻게 벌어졌는지를 못 잽니다.</b> 그래서 T15 남자가 3장에서 멈췄습니다 —
+좋은 장이 없어서가 아니라 <b>축이 모자라 조합이 덜 생겨서</b>입니다.
+그리고 카메라 «높이» 판정도 문턱이 고정값이라 방 밝기에 쏠립니다.
+<br>🔒 <b>이 둘을 고치면 판마다 6장이 안정적으로 나옵니다.</b></div>
+</div>
+<h2>T11 한화 · 여자<span class="cnt">6장</span></h2>
+<div class="grid"><figure class="base"><img src="img/T11_ANG02_00base.jpg" loading="lazy" alt="">
+<figcaption><span class="num nb">기본</span>참조 원판<div class="axes">이 판을 만든 그림</div></figcaption></figure>
+<figure><img src="img/T11_ANG02_01_0.00s_f000.jpg" loading="lazy" alt="">
+<figcaption><span class="num">1</span>0.00초<div class="axes"> · 측면</div></figcaption></figure>
+<figure><img src="img/T11_ANG02_02_3.25s_f078.jpg" loading="lazy" alt="">
+<figcaption><span class="num">2</span>3.25초<div class="axes"> · 3/4</div></figcaption></figure>
+<figure><img src="img/T11_ANG02_03_6.50s_f156.jpg" loading="lazy" alt="">
+<figcaption><span class="num">3</span>6.50초<div class="axes"> · 3/4</div></figcaption></figure>
+<figure><img src="img/T11_ANG02_04_8.50s_f204.jpg" loading="lazy" alt="">
+<figcaption><span class="num">4</span>8.50초<div class="axes"> · 3/4</div></figcaption></figure>
+<figure><img src="img/T11_ANG02_05_10.08s_f242.jpg" loading="lazy" alt="">
+<figcaption><span class="num">5</span>10.08초<div class="axes"> · 3/4</div></figcaption></figure></div>
+<h2>T11 한화 · 남자<span class="cnt">4장</span></h2>
+<div class="grid"><figure class="base"><img src="img/T11_ANG02_M_00base.jpg" loading="lazy" alt="">
+<figcaption><span class="num nb">기본</span>참조 원판<div class="axes">이 판을 만든 그림</div></figcaption></figure>
+<figure><img src="img/T11_ANG02_M_01_3.42s_f082.jpg" loading="lazy" alt="">
+<figcaption><span class="num">1</span>3.42초<div class="axes"> · 3/4</div></figcaption></figure>
+<figure><img src="img/T11_ANG02_M_02_5.12s_f123.jpg" loading="lazy" alt="">
+<figcaption><span class="num">2</span>5.12초<div class="axes"> · 정면</div></figcaption></figure>
+<figure><img src="img/T11_ANG02_M_03_7.08s_f170.jpg" loading="lazy" alt="">
+<figcaption><span class="num">3</span>7.08초<div class="axes"> · 3/4</div></figcaption></figure></div>
+<h2>T15 · 남자<span class="cnt">3장</span></h2>
+<div class="grid"><figure class="base"><img src="img/T15_ANG02_M_00base.jpg" loading="lazy" alt="">
+<figcaption><span class="num nb">기본</span>참조 원판<div class="axes">이 판을 만든 그림</div></figcaption></figure>
+<figure><img src="img/T15_ANG02_M_01_2.46s_f059.jpg" loading="lazy" alt="">
+<figcaption><span class="num">1</span>2.46초<div class="axes"> · 3/4</div></figcaption></figure>
+<figure><img src="img/T15_ANG02_M_02_8.50s_f204.jpg" loading="lazy" alt="">
+<figcaption><span class="num">2</span>8.50초<div class="axes"> · 정면</div></figcaption></figure></div>
+<h2>T18 · 여자<span class="cnt">5장</span></h2>
+<div class="grid"><figure class="base"><img src="img/T18_ANG02_W_00base.jpg" loading="lazy" alt="">
+<figcaption><span class="num nb">기본</span>참조 원판<div class="axes">이 판을 만든 그림</div></figcaption></figure>
+<figure><img src="img/T18_ANG02_W_01_3.04s_f073.jpg" loading="lazy" alt="">
+<figcaption><span class="num">1</span>3.04초<div class="axes"> · 정면</div></figcaption></figure>
+<figure><img src="img/T18_ANG02_W_02_6.62s_f159.jpg" loading="lazy" alt="">
+<figcaption><span class="num">2</span>6.62초<div class="axes"> · 3/4</div></figcaption></figure>
+<figure><img src="img/T18_ANG02_W_03_8.50s_f204.jpg" loading="lazy" alt="">
+<figcaption><span class="num">3</span>8.50초<div class="axes"> · 3/4</div></figcaption></figure>
+<figure><img src="img/T18_ANG02_W_04_10.08s_f242.jpg" loading="lazy" alt="">
+<figcaption><span class="num">4</span>10.08초<div class="axes"> · 3/4</div></figcaption></figure></div><div class="box">
+<b>이대로 제작에 들어갑니다.</b> 대표님 지시 — «지금 영상들은 현재상태의 추출기로 뽑아서 제작 시작».
+<div style="margin-top:6px;color:var(--dim);font-size:.89rem">보시고 빼실 번호가 있으면 말씀만 주십시오. 없으면 이대로 컷 참조로 겁니다.</div>
+</div>
+</div><div style="max-width:820px;margin:48px auto 24px;padding:12px 16px;border-top:1px solid rgba(128,128,128,.28);font:13px/1.6 -apple-system,'Apple SD Gothic Neo',sans-serif;color:#8a8a8a;">주소를 아는 사람은 열람할 수 있는 페이지입니다 · 2026-10-08 이후 자동 삭제</div>
+</body></html>

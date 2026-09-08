@@ -1,0 +1,317 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>키프레임 추출 — 여섯 판 검토 (2026-09-08)</title>
+<style>
+:root{--bg:#faf9f7;--fg:#1c1a17;--dim:#6b6660;--line:#e2ddd6;--card:#fff;--accent:#c2410c;--ok:#15803d;--warn:#a16207;--bad:#b91c1c}
+@media(prefers-color-scheme:dark){:root{--bg:#16150f;--fg:#ece8e1;--dim:#9a938a;--line:#2f2c26;--card:#1e1c16;--accent:#fb923c;--ok:#4ade80;--warn:#fbbf24;--bad:#f87171}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo",Pretendard,sans-serif;-webkit-text-size-adjust:100%}
+.wrap{max-width:1060px;margin:0 auto;padding:28px 18px 80px}
+h1{font-size:1.5rem;margin:0 0 6px;letter-spacing:-.02em}
+.sub{color:var(--dim);font-size:.9rem;margin:0 0 24px}
+h2{font-size:1.16rem;margin:42px 0 10px;padding-top:20px;border-top:1px solid var(--line);letter-spacing:-.01em}
+h2 .tag{font-size:.78rem;color:var(--dim);font-weight:400;margin-left:8px}
+.lead{color:var(--dim);font-size:.87rem;margin:6px 0 16px}
+.bar{display:flex;height:10px;border-radius:5px;overflow:hidden;background:var(--line);margin:10px 0 0}
+.seg{display:block;height:100%}
+.seg.s0{background:var(--ok)} .seg.s1{background:var(--bad)} .seg.s2{background:#9993}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:11px;overflow:hidden}
+figure img{width:100%;display:block;background:#000}
+figcaption{padding:10px 12px 12px;font-size:.82rem;line-height:1.45}
+.num{display:inline-block;min-width:21px;height:21px;line-height:21px;text-align:center;background:var(--accent);color:#fff;border-radius:5px;font-weight:700;font-size:.78rem;margin-right:6px}
+.axes{color:var(--dim);margin-top:4px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:15px 17px;margin:18px 0}
+.box h3{margin:0 0 8px;font-size:.98rem}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.85rem;min-width:480px}
+th,td{border-bottom:1px solid var(--line);padding:7px 10px;text-align:left}
+th{color:var(--dim);font-weight:600;white-space:nowrap}
+.ask{background:var(--card);border:2px solid var(--accent);border-radius:12px;padding:16px 18px;margin:30px 0 0}
+.ask h3{margin:0 0 10px;color:var(--accent);font-size:1.02rem}
+ul{padding-left:19px}li{margin:5px 0}
+code{background:rgba(128,128,128,.14);padding:1px 5px;border-radius:4px;font-size:.85em}
+.ok{color:var(--ok)}.bad{color:var(--bad)}.warn{color:var(--warn)}
+</style></head><body><div class="wrap">
+<h1>키프레임 추출 — 여섯 판 검토</h1>
+<p class="sub">2026-09-08 · 공장4 추출기로 각 판 243프레임을 «전수» 재고 뽑았습니다 · 추가 집행 $0</p>
+<div class="box">
+<h3>어떻게 뽑았나</h3>
+<p style="margin:0 0 8px">공장4가 만든 추출기(<code>kf_extract_lab.py</code>)가 판마다 <b>243프레임을 전부</b> 재고,
+① 쓸 수 있는가(눈 감음·얼굴 가림·잘림) ② 서로 겹치지 않는가(축 2개 이상)로 걸러 냅니다.</p>
+<p style="margin:0"><span class="ok">■</span> 쓸수있다 &nbsp;
+<span class="bad">■</span> 눈감음 &nbsp; <span style="color:#999">■</span> 자가못잼(고개 젖힘·측면에서 검출 실패 — <b>반려가 아닙니다</b>)</p>
+</div>
+<div class="box">
+<h3>🥇 오늘 고친 문구가 숫자로 나왔습니다</h3>
+<div class="scroll"><table>
+<tr><th>같은 회차·같은 여자</th><th>눈 감음</th><th>쓸 수 있다</th></tr>
+<tr><td><b>T11_ANG01</b> 옛 문형 「눈을 뜨고 <b>노래한다</b>」</td><td class="bad">37장</td><td>56장</td></tr>
+<tr><td><b>T11_ANG02</b> 새 문형 「눈을 뜨고, 입은 <b>다문다</b>」</td><td class="ok"><b>0장</b></td><td class="ok"><b>177장</b></td></tr>
+</table></div>
+<p style="margin:10px 0 0">정본 둘이 부딪히고 있었습니다 — <code>§1-y</code> 는 「노래한다」를,
+<code>PERFORM §7</code> 은 「참조의 입은 다문다」를 요구했습니다. <b>눈과 입은 다른 축</b>이라 갈라 적으니
+눈 감음이 사라지고 쓸 수 있는 프레임이 <b>3배</b>가 됐습니다.</p>
+</div>
+<h2>T11 한화 · 여자<span class="tag">옛 문형 — 「눈을 뜨고 «노래한다»」</span></h2>
+<div class="bar"><span class="seg s0" style="width:23.0%"></span><span class="seg s1" style="width:15.2%"></span><span class="seg s2" style="width:61.7%"></span></div>
+<p class="lead">243프레임 전수 — <b>자가못잼</b> 150 · <b>쓸수있다</b> 56 · <b>눈감음</b> 37 → <b>채택 11장</b></p>
+<div class="grid">
+<figure><img src="img/T11_ANG01_01.jpg" loading="lazy" alt="T11_ANG01-1">
+<figcaption><span class="num">1</span>0.21초
+<div class="axes">셋업 1 · 얼굴 20.5% · 측면</div></figcaption></figure>
+<figure><img src="img/T11_ANG01_02.jpg" loading="lazy" alt="T11_ANG01-2">
+<figcaption><span class="num">2</span>1.50초
+<div class="axes">셋업 1 · 얼굴 — · —</div></figcaption></figure>
+<figure><img src="img/T11_ANG01_03.jpg" loading="lazy" alt="T11_ANG01-3">
+<figcaption><span class="num">3</span>2.50초
+<div class="axes">셋업 1 · 얼굴 — · —</div></figcaption></figure>
+<figure><img src="img/T11_ANG01_04.jpg" loading="lazy" alt="T11_ANG01-4">
+<figcaption><span class="num">4</span>3.50초
+<div class="axes">셋업 1 · 얼굴 — · —</div></figcaption></figure>
+<figure><img src="img/T11_ANG01_05.jpg" loading="lazy" alt="T11_ANG01-5">
+<figcaption><span class="num">5</span>4.88초
+<div class="axes">셋업 1 · 얼굴 21.8% · 정면</div></figcaption></figure>
+<figure><img src="img/T11_ANG01_06.jpg" loading="lazy" alt="T11_ANG01-6">
+<figcaption><span class="num">6</span>5.50초
+<div class="axes">셋업 1 · 얼굴 24.2% · 3/4</div></figcaption></figure>
+<figure><img src="img/T11_ANG01_07.jpg" loading="lazy" alt="T11_ANG01-7">
+<figcaption><span class="num">7</span>6.04초
+<div class="axes">셋업 1 · 얼굴 23.3% · 3/4</div></figcaption></figure>
+<figure><img src="img/T11_ANG01_08.jpg" loading="lazy" alt="T11_ANG01-8">
+<figcaption><span class="num">8</span>7.67초
+<div class="axes">셋업 1 · 얼굴 22.5% · 3/4</div></figcaption></figure>
+<figure><img src="img/T11_ANG01_09.jpg" loading="lazy" alt="T11_ANG01-9">
+<figcaption><span class="num">9</span>8.50초
+<div class="axes">셋업 1 · 얼굴 21.7% · 3/4</div></figcaption></figure>
+<figure><img src="img/T11_ANG01_10.jpg" loading="lazy" alt="T11_ANG01-10">
+<figcaption><span class="num">10</span>9.50초
+<div class="axes">셋업 1 · 얼굴 20.5% · 3/4</div></figcaption></figure>
+<figure><img src="img/T11_ANG01_11.jpg" loading="lazy" alt="T11_ANG01-11">
+<figcaption><span class="num">11</span>10.08초
+<div class="axes">셋업 1 · 얼굴 — · —</div></figcaption></figure>
+</div>
+<h2>T11 한화 · 여자<span class="tag">🆕 새 문형 — 「눈을 뜨고, 입은 «다문다»」</span></h2>
+<div class="bar"><span class="seg s0" style="width:72.8%"></span><span class="seg s2" style="width:27.2%"></span></div>
+<p class="lead">243프레임 전수 — <b>쓸수있다</b> 177 · <b>자가못잼</b> 66 → <b>채택 12장</b></p>
+<div class="grid">
+<figure><img src="img/T11_ANG02_01.jpg" loading="lazy" alt="T11_ANG02-1">
+<figcaption><span class="num">1</span>0.00초
+<div class="axes">셋업 1 · 얼굴 18.9% · 측면</div></figcaption></figure>
+<figure><img src="img/T11_ANG02_02.jpg" loading="lazy" alt="T11_ANG02-2">
+<figcaption><span class="num">2</span>0.46초
+<div class="axes">셋업 1 · 얼굴 29.2% · 3/4</div></figcaption></figure>
+<figure><img src="img/T11_ANG02_03.jpg" loading="lazy" alt="T11_ANG02-3">
+<figcaption><span class="num">3</span>1.50초
+<div class="axes">셋업 1 · 얼굴 38.5% · 3/4</div></figcaption></figure>
+<figure><img src="img/T11_ANG02_04.jpg" loading="lazy" alt="T11_ANG02-4">
+<figcaption><span class="num">4</span>2.46초
+<div class="axes">셋업 1 · 얼굴 31.9% · 3/4</div></figcaption></figure>
+<figure><img src="img/T11_ANG02_05.jpg" loading="lazy" alt="T11_ANG02-5">
+<figcaption><span class="num">5</span>3.50초
+<div class="axes">셋업 1 · 얼굴 22.4% · 3/4</div></figcaption></figure>
+<figure><img src="img/T11_ANG02_06.jpg" loading="lazy" alt="T11_ANG02-6">
+<figcaption><span class="num">6</span>4.50초
+<div class="axes">셋업 1 · 얼굴 — · —</div></figcaption></figure>
+<figure><img src="img/T11_ANG02_07.jpg" loading="lazy" alt="T11_ANG02-7">
+<figcaption><span class="num">7</span>5.75초
+<div class="axes">셋업 1 · 얼굴 24.6% · 정면</div></figcaption></figure>
+<figure><img src="img/T11_ANG02_08.jpg" loading="lazy" alt="T11_ANG02-8">
+<figcaption><span class="num">8</span>6.08초
+<div class="axes">셋업 1 · 얼굴 21.5% · 3/4</div></figcaption></figure>
+<figure><img src="img/T11_ANG02_09.jpg" loading="lazy" alt="T11_ANG02-9">
+<figcaption><span class="num">9</span>7.50초
+<div class="axes">셋업 1 · 얼굴 54.2% · 3/4</div></figcaption></figure>
+<figure><img src="img/T11_ANG02_10.jpg" loading="lazy" alt="T11_ANG02-10">
+<figcaption><span class="num">10</span>8.50초
+<div class="axes">셋업 1 · 얼굴 49.4% · 3/4</div></figcaption></figure>
+<figure><img src="img/T11_ANG02_11.jpg" loading="lazy" alt="T11_ANG02-11">
+<figcaption><span class="num">11</span>9.50초
+<div class="axes">셋업 1 · 얼굴 51.8% · 3/4</div></figcaption></figure>
+<figure><img src="img/T11_ANG02_12.jpg" loading="lazy" alt="T11_ANG02-12">
+<figcaption><span class="num">12</span>10.08초
+<div class="axes">셋업 1 · 얼굴 54.1% · 3/4</div></figcaption></figure>
+</div>
+<h2>T11 한화 · 남자<span class="tag">🆕 새 문형 · 마이크 왼쪽</span></h2>
+<div class="bar"><span class="seg s0" style="width:21.0%"></span><span class="seg s2" style="width:79.0%"></span></div>
+<p class="lead">243프레임 전수 — <b>자가못잼</b> 192 · <b>쓸수있다</b> 51 → <b>채택 11장</b></p>
+<div class="grid">
+<figure><img src="img/T11_ANG02_M_01.jpg" loading="lazy" alt="T11_ANG02_M-1">
+<figcaption><span class="num">1</span>0.50초
+<div class="axes">셋업 1 · 얼굴 — · —</div></figcaption></figure>
+<figure><img src="img/T11_ANG02_M_02.jpg" loading="lazy" alt="T11_ANG02_M-2">
+<figcaption><span class="num">2</span>1.50초
+<div class="axes">셋업 1 · 얼굴 — · —</div></figcaption></figure>
+<figure><img src="img/T11_ANG02_M_03.jpg" loading="lazy" alt="T11_ANG02_M-3">
+<figcaption><span class="num">3</span>2.88초
+<div class="axes">셋업 1 · 얼굴 19.5% · 측면</div></figcaption></figure>
+<figure><img src="img/T11_ANG02_M_04.jpg" loading="lazy" alt="T11_ANG02_M-4">
+<figcaption><span class="num">4</span>3.50초
+<div class="axes">셋업 2 · 얼굴 — · —</div></figcaption></figure>
+<figure><img src="img/T11_ANG02_M_05.jpg" loading="lazy" alt="T11_ANG02_M-5">
+<figcaption><span class="num">5</span>4.50초
+<div class="axes">셋업 2 · 얼굴 — · —</div></figcaption></figure>
+<figure><img src="img/T11_ANG02_M_06.jpg" loading="lazy" alt="T11_ANG02_M-6">
+<figcaption><span class="num">6</span>5.50초
+<div class="axes">셋업 2 · 얼굴 22.7% · 정면</div></figcaption></figure>
+<figure><img src="img/T11_ANG02_M_07.jpg" loading="lazy" alt="T11_ANG02_M-7">
+<figcaption><span class="num">7</span>6.50초
+<div class="axes">셋업 2 · 얼굴 — · —</div></figcaption></figure>
+<figure><img src="img/T11_ANG02_M_08.jpg" loading="lazy" alt="T11_ANG02_M-8">
+<figcaption><span class="num">8</span>7.42초
+<div class="axes">셋업 3 · 얼굴 51.4% · 3/4</div></figcaption></figure>
+<figure><img src="img/T11_ANG02_M_09.jpg" loading="lazy" alt="T11_ANG02_M-9">
+<figcaption><span class="num">9</span>8.50초
+<div class="axes">셋업 3 · 얼굴 51.0% · 3/4</div></figcaption></figure>
+<figure><img src="img/T11_ANG02_M_10.jpg" loading="lazy" alt="T11_ANG02_M-10">
+<figcaption><span class="num">10</span>9.50초
+<div class="axes">셋업 4 · 얼굴 — · —</div></figcaption></figure>
+<figure><img src="img/T11_ANG02_M_11.jpg" loading="lazy" alt="T11_ANG02_M-11">
+<figcaption><span class="num">11</span>10.08초
+<div class="axes">셋업 4 · 얼굴 — · —</div></figcaption></figure>
+</div>
+<h2>T15 · 여자<span class="tag">옛 문형</span></h2>
+<div class="bar"><span class="seg s0" style="width:30.0%"></span><span class="seg s2" style="width:70.0%"></span></div>
+<p class="lead">243프레임 전수 — <b>자가못잼</b> 170 · <b>쓸수있다</b> 73 → <b>채택 11장</b></p>
+<div class="grid">
+<figure><img src="img/T15_ANG01_01.jpg" loading="lazy" alt="T15_ANG01-1">
+<figcaption><span class="num">1</span>0.50초
+<div class="axes">셋업 1 · 얼굴 — · —</div></figcaption></figure>
+<figure><img src="img/T15_ANG01_02.jpg" loading="lazy" alt="T15_ANG01-2">
+<figcaption><span class="num">2</span>1.50초
+<div class="axes">셋업 1 · 얼굴 — · —</div></figcaption></figure>
+<figure><img src="img/T15_ANG01_03.jpg" loading="lazy" alt="T15_ANG01-3">
+<figcaption><span class="num">3</span>2.50초
+<div class="axes">셋업 1 · 얼굴 — · —</div></figcaption></figure>
+<figure><img src="img/T15_ANG01_04.jpg" loading="lazy" alt="T15_ANG01-4">
+<figcaption><span class="num">4</span>3.50초
+<div class="axes">셋업 2 · 얼굴 — · —</div></figcaption></figure>
+<figure><img src="img/T15_ANG01_05.jpg" loading="lazy" alt="T15_ANG01-5">
+<figcaption><span class="num">5</span>4.00초
+<div class="axes">셋업 2 · 얼굴 21.3% · 정면</div></figcaption></figure>
+<figure><img src="img/T15_ANG01_06.jpg" loading="lazy" alt="T15_ANG01-6">
+<figcaption><span class="num">6</span>5.50초
+<div class="axes">셋업 2 · 얼굴 24.7% · 측면</div></figcaption></figure>
+<figure><img src="img/T15_ANG01_07.jpg" loading="lazy" alt="T15_ANG01-7">
+<figcaption><span class="num">7</span>6.50초
+<div class="axes">셋업 2 · 얼굴 — · —</div></figcaption></figure>
+<figure><img src="img/T15_ANG01_08.jpg" loading="lazy" alt="T15_ANG01-8">
+<figcaption><span class="num">8</span>7.50초
+<div class="axes">셋업 2 · 얼굴 — · —</div></figcaption></figure>
+<figure><img src="img/T15_ANG01_09.jpg" loading="lazy" alt="T15_ANG01-9">
+<figcaption><span class="num">9</span>8.25초
+<div class="axes">셋업 3 · 얼굴 30.2% · 3/4</div></figcaption></figure>
+<figure><img src="img/T15_ANG01_10.jpg" loading="lazy" alt="T15_ANG01-10">
+<figcaption><span class="num">10</span>9.50초
+<div class="axes">셋업 3 · 얼굴 30.4% · 정면</div></figcaption></figure>
+<figure><img src="img/T15_ANG01_11.jpg" loading="lazy" alt="T15_ANG01-11">
+<figcaption><span class="num">11</span>10.08초
+<div class="axes">셋업 3 · 얼굴 28.0% · 정면</div></figcaption></figure>
+</div>
+<h2>T15 · 남자<span class="tag">🆕 새 문형 · 마이크 왼쪽</span></h2>
+<div class="bar"><span class="seg s0" style="width:26.3%"></span><span class="seg s1" style="width:0.4%"></span><span class="seg s2" style="width:73.3%"></span></div>
+<p class="lead">243프레임 전수 — <b>자가못잼</b> 178 · <b>쓸수있다</b> 64 · <b>눈감음</b> 1 → <b>채택 11장</b></p>
+<div class="grid">
+<figure><img src="img/T15_ANG02_M_01.jpg" loading="lazy" alt="T15_ANG02_M-1">
+<figcaption><span class="num">1</span>0.50초
+<div class="axes">셋업 1 · 얼굴 — · —</div></figcaption></figure>
+<figure><img src="img/T15_ANG02_M_02.jpg" loading="lazy" alt="T15_ANG02_M-2">
+<figcaption><span class="num">2</span>1.50초
+<div class="axes">셋업 1 · 얼굴 — · —</div></figcaption></figure>
+<figure><img src="img/T15_ANG02_M_03.jpg" loading="lazy" alt="T15_ANG02_M-3">
+<figcaption><span class="num">3</span>2.50초
+<div class="axes">셋업 1 · 얼굴 20.7% · 3/4</div></figcaption></figure>
+<figure><img src="img/T15_ANG02_M_04.jpg" loading="lazy" alt="T15_ANG02_M-4">
+<figcaption><span class="num">4</span>3.62초
+<div class="axes">셋업 1 · 얼굴 21.5% · 정면</div></figcaption></figure>
+<figure><img src="img/T15_ANG02_M_05.jpg" loading="lazy" alt="T15_ANG02_M-5">
+<figcaption><span class="num">5</span>4.50초
+<div class="axes">셋업 1 · 얼굴 — · —</div></figcaption></figure>
+<figure><img src="img/T15_ANG02_M_06.jpg" loading="lazy" alt="T15_ANG02_M-6">
+<figcaption><span class="num">6</span>5.50초
+<div class="axes">셋업 1 · 얼굴 — · —</div></figcaption></figure>
+<figure><img src="img/T15_ANG02_M_07.jpg" loading="lazy" alt="T15_ANG02_M-7">
+<figcaption><span class="num">7</span>6.50초
+<div class="axes">셋업 1 · 얼굴 — · —</div></figcaption></figure>
+<figure><img src="img/T15_ANG02_M_08.jpg" loading="lazy" alt="T15_ANG02_M-8">
+<figcaption><span class="num">8</span>7.54초
+<div class="axes">셋업 1 · 얼굴 39.4% · 정면</div></figcaption></figure>
+<figure><img src="img/T15_ANG02_M_09.jpg" loading="lazy" alt="T15_ANG02_M-9">
+<figcaption><span class="num">9</span>8.50초
+<div class="axes">셋업 1 · 얼굴 39.1% · 정면</div></figcaption></figure>
+<figure><img src="img/T15_ANG02_M_10.jpg" loading="lazy" alt="T15_ANG02_M-10">
+<figcaption><span class="num">10</span>9.50초
+<div class="axes">셋업 1 · 얼굴 38.4% · 정면</div></figcaption></figure>
+<figure><img src="img/T15_ANG02_M_11.jpg" loading="lazy" alt="T15_ANG02_M-11">
+<figcaption><span class="num">11</span>10.04초
+<div class="axes">셋업 1 · 얼굴 36.0% · 정면</div></figcaption></figure>
+</div>
+<h2>T18 · 남자<span class="tag">옛 문형</span></h2>
+<div class="bar"><span class="seg s0" style="width:54.3%"></span><span class="seg s2" style="width:45.7%"></span></div>
+<p class="lead">243프레임 전수 — <b>쓸수있다</b> 132 · <b>자가못잼</b> 111 → <b>채택 11장</b></p>
+<div class="grid">
+<figure><img src="img/T18_ANG01_01.jpg" loading="lazy" alt="T18_ANG01-1">
+<figcaption><span class="num">1</span>0.00초
+<div class="axes">셋업 1 · 얼굴 27.2% · 측면</div></figcaption></figure>
+<figure><img src="img/T18_ANG01_02.jpg" loading="lazy" alt="T18_ANG01-2">
+<figcaption><span class="num">2</span>1.50초
+<div class="axes">셋업 1 · 얼굴 28.6% · 측면</div></figcaption></figure>
+<figure><img src="img/T18_ANG01_03.jpg" loading="lazy" alt="T18_ANG01-3">
+<figcaption><span class="num">3</span>2.50초
+<div class="axes">셋업 1 · 얼굴 26.7% · 3/4</div></figcaption></figure>
+<figure><img src="img/T18_ANG01_04.jpg" loading="lazy" alt="T18_ANG01-4">
+<figcaption><span class="num">4</span>3.50초
+<div class="axes">셋업 2 · 얼굴 — · —</div></figcaption></figure>
+<figure><img src="img/T18_ANG01_05.jpg" loading="lazy" alt="T18_ANG01-5">
+<figcaption><span class="num">5</span>4.50초
+<div class="axes">셋업 2 · 얼굴 — · —</div></figcaption></figure>
+<figure><img src="img/T18_ANG01_06.jpg" loading="lazy" alt="T18_ANG01-6">
+<figcaption><span class="num">6</span>5.50초
+<div class="axes">셋업 2 · 얼굴 23.2% · 정면</div></figcaption></figure>
+<figure><img src="img/T18_ANG01_07.jpg" loading="lazy" alt="T18_ANG01-7">
+<figcaption><span class="num">7</span>6.50초
+<div class="axes">셋업 3 · 얼굴 — · —</div></figcaption></figure>
+<figure><img src="img/T18_ANG01_08.jpg" loading="lazy" alt="T18_ANG01-8">
+<figcaption><span class="num">8</span>7.79초
+<div class="axes">셋업 4 · 얼굴 38.4% · 정면</div></figcaption></figure>
+<figure><img src="img/T18_ANG01_09.jpg" loading="lazy" alt="T18_ANG01-9">
+<figcaption><span class="num">9</span>8.50초
+<div class="axes">셋업 4 · 얼굴 36.8% · 정면</div></figcaption></figure>
+<figure><img src="img/T18_ANG01_10.jpg" loading="lazy" alt="T18_ANG01-10">
+<figcaption><span class="num">10</span>9.50초
+<div class="axes">셋업 4 · 얼굴 36.6% · 정면</div></figcaption></figure>
+<figure><img src="img/T18_ANG01_11.jpg" loading="lazy" alt="T18_ANG01-11">
+<figcaption><span class="num">11</span>10.08초
+<div class="axes">셋업 4 · 얼굴 34.8% · 3/4</div></figcaption></figure>
+</div><div class="box">
+<h3>🔬 같은 문형인데 판마다 다르게 나옵니다</h3>
+<div class="scroll"><table>
+<tr><th>판</th><th>하드컷</th><th>나온 것</th></tr>
+<tr><td>T15 여</td><td>2개</td><td>셋업 셋</td></tr>
+<tr><td>T18 남</td><td>3개</td><td>셋업 넷</td></tr>
+<tr><td>T11 여</td><td>0개</td><td>한 덩어리</td></tr>
+<tr><td>T11 남</td><td>3개</td><td>셋업 넷</td></tr>
+</table></div>
+<p style="margin:10px 0 0">같은 시각·같은 <code>LOCKED OFF</code> 문장을 줬는데 <b>0~3번</b>이 나옵니다.
+⇒ 이 문형은 <b>「몇 번 갈라라」를 지정하지 못합니다.</b> 다만 갈린 셋업끼리는 각도가 확실히 달라
+채취에는 오히려 깨끗합니다.</p>
+</div>
+<div class="box">
+<h3>🔴 아직 안 풀린 것</h3>
+<ul>
+<li><b>화각이 넓어지면 방 목록 밖 물건이 나옵니다</b> — 여자 3.25초 천장 돔카메라·매입등, 남자 5.21초 벽 콘센트.
+발주문에 <code>FRAME COVERAGE</code> 문장을 넣었는데도 났습니다. <b>표본 넷</b>입니다.</li>
+<li><b>추출기는 「후보 추리기」지 「최종 채택기」가 아닙니다</b> — 「자가못잼」이 절반 안팎입니다.
+고개를 젖히거나 측면이면 검출이 실패하는데, <b>그 장이 정확히 우리가 원하는 각도</b>입니다. 그래서 반려가 아니라 사람이 봅니다.</li>
+</ul>
+</div>
+<div class="ask">
+<h3>대표님께 여쭐 것</h3>
+<ol>
+<li><b>판마다 쓸 번호</b>를 골라 주십시오. 판 이름과 번호만 주시면 됩니다.</li>
+<li>이 여덟 판(남녀 각 넷)으로 <b>컷 참조를 갈아 끼울지</b> — 지금 컷들은 각도가 하나인 옛 참조를 물고 있습니다.</li>
+</ol>
+</div>
+</div><div style="max-width:820px;margin:48px auto 24px;padding:12px 16px;border-top:1px solid rgba(128,128,128,.28);font:13px/1.6 -apple-system,'Apple SD Gothic Neo',sans-serif;color:#8a8a8a;">주소를 아는 사람은 열람할 수 있는 페이지입니다 · 2026-10-08 이후 자동 삭제</div>
+</body></html>

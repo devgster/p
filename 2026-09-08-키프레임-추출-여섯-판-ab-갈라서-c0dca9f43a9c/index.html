@@ -1,0 +1,267 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>키프레임 추출 — 여섯 판 (A/B 갈라서)</title>
+<style>
+:root{--bg:#faf9f7;--fg:#1c1a17;--dim:#6b6660;--line:#e2ddd6;--card:#fff;--accent:#c2410c;--ok:#15803d;--warn:#a16207;--bad:#b91c1c}
+@media(prefers-color-scheme:dark){:root{--bg:#16150f;--fg:#ece8e1;--dim:#9a938a;--line:#2f2c26;--card:#1e1c16;--accent:#fb923c;--ok:#4ade80;--warn:#fbbf24;--bad:#f87171}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo",Pretendard,sans-serif;-webkit-text-size-adjust:100%}
+.wrap{max-width:1060px;margin:0 auto;padding:28px 18px 80px}
+h1{font-size:1.5rem;margin:0 0 6px;letter-spacing:-.02em}
+.sub{color:var(--dim);font-size:.9rem;margin:0 0 24px}
+h2{font-size:1.16rem;margin:44px 0 10px;padding-top:20px;border-top:1px solid var(--line)}
+h2 .tag{font-size:.78rem;color:var(--dim);font-weight:400;margin-left:8px}
+h3{font-size:.95rem;margin:20px 0 10px}
+h3.ga{color:var(--ok)} h3.gb{color:var(--warn)}
+.cnt{font-weight:400;color:var(--dim);font-size:.85em;margin-left:6px}
+.lead{color:var(--dim);font-size:.87rem;margin:6px 0 4px}
+.bar{display:flex;height:10px;border-radius:5px;overflow:hidden;background:var(--line);margin:10px 0 0}
+.seg{display:block;height:100%}.seg.s0{background:var(--ok)}.seg.s1{background:var(--bad)}.seg.s2{background:#9993}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:11px;overflow:hidden}
+figure img{width:100%;display:block;background:#000}
+figcaption{padding:9px 12px 11px;font-size:.82rem}
+.num{display:inline-block;min-width:21px;height:21px;line-height:21px;text-align:center;color:#fff;border-radius:5px;font-weight:700;font-size:.78rem;margin-right:6px}
+.num.ga{background:var(--ok)} .num.gb{background:var(--warn)}
+.sup{font-size:.75em;color:var(--dim);border:1px solid var(--line);border-radius:4px;padding:0 5px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:15px 17px;margin:18px 0}
+.box h3{margin:0 0 8px;font-size:.98rem;color:inherit}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.85rem;min-width:460px}
+th,td{border-bottom:1px solid var(--line);padding:7px 10px;text-align:left}
+th{color:var(--dim);font-weight:600;white-space:nowrap}
+.ask{background:var(--card);border:2px solid var(--accent);border-radius:12px;padding:16px 18px;margin:30px 0 0}
+.ask h3{margin:0 0 10px;color:var(--accent)}
+ul,ol{padding-left:19px}li{margin:5px 0}
+code{background:rgba(128,128,128,.14);padding:1px 5px;border-radius:4px;font-size:.85em}
+.ok{color:var(--ok)}.bad{color:var(--bad)}
+</style></head><body><div class="wrap">
+<h1>키프레임 추출 — 여섯 판</h1>
+<p class="sub">2026-09-08 · 판마다 243프레임을 «전수» 재고 뽑았습니다 · 추가 집행 $0</p>
+<div class="box">
+<h3>🔴 앞 판을 고쳤습니다 — 「쓸 수 있는 것만 나오는가」에 답이 아니었습니다</h3>
+<p style="margin:0 0 8px">처음 올린 페이지는 67장을 <b>「채택」 한 이름으로</b> 냈는데, 그중 <b>26장(39%)이 자가 «못 잰» 장</b>이었습니다.
+자가 축으로 고른 장이 모자라면 시간축으로 «보충»하는데, 그 자리에 못 잰 장이 들어갔습니다.</p>
+<p style="margin:0"><b>그래서 둘로 갈랐습니다.</b> 보충 로직 자체는 안 뺐습니다 —
+빼면 <b>좋은 각도가 같이 빠집니다</b>(극단적 로우앵글·측면에서 검출기가 실패하는데, 그 장이 각도가 제일 벌어진 장입니다).</p>
+</div>
+<div class="box">
+<h3>보는 법</h3>
+<ul style="margin:0">
+<li><b class="ok">🟢 A — 바로 쓸 수 있다</b> · 자가 재서 통과했습니다. <b>대표님이 물으신 「최종」이 이것입니다.</b></li>
+<li><b style="color:var(--warn)">🟡 B — 자가 못 잰 것</b> · <b>반려가 아니라 «모름»</b>입니다. 고개를 젖히거나 측면이면 얼굴 검출이 실패하는데,
+그 장이 정확히 각도가 벌어진 장이라 버리지 않습니다.</li>
+<li>물리 반려(눈 감음·프레임 잘림)는 <b>애초에 둘 다에 안 옵니다.</b></li>
+</ul>
+<p style="margin:10px 0 0"><span class="ok">■</span> 쓸수있다 &nbsp; <span class="bad">■</span> 눈감음 &nbsp; <span style="color:#999">■</span> 사람확인</p>
+</div>
+<div class="box">
+<h3>🥇 오늘 고친 문구가 숫자로 나왔습니다</h3>
+<div class="scroll"><table>
+<tr><th>같은 회차·같은 여자</th><th>눈 감음</th><th>쓸 수 있다</th></tr>
+<tr><td><b>T11_ANG01</b> 「눈을 뜨고 <b>노래한다</b>」</td><td class="bad">37장</td><td>56장</td></tr>
+<tr><td><b>T11_ANG02</b> 「눈을 뜨고, 입은 <b>다문다</b>」</td><td class="ok"><b>0장</b></td><td class="ok"><b>177장</b></td></tr>
+</table></div>
+<p style="margin:10px 0 0">정본 둘이 부딪히고 있었습니다 — <code>§1-y</code> 는 「노래한다」를, <code>PERFORM §7</code> 은
+「참조의 입은 다문다」를 요구했습니다. <b>눈과 입은 다른 축</b>이라 갈라 적으니 쓸 수 있는 프레임이 <b>3배</b>가 됐습니다.</p>
+</div>
+<h2>T11 한화 · 여자<span class="tag">옛 문형 — 「눈을 뜨고 «노래한다»」</span></h2>
+<div class="bar"><span class="seg s0" style="width:23.0%"></span><span class="seg s1" style="width:15.2%"></span><span class="seg s2" style="width:61.7%"></span></div>
+<p class="lead">243프레임 전수 — <b>사람확인</b> 150 · <b>쓸수있다</b> 56 · <b>눈감음</b> 37</p>
+<h3 class="ga">🟢 A — 바로 쓸 수 있다 <span class="cnt">7장</span></h3>
+<div class="grid"><figure><img src="img/T11_ANG01_A01.jpg" loading="lazy" alt="">
+<figcaption><span class="num ga">1</span>0.42초</figcaption></figure>
+<figure><img src="img/T11_ANG01_A02.jpg" loading="lazy" alt="">
+<figcaption><span class="num ga">2</span>1.00초 <span class="sup">보충</span></figcaption></figure>
+<figure><img src="img/T11_ANG01_A03.jpg" loading="lazy" alt="">
+<figcaption><span class="num ga">3</span>1.46초 <span class="sup">보충</span></figcaption></figure>
+<figure><img src="img/T11_ANG01_A04.jpg" loading="lazy" alt="">
+<figcaption><span class="num ga">4</span>1.92초 <span class="sup">보충</span></figcaption></figure>
+<figure><img src="img/T11_ANG01_A05.jpg" loading="lazy" alt="">
+<figcaption><span class="num ga">5</span>2.38초 <span class="sup">보충</span></figcaption></figure>
+<figure><img src="img/T11_ANG01_A06.jpg" loading="lazy" alt="">
+<figcaption><span class="num ga">6</span>2.83초 <span class="sup">보충</span></figcaption></figure>
+<figure><img src="img/T11_ANG01_A07.jpg" loading="lazy" alt="">
+<figcaption><span class="num ga">7</span>3.29초 <span class="sup">보충</span></figcaption></figure></div>
+<h3 class="gb">🟡 B — 자가 못 잰 것 (사람이 봐야 한다) <span class="cnt">4장</span></h3>
+<div class="grid"><figure><img src="img/T11_ANG01_B01.jpg" loading="lazy" alt="">
+<figcaption><span class="num gb">1</span>0.46초 <span class="sup">보충</span></figcaption></figure>
+<figure><img src="img/T11_ANG01_B02.jpg" loading="lazy" alt="">
+<figcaption><span class="num gb">2</span>0.92초 <span class="sup">보충</span></figcaption></figure>
+<figure><img src="img/T11_ANG01_B03.jpg" loading="lazy" alt="">
+<figcaption><span class="num gb">3</span>1.38초 <span class="sup">보충</span></figcaption></figure>
+<figure><img src="img/T11_ANG01_B04.jpg" loading="lazy" alt="">
+<figcaption><span class="num gb">4</span>1.71초 <span class="sup">보충</span></figcaption></figure></div>
+<h2>T11 한화 · 여자<span class="tag">🆕 새 문형 — 「눈을 뜨고, 입은 «다문다»」</span></h2>
+<div class="bar"><span class="seg s0" style="width:72.8%"></span><span class="seg s2" style="width:27.2%"></span></div>
+<p class="lead">243프레임 전수 — <b>쓸수있다</b> 177 · <b>사람확인</b> 66</p>
+<h3 class="ga">🟢 A — 바로 쓸 수 있다 <span class="cnt">11장</span></h3>
+<div class="grid"><figure><img src="img/T11_ANG02_A01.jpg" loading="lazy" alt="">
+<figcaption><span class="num ga">1</span>0.42초</figcaption></figure>
+<figure><img src="img/T11_ANG02_A02.jpg" loading="lazy" alt="">
+<figcaption><span class="num ga">2</span>0.83초</figcaption></figure>
+<figure><img src="img/T11_ANG02_A03.jpg" loading="lazy" alt="">
+<figcaption><span class="num ga">3</span>1.29초 <span class="sup">보충</span></figcaption></figure>
+<figure><img src="img/T11_ANG02_A04.jpg" loading="lazy" alt="">
+<figcaption><span class="num ga">4</span>1.75초 <span class="sup">보충</span></figcaption></figure>
+<figure><img src="img/T11_ANG02_A05.jpg" loading="lazy" alt="">
+<figcaption><span class="num ga">5</span>2.21초 <span class="sup">보충</span></figcaption></figure>
+<figure><img src="img/T11_ANG02_A06.jpg" loading="lazy" alt="">
+<figcaption><span class="num ga">6</span>2.71초</figcaption></figure>
+<figure><img src="img/T11_ANG02_A07.jpg" loading="lazy" alt="">
+<figcaption><span class="num ga">7</span>3.17초 <span class="sup">보충</span></figcaption></figure>
+<figure><img src="img/T11_ANG02_A08.jpg" loading="lazy" alt="">
+<figcaption><span class="num ga">8</span>3.62초 <span class="sup">보충</span></figcaption></figure>
+<figure><img src="img/T11_ANG02_A09.jpg" loading="lazy" alt="">
+<figcaption><span class="num ga">9</span>4.08초 <span class="sup">보충</span></figcaption></figure>
+<figure><img src="img/T11_ANG02_A10.jpg" loading="lazy" alt="">
+<figcaption><span class="num ga">10</span>4.54초 <span class="sup">보충</span></figcaption></figure>
+<figure><img src="img/T11_ANG02_A11.jpg" loading="lazy" alt="">
+<figcaption><span class="num ga">11</span>4.62초 <span class="sup">보충</span></figcaption></figure></div>
+<h3 class="gb">🟡 B — 자가 못 잰 것 (사람이 봐야 한다) <span class="cnt">1장</span></h3>
+<div class="grid"><figure><img src="img/T11_ANG02_B01.jpg" loading="lazy" alt="">
+<figcaption><span class="num gb">1</span>0.58초 <span class="sup">보충</span></figcaption></figure></div>
+<h2>T11 한화 · 남자<span class="tag">🆕 새 문형 · 마이크 왼쪽</span></h2>
+<div class="bar"><span class="seg s0" style="width:21.0%"></span><span class="seg s2" style="width:79.0%"></span></div>
+<p class="lead">243프레임 전수 — <b>사람확인</b> 192 · <b>쓸수있다</b> 51</p>
+<h3 class="ga">🟢 A — 바로 쓸 수 있다 <span class="cnt">4장</span></h3>
+<div class="grid"><figure><img src="img/T11_ANG02_M_A01.jpg" loading="lazy" alt="">
+<figcaption><span class="num ga">1</span>0.50초</figcaption></figure>
+<figure><img src="img/T11_ANG02_M_A02.jpg" loading="lazy" alt="">
+<figcaption><span class="num ga">2</span>1.04초 <span class="sup">보충</span></figcaption></figure>
+<figure><img src="img/T11_ANG02_M_A03.jpg" loading="lazy" alt="">
+<figcaption><span class="num ga">3</span>1.54초</figcaption></figure>
+<figure><img src="img/T11_ANG02_M_A04.jpg" loading="lazy" alt="">
+<figcaption><span class="num ga">4</span>2.00초 <span class="sup">보충</span></figcaption></figure></div>
+<h3 class="gb">🟡 B — 자가 못 잰 것 (사람이 봐야 한다) <span class="cnt">7장</span></h3>
+<div class="grid"><figure><img src="img/T11_ANG02_M_B01.jpg" loading="lazy" alt="">
+<figcaption><span class="num gb">1</span>0.42초 <span class="sup">보충</span></figcaption></figure>
+<figure><img src="img/T11_ANG02_M_B02.jpg" loading="lazy" alt="">
+<figcaption><span class="num gb">2</span>0.88초 <span class="sup">보충</span></figcaption></figure>
+<figure><img src="img/T11_ANG02_M_B03.jpg" loading="lazy" alt="">
+<figcaption><span class="num gb">3</span>1.38초 <span class="sup">보충</span></figcaption></figure>
+<figure><img src="img/T11_ANG02_M_B04.jpg" loading="lazy" alt="">
+<figcaption><span class="num gb">4</span>1.83초 <span class="sup">보충</span></figcaption></figure>
+<figure><img src="img/T11_ANG02_M_B05.jpg" loading="lazy" alt="">
+<figcaption><span class="num gb">5</span>2.33초 <span class="sup">보충</span></figcaption></figure>
+<figure><img src="img/T11_ANG02_M_B06.jpg" loading="lazy" alt="">
+<figcaption><span class="num gb">6</span>2.88초 <span class="sup">보충</span></figcaption></figure>
+<figure><img src="img/T11_ANG02_M_B07.jpg" loading="lazy" alt="">
+<figcaption><span class="num gb">7</span>2.96초 <span class="sup">보충</span></figcaption></figure></div>
+<h2>T15 · 여자<span class="tag">옛 문형</span></h2>
+<div class="bar"><span class="seg s0" style="width:30.0%"></span><span class="seg s2" style="width:70.0%"></span></div>
+<p class="lead">243프레임 전수 — <b>사람확인</b> 170 · <b>쓸수있다</b> 73</p>
+<h3 class="ga">🟢 A — 바로 쓸 수 있다 <span class="cnt">5장</span></h3>
+<div class="grid"><figure><img src="img/T15_ANG01_A01.jpg" loading="lazy" alt="">
+<figcaption><span class="num ga">1</span>0.58초</figcaption></figure>
+<figure><img src="img/T15_ANG01_A02.jpg" loading="lazy" alt="">
+<figcaption><span class="num ga">2</span>1.04초 <span class="sup">보충</span></figcaption></figure>
+<figure><img src="img/T15_ANG01_A03.jpg" loading="lazy" alt="">
+<figcaption><span class="num ga">3</span>1.58초</figcaption></figure>
+<figure><img src="img/T15_ANG01_A04.jpg" loading="lazy" alt="">
+<figcaption><span class="num ga">4</span>2.04초 <span class="sup">보충</span></figcaption></figure>
+<figure><img src="img/T15_ANG01_A05.jpg" loading="lazy" alt="">
+<figcaption><span class="num ga">5</span>2.12초 <span class="sup">보충</span></figcaption></figure></div>
+<h3 class="gb">🟡 B — 자가 못 잰 것 (사람이 봐야 한다) <span class="cnt">6장</span></h3>
+<div class="grid"><figure><img src="img/T15_ANG01_B01.jpg" loading="lazy" alt="">
+<figcaption><span class="num gb">1</span>0.42초 <span class="sup">보충</span></figcaption></figure>
+<figure><img src="img/T15_ANG01_B02.jpg" loading="lazy" alt="">
+<figcaption><span class="num gb">2</span>0.88초 <span class="sup">보충</span></figcaption></figure>
+<figure><img src="img/T15_ANG01_B03.jpg" loading="lazy" alt="">
+<figcaption><span class="num gb">3</span>1.33초 <span class="sup">보충</span></figcaption></figure>
+<figure><img src="img/T15_ANG01_B04.jpg" loading="lazy" alt="">
+<figcaption><span class="num gb">4</span>1.79초 <span class="sup">보충</span></figcaption></figure>
+<figure><img src="img/T15_ANG01_B05.jpg" loading="lazy" alt="">
+<figcaption><span class="num gb">5</span>2.33초 <span class="sup">보충</span></figcaption></figure>
+<figure><img src="img/T15_ANG01_B06.jpg" loading="lazy" alt="">
+<figcaption><span class="num gb">6</span>2.79초 <span class="sup">보충</span></figcaption></figure></div>
+<h2>T15 · 남자<span class="tag">🆕 새 문형 · 마이크 왼쪽</span></h2>
+<div class="bar"><span class="seg s0" style="width:26.3%"></span><span class="seg s1" style="width:0.4%"></span><span class="seg s2" style="width:73.3%"></span></div>
+<p class="lead">243프레임 전수 — <b>사람확인</b> 178 · <b>쓸수있다</b> 64 · <b>눈감음</b> 1</p>
+<h3 class="ga">🟢 A — 바로 쓸 수 있다 <span class="cnt">6장</span></h3>
+<div class="grid"><figure><img src="img/T15_ANG02_M_A01.jpg" loading="lazy" alt="">
+<figcaption><span class="num ga">1</span>0.50초</figcaption></figure>
+<figure><img src="img/T15_ANG02_M_A02.jpg" loading="lazy" alt="">
+<figcaption><span class="num ga">2</span>0.96초 <span class="sup">보충</span></figcaption></figure>
+<figure><img src="img/T15_ANG02_M_A03.jpg" loading="lazy" alt="">
+<figcaption><span class="num ga">3</span>1.54초</figcaption></figure>
+<figure><img src="img/T15_ANG02_M_A04.jpg" loading="lazy" alt="">
+<figcaption><span class="num ga">4</span>2.00초 <span class="sup">보충</span></figcaption></figure>
+<figure><img src="img/T15_ANG02_M_A05.jpg" loading="lazy" alt="">
+<figcaption><span class="num ga">5</span>2.46초 <span class="sup">보충</span></figcaption></figure>
+<figure><img src="img/T15_ANG02_M_A06.jpg" loading="lazy" alt="">
+<figcaption><span class="num ga">6</span>2.54초 <span class="sup">보충</span></figcaption></figure></div>
+<h3 class="gb">🟡 B — 자가 못 잰 것 (사람이 봐야 한다) <span class="cnt">5장</span></h3>
+<div class="grid"><figure><img src="img/T15_ANG02_M_B01.jpg" loading="lazy" alt="">
+<figcaption><span class="num gb">1</span>0.42초 <span class="sup">보충</span></figcaption></figure>
+<figure><img src="img/T15_ANG02_M_B02.jpg" loading="lazy" alt="">
+<figcaption><span class="num gb">2</span>0.88초 <span class="sup">보충</span></figcaption></figure>
+<figure><img src="img/T15_ANG02_M_B03.jpg" loading="lazy" alt="">
+<figcaption><span class="num gb">3</span>1.42초 <span class="sup">보충</span></figcaption></figure>
+<figure><img src="img/T15_ANG02_M_B04.jpg" loading="lazy" alt="">
+<figcaption><span class="num gb">4</span>1.88초 <span class="sup">보충</span></figcaption></figure>
+<figure><img src="img/T15_ANG02_M_B05.jpg" loading="lazy" alt="">
+<figcaption><span class="num gb">5</span>2.33초 <span class="sup">보충</span></figcaption></figure></div>
+<h2>T18 · 남자<span class="tag">옛 문형</span></h2>
+<div class="bar"><span class="seg s0" style="width:54.3%"></span><span class="seg s2" style="width:45.7%"></span></div>
+<p class="lead">243프레임 전수 — <b>쓸수있다</b> 132 · <b>사람확인</b> 111</p>
+<h3 class="ga">🟢 A — 바로 쓸 수 있다 <span class="cnt">8장</span></h3>
+<div class="grid"><figure><img src="img/T18_ANG01_A01.jpg" loading="lazy" alt="">
+<figcaption><span class="num ga">1</span>0.42초</figcaption></figure>
+<figure><img src="img/T18_ANG01_A02.jpg" loading="lazy" alt="">
+<figcaption><span class="num ga">2</span>0.88초 <span class="sup">보충</span></figcaption></figure>
+<figure><img src="img/T18_ANG01_A03.jpg" loading="lazy" alt="">
+<figcaption><span class="num ga">3</span>1.33초 <span class="sup">보충</span></figcaption></figure>
+<figure><img src="img/T18_ANG01_A04.jpg" loading="lazy" alt="">
+<figcaption><span class="num ga">4</span>1.88초 <span class="sup">보충</span></figcaption></figure>
+<figure><img src="img/T18_ANG01_A05.jpg" loading="lazy" alt="">
+<figcaption><span class="num ga">5</span>2.38초 <span class="sup">보충</span></figcaption></figure>
+<figure><img src="img/T18_ANG01_A06.jpg" loading="lazy" alt="">
+<figcaption><span class="num ga">6</span>2.83초 <span class="sup">보충</span></figcaption></figure>
+<figure><img src="img/T18_ANG01_A07.jpg" loading="lazy" alt="">
+<figcaption><span class="num ga">7</span>3.29초 <span class="sup">보충</span></figcaption></figure>
+<figure><img src="img/T18_ANG01_A08.jpg" loading="lazy" alt="">
+<figcaption><span class="num ga">8</span>3.38초 <span class="sup">보충</span></figcaption></figure></div>
+<h3 class="gb">🟡 B — 자가 못 잰 것 (사람이 봐야 한다) <span class="cnt">3장</span></h3>
+<div class="grid"><figure><img src="img/T18_ANG01_B01.jpg" loading="lazy" alt="">
+<figcaption><span class="num gb">1</span>0.54초 <span class="sup">보충</span></figcaption></figure>
+<figure><img src="img/T18_ANG01_B02.jpg" loading="lazy" alt="">
+<figcaption><span class="num gb">2</span>1.00초 <span class="sup">보충</span></figcaption></figure>
+<figure><img src="img/T18_ANG01_B03.jpg" loading="lazy" alt="">
+<figcaption><span class="num gb">3</span>1.50초 <span class="sup">보충</span></figcaption></figure></div><div class="box">
+<h3>🔬 같은 문형인데 판마다 다르게 나옵니다 — 표본 다섯</h3>
+<div class="scroll"><table>
+<tr><th>판</th><th>하드컷</th><th>배수</th></tr>
+<tr><td>T11 여 (ANG01)</td><td>0개</td><td>1.9배</td></tr>
+<tr><td>T11 여 (ANG02)</td><td>0개</td><td>4.7배</td></tr>
+<tr><td>T11 남</td><td>3개</td><td>14.6배</td></tr>
+<tr><td>T15 여</td><td>2개</td><td>7.5배</td></tr>
+<tr><td>T15 남</td><td>0개</td><td>4.7배</td></tr>
+<tr><td>T18 남</td><td>3개</td><td>13.1배</td></tr>
+</table></div>
+<p style="margin:10px 0 0">같은 시각·같은 <code>LOCKED OFF</code> 문장을 줬는데 <b>0·2·3번</b>이 나옵니다.
+⇒ 이 문형은 <b>「몇 번 갈라라」를 지정하지 못합니다.</b></p>
+</div>
+<div class="box">
+<h3>🔴 아직 안 풀린 것 둘</h3>
+<ul>
+<li><b>마이크가 얼굴을 가립니다 — 축이 셋인데 정본은 «좌우»만 적고 있었습니다.</b>
+T18 은 <b>위아래</b>(높이가 바뀌니 얼굴을 가로질렀다), T15 남자는 <b>앞뒤</b>(카메라가 마이크 뒤로 돌아가 화면 가운데로 왔다).
+좌우로는 한 번도 안 넘어갔습니다. ⇒ 다음 판 문구: <b>「카메라와 그 사람 사이에 마이크가 오지 않는다」</b></li>
+<li><b>화각이 넓어지면 방 목록 밖 물건이 나옵니다</b> — <b>표본 넷</b>.
+🔴 T18 과 T15 남자에서 <b>「비상구 유도등」과 「문」이 그대로 겹칩니다</b> — 우연이 아니라
+모델이 「녹음실」에서 같은 물건을 불러옵니다. <code>FRAME COVERAGE</code> 문장을 넣었는데도 났습니다.</li>
+</ul>
+</div>
+<div class="ask">
+<h3>대표님께 여쭐 것</h3>
+<ol>
+<li><b>A 에서 판마다 쓸 번호</b>를 골라 주십시오. B 에서 살리실 것이 있으면 그것도 번호로 주시면 됩니다.</li>
+<li>이 장들로 <b>컷 참조를 갈아 끼울지</b> — 지금 컷들은 각도가 하나인 옛 참조를 물고 있습니다.</li>
+</ol>
+<p style="margin:10px 0 0;font-size:.87rem;color:var(--dim)">⚠️ A 도 「대표님이 3분 보고 싶은 얼굴인가」는 못 답합니다 —
+자가 답하는 것은 <b>「물리적으로 쓸 수 있다」</b>까지입니다.</p>
+</div>
+</div><div style="max-width:820px;margin:48px auto 24px;padding:12px 16px;border-top:1px solid rgba(128,128,128,.28);font:13px/1.6 -apple-system,'Apple SD Gothic Neo',sans-serif;color:#8a8a8a;">주소를 아는 사람은 열람할 수 있는 페이지입니다 · 2026-10-08 이후 자동 삭제</div>
+</body></html>

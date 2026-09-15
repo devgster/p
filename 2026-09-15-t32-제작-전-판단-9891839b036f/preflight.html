@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>T32 영상 발주 전 추가 판단</title>
+<style>
+  :root{--bg:#0f1116;--panel:#181d27;--line:#384256;--text:#f5f7fb;--muted:#b8c0ce;--blue:#8dbaff;--green:#79dfad;--red:#ff7f88;--amber:#ffd27a}
+  *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 system-ui,-apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif}
+  main{max-width:1180px;margin:auto;padding:28px 18px 72px} h1{margin:0 0 8px;font-size:clamp(1.7rem,3vw,2.5rem);line-height:1.2} h2{margin:0 0 12px;font-size:1.28rem} h3{margin:0 0 8px;font-size:1.05rem}
+  p{margin:8px 0}.lead,.muted{color:var(--muted)}.card{margin:18px 0;padding:18px;border:1px solid var(--line);border-radius:13px;background:var(--panel)}
+  .block{border-color:#81434b;background:#2a1b21}.pass{color:var(--green)}.bad{color:var(--red)}.warn{color:var(--amber)} code,pre{font-family:ui-monospace,SFMono-Regular,Menlo,monospace} code{color:#e4ecff}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}.kf{padding:10px;border:1px solid var(--line);border-radius:10px;background:#111620}.kf img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:7px;background:#080a0e}.kf p{font-size:.88rem;margin:7px 0 0}
+  .options{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:12px}.option{padding:15px;border:2px solid var(--line);border-radius:11px;background:#121824}.option.recommended{border-color:var(--blue)}
+  .tag{display:inline-block;padding:2px 8px;border-radius:99px;background:#24334d;color:#bcd6ff;font-size:.8rem;font-weight:700}.impact{margin-top:10px;padding:9px 11px;border-left:3px solid var(--amber);background:#242218;font-size:.9rem}
+  button{border:0;border-radius:8px;padding:9px 12px;background:var(--blue);color:#091321;font:inherit;font-weight:800;cursor:pointer}button.alt{background:#dce4ef}button.hold{background:#ffc4c8}
+  .buttons{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}textarea{width:100%;min-height:132px;padding:12px;background:#0c1017;color:var(--text);border:1px solid var(--line);border-radius:8px;font:14px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace}
+  pre{white-space:pre-wrap;overflow-wrap:anywhere;padding:12px;border-radius:8px;background:#0c1017;color:#dce5f5;font-size:.86rem}.small{font-size:.88rem}details{margin-top:10px}summary{cursor:pointer;color:#cfe0ff}
+  @media(max-width:700px){main{padding:20px 12px 48px}.card{padding:14px}}
+</style>
+</head>
+<body>
+<main>
+  <h1>T32 영상 발주 전 추가 판단</h1>
+  <p class="lead">승인된 KF 5장과 컷 설계는 그대로입니다. 현재는 <strong>H3 발주 0건 · 비용 $0</strong>이며, 아래 두 기계 차단의 처리 방향만 정합니다.</p>
+
+  <section class="card block">
+    <h2>현재 발주 차단</h2>
+    <p><strong class="bad">B2 27건</strong> — KF02S~KF05S의 옆얼굴을 현재 얼굴 랜드마크 검출기가 찾지 못했습니다. “못 재면 발주하지 않는다” 규칙에 따라 차단됐습니다.</p>
+    <p><strong class="bad">R77 1건</strong> — 실제 직접 호출이 아니라 <code>h3_source_provenance.py</code>의 설명용 docstring 안 파일명 문자열을 직접 호출 경로로 오검출했습니다.</p>
+    <p class="small muted">별도 C4a 8건 판단은 <a href="c4a.html" style="color:#a9caff">기존 C4a 판단 페이지</a>에 있습니다. C4a·B2·R77이 모두 해소되기 전에는 큐에 넣지 않습니다.</p>
+  </section>
+
+  <section class="card">
+    <h2>이미 정해 주신 것</h2>
+    <ul>
+      <li>R8 구간표와 KF01S~KF05S v5는 대표님이 직접 채택했습니다.</li>
+      <li>KF02S 화면 아래 맞잡은 손·손가락 노출도 공개된 상태로 채택했습니다.</li>
+      <li>40컷 H3 설계는 승인된 다섯 직접 KF의 무변형 참조만 사용합니다.</li>
+      <li>게이트 완화·예외 추가·직접 허브 빌더 호출은 선택지에 포함하지 않습니다.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>승인된 v5 키프레임 5장</h2>
+    <div class="grid">
+      <article class="kf"><img src="assets/KF01S.png" alt="승인 KF01S v5"><p><strong>KF01S</strong> · 얼굴 검출 성공</p></article>
+      <article class="kf"><img src="assets/KF02S.png" alt="승인 KF02S v5"><p><strong>KF02S</strong> · 옆얼굴 검출 실패 · 4컷 영향</p></article>
+      <article class="kf"><img src="assets/KF03S.png" alt="승인 KF03S v5"><p><strong>KF03S</strong> · 옆얼굴 검출 실패 · 9컷 영향</p></article>
+      <article class="kf"><img src="assets/KF04S.png" alt="승인 KF04S v5"><p><strong>KF04S</strong> · 옆얼굴 검출 실패 · 7컷 영향</p></article>
+      <article class="kf"><img src="assets/KF05S.png" alt="승인 KF05S v5"><p><strong>KF05S</strong> · 옆얼굴 검출 실패 · 7컷 영향</p></article>
+    </div>
+    <details><summary>B2가 차단한 27컷 보기</summary><p class="small">C02, C04, C06, C08, C10, C12, C15, C16, C18, C19, C21, C23, C25, C27, C29, C32, C33, C35, C37, C39, C41, C43, C45, C47, C52, C53, C55</p></details>
+  </section>
+
+  <section class="card">
+    <h2>판단 1 · B2 얼굴 검출 실패</h2>
+    <div class="options">
+      <article class="option recommended">
+        <span class="tag">최소 변경</span><h3>A · 측정기만 옆얼굴을 재도록 보완</h3>
+        <p>승인 KF 5장·해시·컷 배정은 유지합니다. B2가 실제 옆얼굴에서도 입 상태를 측정할 수 있게 공용 측정 경로를 보완하고, 다시 측정해 0건일 때만 발주합니다.</p>
+        <div class="impact"><strong>영향:</strong> 공용 코드 영향 · 키프레임 재제작 0장 · T32 이미지 비용 $0 · 대표님 재채택 없음</div>
+        <div class="buttons"><button onclick="setB2('A')">B2는 A</button></div>
+      </article>
+      <article class="option">
+        <h3>B · KF02S~KF05S를 T32에서 재제작</h3>
+        <p>B2 코드는 유지하고, 현재 검출기가 읽을 수 있는 구도로 네 장을 다시 만듭니다. 새 이미지가 되므로 기존 채택 해시와 컷 배정이 바뀌고 대표님 키프레임 재검토가 필요합니다.</p>
+        <div class="impact"><strong>영향:</strong> T32 한정 · 키프레임 재제작 4장 · 이미지 비용 발생 · 대표님 재채택 필요</div>
+        <div class="buttons"><button class="alt" onclick="setB2('B')">B2는 B</button></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>판단 2 · R77 docstring 오검출</h2>
+    <pre>scripts/regression.py:5979
+if "build-h3-jobs.py" in body:
+    bypass.append(...)
+
+scripts/h3_source_provenance.py:128
+"""허브 `build-h3-jobs.py`의 `read_prompt()`와 같은 규칙으로 읽는다."""</pre>
+    <p>R77은 파이썬 소스 전체를 문자열 검색합니다. 현재 검출된 것은 실행문이 아니라 위 설명 한 줄이며, T32는 실제로 <code>queue_request.py</code>만 사용하도록 설계됐습니다.</p>
+    <div class="options">
+      <article class="option recommended">
+        <span class="tag">최소 변경</span><h3>A · 설명 문구의 파일명만 일반화</h3>
+        <p>docstring을 “허브의 H3 프롬프트 reader와 같은 규칙”처럼 바꿉니다. 실행 코드와 R77 검사 로직은 그대로 두고 오검출 원인 문자열만 제거한 뒤 회귀검사를 다시 돌립니다.</p>
+        <div class="impact"><strong>영향:</strong> 공용 파일 문서문구 1곳 · 런타임 동작 변화 없음 · T32 한정 데이터 변화 없음 · 비용 $0</div>
+        <div class="buttons"><button onclick="setR77('A')">R77은 A</button></div>
+      </article>
+      <article class="option">
+        <h3>B · R77이 주석·docstring을 제외하도록 변경</h3>
+        <p>검사기가 파이썬 코드를 파싱해 실행 문자열만 찾도록 바꿉니다. 이번 오검출은 해결되지만 R77 자체의 공용 판정 범위가 바뀌어 더 넓은 회귀검증이 필요합니다.</p>
+        <div class="impact"><strong>영향:</strong> 공용 게이트 로직 영향 · T32 한정 아님 · 추가 회귀검사 필요 · 비용 $0</div>
+        <div class="buttons"><button class="alt" onclick="setR77('B')">R77은 B</button></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>이미 통과한 검사</h2>
+    <ul>
+      <li><span class="pass">통과</span> — 대장 무결성 40줄 / 0건</li>
+      <li><span class="pass">통과</span> — H3 프롬프트 40개 / 형식·가사 배정·연기·인원 모순 0건</li>
+      <li><span class="pass">통과</span> — 오디오 클립·오디오 창·생성 길이 0건</li>
+      <li><span class="pass">통과</span> — 승인 v5 직접 원본 → refs 5장 byte-identical, 배정 누락 0건</li>
+      <li><span class="warn">차단 유지</span> — H3 발주 0건 · 영상 생성 0건 · 현재 비용 $0</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>복사용 답변</h2>
+    <p class="small muted">두 판단을 고르면 문장이 자동으로 바뀝니다. 기본값은 최소 변경 A+A입니다.</p>
+    <textarea id="reply" readonly aria-label="복사용 대표님 답변"></textarea>
+    <div class="buttons"><button onclick="copyReply()">답변 복사</button><button class="hold" onclick="holdAll()">둘 다 보류</button><span id="copied" class="small muted" aria-live="polite"></span></div>
+  </section>
+</main>
+<script>
+let b2='A', r77='A';
+function render(){
+  const b2Text=b2==='A'?'승인 KF 5장·해시는 유지하고 B2 측정기만 옆얼굴을 실제 측정하도록 보완한 뒤 0건을 확인':'KF02S~KF05S 네 장을 T32에서 재제작하고 대표님 재채택 후 B2 0건을 확인';
+  const r77Text=r77==='A'?'h3_source_provenance.py docstring의 직접 빌더 파일명 문구만 일반화하고 실행 코드·R77 로직은 유지':'R77이 주석·docstring을 제외하도록 공용 검사 로직을 수정하고 회귀검증';
+  document.getElementById('reply').value=`T32 영상 사전 차단: B2 ${b2}안 — ${b2Text}. R77 ${r77}안 — ${r77Text}. C4a 판단은 별도 페이지 결정대로 처리하고, 세 관문 모두 0건이 된 뒤에만 queue_request로 H3를 발주해줘. 게이트 완화·예외·직접 허브 빌더 호출은 하지 마.`;
+}
+function setB2(v){b2=v;render();document.getElementById('reply').focus()}
+function setR77(v){r77=v;render();document.getElementById('reply').focus()}
+function holdAll(){document.getElementById('reply').value='T32 B2·R77은 둘 다 보류. 승인 KF·공용 코드·게이트를 바꾸지 말고 H3 발주 0건 상태를 유지해줘.';document.getElementById('reply').focus()}
+async function copyReply(){const el=document.getElementById('reply');try{await navigator.clipboard.writeText(el.value);document.getElementById('copied').textContent='복사했습니다.'}catch(_){el.select();document.getElementById('copied').textContent='텍스트를 선택했습니다. 복사해 주세요.'}}
+render();
+</script>
+<div style="max-width:820px;margin:48px auto 24px;padding:12px 16px;border-top:1px solid rgba(128,128,128,.28);font:13px/1.6 -apple-system,'Apple SD Gothic Neo',sans-serif;color:#8a8a8a;">주소를 아는 사람은 열람할 수 있는 페이지입니다 · 2026-10-15 이후 자동 삭제</div>
+</body>
+</html>

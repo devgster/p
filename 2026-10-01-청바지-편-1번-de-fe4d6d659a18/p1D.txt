@@ -1,0 +1,20 @@
+[Character Action & Continuity]
+Realistic Korean slice-of-life short video clip. A quiet park in a Korean apartment complex, outdoors in open daylight. Maintain exact appearance from start frame: a 24-month-old Korean toddler boy wearing a soft white t-shirt, beige pants and white socks. Scale: a small 24-month-old toddler build with natural proportions.
+[0-9s] Doyoon looks at the camera and talks with his dad, who stands just off-screen behind the camera. They speak one after another right away, with only short natural pauses between lines.
+[9-10s] Doyoon looks at the camera, mouth closed.
+
+[Dialogue Script & Emotion]
+아빠 (화면 밖, 신나서 자랑하듯, 끝을 올리며 들뜬 목소리로): "도윤아, 아빠 이거 입고 나갈까?"
+도윤 (보통 속도로, 깜짝 놀라 다급하게): "아빠! 옷 망가져떠!"
+아빠 (화면 밖, 웃음 띤 목소리로 «아니야~»를 길게 늘이며 다정하게 설명): "아니야~ 원래 이렇게 나온 옷이야."
+
+[Audio & Voice Specifications]
+Two voices only.
+Doyoon: Definite 18 to 24-month-old Korean INFANT TODDLER boy voice. Low-pitched, cute, raspy little boy toddler voice. Strictly NOT a school-age child, NOT female. Normal speaking speed.
+Dad (off-screen): a warm, cheerful Korean man in his thirties who speaks with lively, expressive intonation and clear emotion in every line.
+Sound Format: Voices outdoors in a wide open park, recorded close to them.
+Background Sound: Quiet open-air park ambience, soft and steady.
+
+[Technical Directives]
+카메라: 카메라를 보는 도윤이 전신 풀샷. 카메라 고정.
+화면: 도윤이와 공원만 보인다. 아빠는 화면에 나오지 않는다. 도윤이 대사에만 입모양 100% 완벽 립싱크.

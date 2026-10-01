@@ -1,0 +1,20 @@
+[Character Action & Continuity]
+Realistic Korean slice-of-life short video clip. A quiet park in a Korean apartment complex, outdoors in open daylight. Maintain exact appearance from start frame: a 24-month-old Korean toddler boy wearing a soft white t-shirt, beige pants and white socks. Scale: a small 24-month-old toddler build with natural proportions. His dad stands just off-screen beside the camera; the dad is never seen.
+[0-3s] Doyoon speaks to his dad just beside the camera — worried and careful, small voice.
+[3-8s] Off-screen, Dad speaks — flustered disbelief turning into amused protest, smiling voice, a little defensive about his fashion. Doyoon turns his eyes toward the dad's voice just beside the camera and listens, mouth closed.
+[8-10s] Doyoon looks at the camera, mouth closed.
+
+[Dialogue Script & Emotion]
+도윤 (보통 속도로, 걱정스럽게 조심조심, 작은 목소리로): "아빠 넘어져떠?"
+아빠 (화면 밖, 어이없다는 듯 당황했다가 웃음 섞인 항변, 멋 부린 게 살짝 민망한 말투): "안 넘어졌어~ 멋 내려고 산 거야."
+
+[Audio & Voice Specifications]
+Two voices only, a natural back-and-forth conversation with real acting.
+Doyoon: Definite 18 to 24-month-old Korean INFANT TODDLER boy voice. Low-pitched, cute, raspy little boy toddler voice. Strictly NOT a school-age child, NOT female. Normal speaking speed.
+Dad (off-screen): Doyoon's playful, warm Korean father in his early thirties. He ACTS every line with clear emotion and lively intonation, like a real dad joking with his toddler at home — never flat, never reading, never like a narrator.
+Sound Format: Voices outdoors in a wide open park, recorded close to them.
+Background Sound: Quiet open-air park ambience, soft and steady.
+
+[Technical Directives]
+카메라: 카메라를 보는 도윤이 전신 풀샷. 카메라 고정.
+화면: 도윤이와 공원만 보인다. 아빠는 화면에 나오지 않는다. 도윤이 대사에만 입모양 100% 완벽 립싱크.

@@ -1,0 +1,20 @@
+[Character Action & Continuity]
+Realistic Korean slice-of-life short video clip. A quiet park in a Korean apartment complex, outdoors in open daylight. Maintain exact appearance from start frame: a 24-month-old Korean toddler boy wearing a soft white t-shirt, beige pants and white socks. Scale: a small 24-month-old toddler build with natural proportions. His dad stands just off-screen beside the camera; the dad is never seen.
+[0-4s] Doyoon speaks to his dad just beside the camera — calm and grown-up, gently comforting like an adult soothing a crying child.
+[4-8s] Doyoon speaks to his dad just beside the camera — sweet and earnest, kind little promise.
+[8-10s] Doyoon looks at the camera, mouth closed.
+
+[Dialogue Script & Emotion]
+도윤 (보통 속도로, 어른이 우는 아이 달래듯 차분하고 의젓하게): "갠차나. 안 울어도 돼."
+도윤 (보통 속도로, 다정하고 의젓하게, 약속하듯): "도유니가 호~ 해 줄게."
+
+[Audio & Voice Specifications]
+Two voices only, a natural back-and-forth conversation with real acting.
+Doyoon: Definite 18 to 24-month-old Korean INFANT TODDLER boy voice. Low-pitched, cute, raspy little boy toddler voice. Strictly NOT a school-age child, NOT female. Normal speaking speed.
+Dad (off-screen): Doyoon's playful, warm Korean father in his early thirties. He ACTS every line with clear emotion and lively intonation, like a real dad joking with his toddler at home — never flat, never reading, never like a narrator.
+Sound Format: Voices outdoors in a wide open park, recorded close to them.
+Background Sound: Quiet open-air park ambience, soft and steady.
+
+[Technical Directives]
+카메라: 카메라를 보는 도윤이 전신 풀샷. 카메라 고정.
+화면: 도윤이와 공원만 보인다. 아빠는 화면에 나오지 않는다. 도윤이 대사에만 입모양 100% 완벽 립싱크.

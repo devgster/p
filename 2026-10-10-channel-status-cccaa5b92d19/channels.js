@@ -2,7 +2,7 @@
 const $ = id => document.getElementById(id);
 const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const number = v => typeof v === 'number' && Number.isFinite(v) ? v.toLocaleString('ko-KR') : '미확인';
-const date = v => v && Number.isFinite(Date.parse(v)) ? new Date(v).toLocaleString('ko-KR',{timeZone:'Asia/Seoul',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'}) : '미확인';
+const date = v => v != null && Number.isFinite(new Date(v).getTime()) ? new Date(v).toLocaleString('ko-KR',{timeZone:'Asia/Seoul',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'}) : '미확인';
 const identity = r => `${r.platform}:${r.account_id || r.username || r.key}`;
 const labels = {subscribers:'구독자',followers:'팔로워',total_views:'누적 조회수',engaged_views_90d:'유효 조회수 · 90일 쇼츠',watch_hours_365d:'시청 시간 · 365일 VOD'};
 let records = [], history = [], platform = 'all', historyError = '';

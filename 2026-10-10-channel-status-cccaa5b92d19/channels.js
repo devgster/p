@@ -18,7 +18,12 @@ function render(){
   const rows = records.filter(r=>r.platform===p), known = rows.filter(r=>typeof r[k]==='number');
   return `<article><small>${title}</small><strong>${known.length ? number(known.reduce((a,r)=>a+r[k],0)) : '미확인'}</strong><small>${known.length}/${rows.length}개 계정 확인${known.length < rows.length ? ' · 확인된 값만 합산' : ''}</small></article>`;
  }).join('');
- $('cards').innerHTML = visible().map(r=>`<article class="card"><span class="badge">${r.platform.toUpperCase()}</span><h3>${esc(r.label || r.title || r.username)}</h3><div class="stats">${fields(r).map(k=>stat(r,k)).join('')}</div>${r.error || r.engaged_error || r.watch_error ? '<p class="warn">일부 지표 미확인 · 계정 연결 또는 원본 응답 확인 필요</p>' : ''}<div class="meta">수집 ${date(r.observed_at)} KST<br>계정 ${esc(r.account_id || r.username || r.key)}<br>출처 ${esc(r.source)}<br>${esc(r.views_scope)}${r.analytics_scope ? `<br>Analytics · ${esc(r.analytics_scope.start_date)} ~ ${esc(r.analytics_scope.end_date)} · 대시보드 기준` : ''}</div></article>`).join('');
+ const cardMarkup = r => `<article class="card"><span class="badge">${r.platform === 'youtube' ? '▶ YOUTUBE · 유튜브' : '◎ INSTAGRAM · 인스타그램'}</span><h3>${esc(r.label || r.title || r.username)}</h3><div class="stats">${fields(r).map(k=>stat(r,k)).join('')}</div>${r.error || r.engaged_error || r.watch_error ? '<p class="warn">일부 지표 미확인 · 계정 연결 또는 원본 응답 확인 필요</p>' : ''}<div class="meta">수집 ${date(r.observed_at)} KST<br>계정 ${esc(r.account_id || r.username || r.key)}<br>출처 ${esc(r.source)}<br>${esc(r.views_scope)}${r.analytics_scope ? `<br>Analytics · ${esc(r.analytics_scope.start_date)} ~ ${esc(r.analytics_scope.end_date)} · 대시보드 기준` : ''}</div></article>`;
+ $('cards').innerHTML = ['youtube','instagram'].map(p=>{
+  const rows=visible().filter(r=>r.platform===p);if(!rows.length)return '';
+  const youtube=p==='youtube';
+  return `<section class="platform-group ${p}" aria-label="${youtube?'유튜브':'인스타그램'} 채널 목록"><div class="platform-heading"><span class="platform-icon" aria-hidden="true">${youtube?'▶':'◎'}</span><div><h3>${youtube?'유튜브':'인스타그램'} <span>${youtube?'YouTube':'Instagram'}</span></h3><p>${youtube?'구독자 · 채널 누적 조회수 · 시청 성과':'팔로워 · 게시물 누적 조회수'}</p></div><b class="platform-count">${rows.length}개 계정</b></div><div class="cards">${rows.map(cardMarkup).join('')}</div></section>`;
+ }).join('');
  const old = $('channel').value;
  $('channel').innerHTML = visible().map(r=>`<option value="${esc(identity(r))}">${esc(r.label || r.title || r.username)} · ${r.platform === 'youtube' ? 'YT' : 'IG'}</option>`).join('');
  if(visible().some(r=>identity(r)===old)) $('channel').value=old;

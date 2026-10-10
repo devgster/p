@@ -10,8 +10,11 @@ const visible = () => records.filter(r => platform === 'all' || r.platform === p
 const fields = r => [r.platform === 'youtube' ? 'subscribers' : 'followers','total_views',...(r.platform === 'youtube' ? [r.analytics_scope?.filter === 'creatorContentType==videoOnDemand' ? 'watch_hours_365d' : 'engaged_views_90d'] : [])];
 function stat(r,k){
  const c = r.comparison?.[k], d = c?.delta;
- const change = r[k] == null ? '미확인' : c ? `${d > 0 ? '+' : ''}${number(d)} · ${c.percent == null ? '증감률 산출 불가' : (c.percent > 0 ? '+' : '') + c.percent.toFixed(2) + '%'}` : '첫 기록 · 비교 기준 없음';
- return `<div class="stat"><small>${labels[k]}</small><b>${number(r[k])}${k === 'watch_hours_365d' && r[k] != null ? ' h' : ''}</b><small class="${d > 0 ? 'up' : d < 0 ? 'down' : ''}">${change}</small>${c ? `<small>${date(c.previous_at)} 대비</small>` : ''}</div>`;
+ const known = r[k] != null && typeof d === 'number' && Number.isFinite(d);
+ const direction = known ? (d > 0 ? 'up' : d < 0 ? 'down' : 'flat') : 'unknown';
+ const percent = c?.percent == null ? '증감률 산출 불가' : `${c.percent > 0 ? '+' : ''}${c.percent.toFixed(2)}%`;
+ const change = r[k] == null ? '미확인' : !known ? '비교 기준 없음' : d === 0 ? `— 변동 없음 · ${percent}` : `${d > 0 ? '▲ +' : '▼ −'}${number(Math.abs(d))} (${percent})`;
+ return `<div class="stat"><small>${labels[k]}</small><b>${number(r[k])}${k === 'watch_hours_365d' && r[k] != null ? ' h' : ''}</b><div class="change ${direction}" aria-label="${d > 0 ? '증가' : d < 0 ? '감소' : '증감'}">${change}</div>${c ? `<small class="comparison-date">${date(c.previous_at)} 대비</small>` : ''}</div>`;
 }
 function render(){
  $('summary').innerHTML = [['youtube','subscribers','YouTube 구독자'],['youtube','total_views','YouTube 누적 조회수'],['instagram','followers','Instagram 팔로워'],['instagram','total_views','Instagram 게시물 조회수']].map(([p,k,title])=>{

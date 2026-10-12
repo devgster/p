@@ -849,14 +849,6 @@
       "bytes": 26600247
     },
     {
-      "slug": "2026-10-10-channel-status-cccaa5b92d19",
-      "title": "channel-status",
-      "published": "2026-10-11",
-      "expires": "없음",
-      "files": 5,
-      "bytes": 134788
-    },
-    {
       "slug": "2026-10-12-돈덕전-flow-발주서-43bb57c4432a",
       "title": "돈덕전 Flow 발주서",
       "published": "2026-10-12",
@@ -871,6 +863,14 @@
       "expires": "2026-11-11",
       "files": 2,
       "bytes": 196871
+    },
+    {
+      "slug": "2026-10-10-channel-status-cccaa5b92d19",
+      "title": "channel-status",
+      "published": "2026-10-12",
+      "expires": "없음",
+      "files": 5,
+      "bytes": 161733
     }
   ]
 }

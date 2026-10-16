@@ -4,17 +4,17 @@ const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt
 const number = v => typeof v === 'number' && Number.isFinite(v) ? v.toLocaleString('ko-KR') : '미확인';
 const date = v => v != null && Number.isFinite(new Date(v).getTime()) ? new Date(v).toLocaleString('ko-KR',{timeZone:'Asia/Seoul',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'}) : '미확인';
 const identity = r => `${r.platform}:${r.account_id || r.username || r.key}`;
-const labels = {subscribers:'구독자',followers:'팔로워',total_views:'누적 조회수',engaged_views_90d:'유효 공개 쇼츠 조회수 · 수익 창출',watch_hours_365d:'유효 공개 시청 시간 · 수익 창출'};
+const labels = {subscribers:'구독자',followers:'팔로워',total_views:'누적 조회수',shorts_engaged_views_90d:'쇼츠 참여 조회수 · 90일',engaged_views_90d:'유효 공개 쇼츠 조회수 · 수익 창출',watch_hours_365d:'유효 공개 시청 시간 · 수익 창출'};
 let records = [], history = [], platform = 'all', historyError = '';
 const visible = () => records.filter(r => platform === 'all' || r.platform === platform);
-const fields = r => [r.platform === 'youtube' ? 'subscribers' : 'followers','total_views',...(r.platform === 'youtube' ? [r.analytics_scope?.filter === 'creatorContentType==videoOnDemand' ? 'watch_hours_365d' : 'engaged_views_90d'] : [])];
+const fields = r => [r.platform === 'youtube' ? 'subscribers' : 'followers','total_views',...(r.platform === 'youtube' ? ['shorts_engaged_views_90d',r.analytics_scope?.filter === 'creatorContentType==videoOnDemand' ? 'watch_hours_365d' : 'engaged_views_90d'] : [])];
 function stat(r,k){
  const c = r.comparison?.[k], d = c?.delta;
  const known = r[k] != null && typeof d === 'number' && Number.isFinite(d);
  const direction = known ? (d > 0 ? 'up' : d < 0 ? 'down' : 'flat') : 'unknown';
  const percent = c?.percent == null ? '증감률 산출 불가' : `${c.percent > 0 ? '+' : ''}${c.percent.toFixed(2)}%`;
  const change = r[k] == null ? '미확인' : !known ? '비교 기준 없음' : d === 0 ? `— 변동 없음 · ${percent}` : `${d > 0 ? '▲ +' : '▼ −'}${number(Math.abs(d))} (${percent})`;
- return `<div class="stat"><small>${r.platform === 'youtube' && k === 'total_views' ? '조회수 · Studio 전체 기간' : labels[k]}</small><b>${number(r[k])}${k === 'watch_hours_365d' && r[k] != null ? ' h' : ''}</b><div class="change ${direction}" aria-label="${d > 0 ? '증가' : d < 0 ? '감소' : '증감'}">${change}</div>${r.studio_provenance?.[k] ? `<small>${r.studio_provenance[k].source === 'YouTube Analytics API' ? 'Analytics API 수집' : 'Studio 확인'} ${date(r.studio_provenance[k].observed_at)}${r.studio_provenance[k].as_of ? ' · 집계 기준일 '+esc(r.studio_provenance[k].as_of) : ''}</small>` : ''}${c ? `<small class="comparison-date">${date(c.previous_at)} 대비</small>` : ''}</div>`;
+ return `<div class="stat"><small>${r.platform === 'youtube' && k === 'total_views' ? '조회수 · Studio 전체 기간' : labels[k]}</small><b>${number(r[k])}${k === 'watch_hours_365d' && r[k] != null ? ' h' : ''}</b><div class="change ${direction}" aria-label="${d > 0 ? '증가' : d < 0 ? '감소' : '증감'}">${change}</div>${r.studio_provenance?.[k] ? `<small>${r.studio_provenance[k].source === 'YouTube Analytics API' ? 'Analytics API 수집' : 'Studio 확인'} ${date(r.studio_provenance[k].observed_at)}${r.studio_provenance[k].as_of ? ' · 집계 기준일 '+esc(r.studio_provenance[k].as_of) : ''}</small>` : ''}${k === 'shorts_engaged_views_90d' && r.participation_scope?.start_date ? `<small>${esc(r.participation_scope.start_date)} ~ ${esc(r.participation_scope.end_date)} · Analytics API</small>` : ''}${c ? `<small class="comparison-date">${date(c.previous_at)} 대비</small>` : ''}</div>`;
 }
 function render(){
  $('summary').innerHTML = [['youtube','subscribers','YouTube 구독자'],['youtube','total_views','YouTube Studio 전체 기간 조회수'],['instagram','followers','Instagram 팔로워'],['instagram','total_views','Instagram 게시물 조회수']].map(([p,k,title])=>{
@@ -25,7 +25,7 @@ function render(){
  $('cards').innerHTML = ['youtube','instagram'].map(p=>{
   const rows=visible().filter(r=>r.platform===p);if(!rows.length)return '';
   const youtube=p==='youtube';
-  return `<section class="platform-group ${p}" aria-label="${youtube?'유튜브':'인스타그램'} 채널 목록"><div class="platform-heading"><span class="platform-icon" aria-hidden="true">${youtube?'▶':'◎'}</span><div><h3>${youtube?'유튜브':'인스타그램'} <span>${youtube?'YouTube':'Instagram'}</span></h3><p>${youtube?'구독자 · Studio 전체 기간 조회수 · 수익 창출 지표':'팔로워 · 게시물 누적 조회수'}</p></div><b class="platform-count">${rows.length}개 계정</b></div><div class="cards">${rows.map(cardMarkup).join('')}</div></section>`;
+  return `<section class="platform-group ${p}" aria-label="${youtube?'유튜브':'인스타그램'} 채널 목록"><div class="platform-heading"><span class="platform-icon" aria-hidden="true">${youtube?'▶':'◎'}</span><div><h3>${youtube?'유튜브':'인스타그램'} <span>${youtube?'YouTube':'Instagram'}</span></h3><p>${youtube?'구독자 · 전체 기간 조회수 · 쇼츠 참여 조회수 · 수익 창출 지표':'팔로워 · 게시물 누적 조회수'}</p></div><b class="platform-count">${rows.length}개 계정</b></div><div class="cards">${rows.map(cardMarkup).join('')}</div></section>`;
  }).join('');
  const old = $('channel').value;
  $('channel').innerHTML = visible().map(r=>`<option value="${esc(identity(r))}">${esc(r.label || r.title || r.username)} · ${r.platform === 'youtube' ? 'YT' : 'IG'}</option>`).join('');
@@ -42,7 +42,7 @@ function chart(){
  const r=records.find(r=>identity(r)===$('channel').value), key=$('metric').value;
  if(!r) {$('chart').innerHTML='<p class="empty">표시할 계정이 없습니다.</p>';return;}
  const cutoff=Date.now()-Number($('days').value)*86400000;
- const compatible=p=>key==='total_views' ? p.views_scope===r.views_scope : ['engaged_views_90d','watch_hours_365d'].includes(key) ? p.analytics_scope?.metric===r.analytics_scope?.metric && p.analytics_scope?.filter===r.analytics_scope?.filter : true;
+ const compatible=p=>key==='shorts_engaged_views_90d' ? p.participation_scope?.metric===r.participation_scope?.metric && p.participation_scope?.filter===r.participation_scope?.filter : key==='total_views' ? p.views_scope===r.views_scope : ['engaged_views_90d','watch_hours_365d'].includes(key) ? p.analytics_scope?.metric===r.analytics_scope?.metric && p.analytics_scope?.filter===r.analytics_scope?.filter : true;
  const points=new Map();
  [...history,r].filter(p=>identity(p)===identity(r) && Date.parse(p.observed_at)>=cutoff && compatible(p)).forEach(p=>points.set(Date.parse(p.observed_at),p[key]));
  const all=[...points].sort((a,b)=>a[0]-b[0]), valid=all.filter(p=>typeof p[1]==='number'&&Number.isFinite(p[1]));

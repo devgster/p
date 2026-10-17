@@ -865,20 +865,20 @@
       "bytes": 196871
     },
     {
-      "slug": "2026-10-10-channel-status-cccaa5b92d19",
-      "title": "channel-status",
-      "published": "2026-10-16",
-      "expires": "없음",
-      "files": 5,
-      "bytes": 263556
-    },
-    {
       "slug": "2026-10-17-도윤이-질투편-검수-dfffe386fd8b",
       "title": "도윤이 질투편 검수",
       "published": "2026-10-17",
       "expires": "2026-11-16",
       "files": 3,
       "bytes": 18819721
+    },
+    {
+      "slug": "2026-10-10-channel-status-cccaa5b92d19",
+      "title": "channel-status",
+      "published": "2026-10-17",
+      "expires": "없음",
+      "files": 5,
+      "bytes": 280078
     }
   ]
 }

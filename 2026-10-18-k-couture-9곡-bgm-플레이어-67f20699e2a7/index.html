@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>K-Couture 9곡 BGM 오디오 플레이어</title>
+  <style>
+    :root {
+      --bg: #090a0f;
+      --card: #151720;
+      --card-border: rgba(255, 255, 255, 0.08);
+      --accent: #d4af37;
+      --accent-hover: #f3cf5e;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+      min-height: 100vh;
+      padding: 20px 16px 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap {
+      width: 100%;
+      max-width: 480px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    header {
+      text-align: center;
+      padding: 10px 0 16px;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--accent);
+      background: rgba(212, 175, 55, 0.12);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+    h1 {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .sub {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    /* Track Card */
+    .track-card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      transition: border-color 0.2s;
+    }
+    .track-card.playing {
+      border-color: var(--accent);
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+    }
+    .track-top {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .play-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #d4af37, #aa8212);
+      border: none;
+      color: #000;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+      outline: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .play-btn:active {
+      transform: scale(0.94);
+    }
+    .track-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      overflow: hidden;
+    }
+    .track-num-tag {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .track-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .track-desc {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.3;
+    }
+
+    /* Progress bar */
+    .progress-bar-wrap {
+      width: 100%;
+      height: 6px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 3px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .progress-bar {
+      width: 0%;
+      height: 100%;
+      background: var(--accent);
+      border-radius: 3px;
+      transition: width 0.1s linear;
+    }
+
+    /* Fallback direct links */
+    .track-links {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      padding-top: 4px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .track-dur {
+      color: var(--muted);
+      font-family: monospace;
+    }
+    .direct-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 8px;
+      background: rgba(212, 175, 55, 0.1);
+      border-radius: 6px;
+    }
+    .direct-link:active {
+      background: rgba(212, 175, 55, 0.25);
+    }
+
+    /* Standard audio tag fallback (hidden unless needed) */
+    audio {
+      width: 100%;
+      height: 32px;
+      margin-top: 4px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="badge">BGM Pool · Batch #1 (9곡)</div>
+      <h1>K-Couture 오디오 플레이어</h1>
+      <p class="sub">재생 버튼(▶)을 누르면 바로 청취하실 수 있습니다.<br>전곡 20초 규격 · 페이드인/페이드아웃 완료</p>
+    </header>
+
+    <!-- Track List -->
+    <div id="tracks-container"></div>
+  </div>
+
+  <script>
+    const tracks = [
+      { id: 1, file: "audio/track_01.mp3", m4a: "audio/track_01.m4a", title: "01. Lounge Chillhop Beat", mood: "하이패션 시크 & 모던 런웨이" },
+      { id: 2, file: "audio/track_02.mp3", m4a: "audio/track_02.m4a", title: "02. Deep Bass Groove", mood: "스트리트 테크웨어 & DDP 야경" },
+      { id: 3, file: "audio/track_03.mp3", m4a: "audio/track_03.m4a", title: "03. Urban Downtempo", mood: "센슈얼 미드나잇 & 턱시도" },
+      { id: 4, file: "audio/track_04.mp3", m4a: "audio/track_04.m4a", title: "04. Chic Lo-fi Jazz Beat", mood: "미니멀 럭셔리 & 린넨 룩북" },
+      { id: 5, file: "audio/track_05.mp3", m4a: "audio/track_05.m4a", title: "05. Midnight Bossa Beat", mood: "어텀 에디토리얼 & 실크 트렌치" },
+      { id: 6, file: "audio/track_06.mp3", m4a: "audio/track_06.m4a", title: "06. Smooth Rhodes Snare", mood: "파리 오트쿠튀르 감성" },
+      { id: 7, file: "audio/track_07.mp3", m4a: "audio/track_07.m4a", title: "07. Future Vintage Tape", mood: "네오 조선 레트로 비트" },
+      { id: 8, file: "audio/track_08.mp3", m4a: "audio/track_08.m4a", title: "08. Neo Soul Electric Piano", mood: "스튜디오 화보 촬영 슛" },
+      { id: 9, file: "audio/track_09.mp3", m4a: "audio/track_09.m4a", title: "09. Ambient Minimal Pulse", mood: "아키텍처 룩북 & 사이버펑크" }
+    ];
+
+    let currentAudio = null;
+    let currentId = null;
+
+    const container = document.getElementById("tracks-container");
+
+    tracks.forEach(t => {
+      const card = document.createElement("div");
+      card.className = "track-card";
+      card.id = `card-${t.id}`;
+      card.innerHTML = `
+        <div class="track-top">
+          <button class="play-btn" id="btn-${t.id}" onclick="togglePlay(${t.id})">▶</button>
+          <div class="track-info">
+            <span class="track-num-tag">TRACK ${String(t.id).padStart(2, '0')}</span>
+            <div class="track-title">${t.title}</div>
+            <div class="track-desc">${t.mood}</div>
+          </div>
+        </div>
+        <div class="progress-bar-wrap" onclick="seekTrack(event, ${t.id})">
+          <div class="progress-bar" id="bar-${t.id}"></div>
+        </div>
+        <div class="track-links">
+          <span class="track-dur" id="dur-${t.id}">00:00 / 00:20</span>
+          <div style="display:flex; gap:6px;">
+            <a href="${t.file}" class="direct-link" target="_blank">직접 재생 (MP3)</a>
+            <a href="${t.m4a}" class="direct-link" target="_blank">M4A</a>
+          </div>
+        </div>
+        <audio id="native-audio-${t.id}" preload="metadata" playsinline webkit-playsinline src="${t.file}"></audio>
+      `;
+      container.appendChild(card);
+    });
+
+    function togglePlay(id) {
+      const audioElement = document.getElementById(`native-audio-${id}`);
+      const btn = document.getElementById(`btn-${id}`);
+      const card = document.getElementById(`card-${id}`);
+
+      if (currentAudio && currentAudio !== audioElement) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+        if (currentId) {
+          document.getElementById(`btn-${currentId}`).innerText = "▶";
+          document.getElementById(`card-${currentId}`).classList.remove("playing");
+          document.getElementById(`bar-${currentId}`).style.width = "0%";
+          document.getElementById(`dur-${currentId}`).innerText = "00:00 / 00:20";
+        }
+      }
+
+      if (audioElement.paused) {
+        audioElement.play().then(() => {
+          btn.innerText = "⏸";
+          card.classList.add("playing");
+          currentAudio = audioElement;
+          currentId = id;
+        }).catch(err => {
+          console.error("Audio play failed:", err);
+          window.open(tracks.find(x => x.id === id).file, "_blank");
+        });
+      } else {
+        audioElement.pause();
+        btn.innerText = "▶";
+        card.classList.remove("playing");
+      }
+
+      audioElement.ontimeupdate = () => {
+        const cur = audioElement.currentTime;
+        const dur = audioElement.duration || 20;
+        const pct = (cur / dur) * 100;
+        document.getElementById(`bar-${id}`).style.width = `${pct}%`;
+        const curStr = String(Math.floor(cur)).padStart(2, '0');
+        const durStr = String(Math.floor(dur)).padStart(2, '0');
+        document.getElementById(`dur-${id}`).innerText = `00:${curStr} / 00:${durStr}`;
+      };
+
+      audioElement.onended = () => {
+        btn.innerText = "▶";
+        card.classList.remove("playing");
+        document.getElementById(`bar-${id}`).style.width = "0%";
+        document.getElementById(`dur-${id}`).innerText = "00:00 / 00:20";
+      };
+    }
+
+    function seekTrack(e, id) {
+      const audio = document.getElementById(`native-audio-${id}`);
+      if (!audio) return;
+      const rect = e.currentTarget.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      const ratio = clickX / rect.width;
+      audio.currentTime = (audio.duration || 20) * ratio;
+      if (audio.paused) {
+        togglePlay(id);
+      }
+    }
+  </script>
+<div style="max-width:820px;margin:48px auto 24px;padding:12px 16px;border-top:1px solid rgba(128,128,128,.28);font:13px/1.6 -apple-system,'Apple SD Gothic Neo',sans-serif;color:#8a8a8a;">주소를 아는 사람은 열람할 수 있는 페이지입니다 · 2026-11-17 이후 자동 삭제</div>
+</body>
+</html>

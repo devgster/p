@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>K-Couture 런웨이 & 코첼라 BGM 플레이어</title>
+  <style>
+    :root {
+      --bg: #090a0f;
+      --card: #13151f;
+      --card-border: rgba(255, 255, 255, 0.08);
+      --accent: #d4af37;
+      --accent-hover: #f3cf5e;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --tag-runway: #e11d48;
+      --tag-coachella: #8b5cf6;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+      min-height: 100vh;
+      padding: 16px 12px 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap {
+      width: 100%;
+      max-width: 520px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    header {
+      text-align: center;
+      padding: 10px 0 6px;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--accent);
+      background: rgba(212, 175, 55, 0.12);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      padding: 4px 14px;
+      border-radius: 999px;
+      margin-bottom: 8px;
+    }
+    h1 {
+      font-size: 21px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .sub {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    /* Concept pill filter description */
+    .concept-guide {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin-top: 6px;
+    }
+    .pill {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 6px;
+    }
+    .pill.runway {
+      background: rgba(225, 29, 72, 0.15);
+      color: #fb7185;
+      border: 1px solid rgba(225, 29, 72, 0.3);
+    }
+    .pill.coachella {
+      background: rgba(139, 92, 246, 0.15);
+      color: #c4b5fd;
+      border: 1px solid rgba(139, 92, 246, 0.3);
+    }
+
+    /* Important tip banner */
+    .tip-banner {
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.05));
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-size: 12px;
+      line-height: 1.5;
+      color: #f1f5f9;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+    .tip-icon {
+      font-size: 18px;
+      flex-shrink: 0;
+      line-height: 1.2;
+    }
+
+    /* Track Card */
+    .track-card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .track-card.active {
+      border-color: var(--accent);
+      box-shadow: 0 0 24px rgba(212, 175, 55, 0.25);
+    }
+
+    .track-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .track-type-tag {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      padding: 2px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+    .track-type-tag.runway {
+      background: rgba(225, 29, 72, 0.2);
+      color: #fda4af;
+      border: 1px solid rgba(225, 29, 72, 0.3);
+    }
+    .track-type-tag.coachella {
+      background: rgba(139, 92, 246, 0.2);
+      color: #d8b4fe;
+      border: 1px solid rgba(139, 92, 246, 0.3);
+    }
+
+    .track-bpm {
+      font-size: 11px;
+      font-family: monospace;
+      color: var(--accent);
+      background: rgba(212, 175, 55, 0.08);
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-weight: 700;
+    }
+
+    .track-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 2px;
+    }
+    .track-concept {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    /* Video player */
+    .video-wrap {
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #000;
+      position: relative;
+      aspect-ratio: 9 / 16;
+      max-height: 480px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Action bar */
+    .action-bar {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 6px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .direct-link {
+      font-size: 11px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 6px 10px;
+      background: rgba(212, 175, 55, 0.1);
+      border-radius: 8px;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: background 0.15s;
+    }
+    .direct-link:active {
+      background: rgba(212, 175, 55, 0.25);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      font-size: 11px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="badge">Runway & Coachella High-Energy Edition</div>
+      <h1>K-Couture 런웨이 & 코첼라 BGM</h1>
+      <p class="sub">실제 파리·밀라노 런웨이의 다크 테크노와 코첼라 헤드라이너 무대의 폭발적인 드롭을 재현한 9곡 풀</p>
+      <div class="concept-guide">
+        <span class="pill runway">01~05 런웨이 캣워크 (테크노·하우스)</span>
+        <span class="pill coachella">06~09 코첼라 스테이지 (EDM·트랩)</span>
+      </div>
+    </header>
+
+    <div class="tip-banner">
+      <div class="tip-icon">🔊</div>
+      <div>
+        <strong>모바일 무음 모드 안내:</strong> 아이폰의 측면 무음(진동) 스위치가 켜져 있어도 아래 <strong>화보 영상(▶)을 터치</strong>하시면 스피커로 묵직한 베이스와 비트가 생생하게 100% 출력됩니다.
+      </div>
+    </div>
+
+    <!-- Track List -->
+    <div id="tracks-container"></div>
+
+    <footer>
+      스튜디오 디비전 · K-Couture Runway & Coachella BGM Pool · Batch #1 (신작)
+    </footer>
+  </div>
+
+  <script>
+    const tracks = [
+      {
+        id: 1,
+        type: "runway",
+        typeLabel: "RUNWAY CATWALK",
+        bpm: "128 BPM",
+        title: "01. Balenciaga Dark Industrial Techno",
+        concept: "BFRND / Balenciaga 런웨이 스타일 · 묵직한 4/4 킥 & 최면적인 다크 애시드 신스",
+        video: "video/track_01.mp4",
+        poster: "posters/poster_01.jpg",
+        mp3: "audio/track_01.mp3",
+        m4a: "audio/track_01.m4a"
+      },
+      {
+        id: 2,
+        type: "runway",
+        typeLabel: "RUNWAY CATWALK",
+        bpm: "126 BPM",
+        title: "02. Milan Minimal Tech House",
+        concept: "밀라노 패션위크 런웨이 스타일 · 미니멀한 긴장감 & 단단한 롤링 서브베이스",
+        video: "video/track_02.mp4",
+        poster: "posters/poster_02.jpg",
+        mp3: "audio/track_02.mp3",
+        m4a: "audio/track_02.m4a"
+      },
+      {
+        id: 3,
+        type: "runway",
+        typeLabel: "RUNWAY CATWALK",
+        bpm: "125 BPM",
+        title: "03. Paris Catwalk Stride House",
+        concept: "파리 오트쿠튀르 캣워크 스타일 · 당당한 모델 스트라이드 템포 & 시크 일렉트로 그루브",
+        video: "video/track_03.mp4",
+        poster: "posters/poster_03.jpg",
+        mp3: "audio/track_03.mp3",
+        m4a: "audio/track_03.m4a"
+      },
+      {
+        id: 4,
+        type: "runway",
+        typeLabel: "RUNWAY CATWALK",
+        bpm: "128 BPM",
+        title: "04. DDP Cyberpunk EBM Techno",
+        concept: "DDP 서울 패션위크 나이트 런웨이 · 아날로그 디스토피안 펄스 & 인더스트리얼 신스",
+        video: "video/track_04.mp4",
+        poster: "posters/poster_04.jpg",
+        mp3: "audio/track_04.mp3",
+        m4a: "audio/track_04.m4a"
+      },
+      {
+        id: 5,
+        type: "runway",
+        typeLabel: "RUNWAY CATWALK",
+        bpm: "124 BPM",
+        title: "05. Midnight Sub-Bass Dub Techno",
+        concept: "톰포드 미드나잇 턱시도 런웨이 · 지축을 울리는 서브베이스 & 긴장감 넘치는 리듬",
+        video: "video/track_05.mp4",
+        poster: "posters/poster_05.jpg",
+        mp3: "audio/track_05.mp3",
+        m4a: "audio/track_05.m4a"
+      },
+      {
+        id: 6,
+        type: "runway",
+        typeLabel: "RUNWAY STREETWEAR",
+        bpm: "135 BPM",
+        title: "06. Acid Trap 808 Drop",
+        concept: "크롬하츠 고딕 스트리트 런웨이 · 날카로운 애시드 리프 & 펀치감 넘치는 트랩 808",
+        video: "video/track_06.mp4",
+        poster: "posters/poster_06.jpg",
+        mp3: "audio/track_06.mp3",
+        m4a: "audio/track_06.m4a"
+      },
+      {
+        id: 7,
+        type: "coachella",
+        typeLabel: "COACHELLA STAGE",
+        bpm: "130 BPM",
+        title: "07. Coachella Sahara Stage Techno Fest",
+        concept: "코첼라 사하라 스테이지 헤드라이너 · 130 BPM 웅장한 신스 & 폭발적 페스티벌 드롭",
+        video: "video/track_07.mp4",
+        poster: "posters/poster_07.jpg",
+        mp3: "audio/track_07.mp3",
+        m4a: "audio/track_07.m4a"
+      },
+      {
+        id: 8,
+        type: "coachella",
+        typeLabel: "COACHELLA STAGE",
+        bpm: "132 BPM",
+        title: "08. Coachella EDM Dance Break Anthem",
+        concept: "블랙핑크 코첼라 댄스 브레이크 라이브 바이브 · 거대한 페스티벌 비트 & 클라이맥스",
+        video: "video/track_08.mp4",
+        poster: "posters/poster_08.jpg",
+        mp3: "audio/track_08.mp3",
+        m4a: "audio/track_08.m4a"
+      },
+      {
+        id: 9,
+        type: "coachella",
+        typeLabel: "COACHELLA FINALE",
+        bpm: "140 BPM",
+        title: "09. Stadium Festival Trap & 808 Drop",
+        concept: "7만 관중 월드투어 스타디움 피날레 무대 · 거대한 브라스 드롭 & 폭발적인 파이로테크닉",
+        video: "video/track_09.mp4",
+        poster: "posters/poster_09.jpg",
+        mp3: "audio/track_09.mp3",
+        m4a: "audio/track_09.m4a"
+      }
+    ];
+
+    const container = document.getElementById("tracks-container");
+    let currentVideo = null;
+
+    tracks.forEach(t => {
+      const card = document.createElement("div");
+      card.className = "track-card";
+      card.id = `card-${t.id}`;
+      card.innerHTML = `
+        <div class="track-header">
+          <span class="track-type-tag ${t.type}">${t.typeLabel}</span>
+          <span class="track-bpm">${t.bpm} · 00:20</span>
+        </div>
+        <div>
+          <div class="track-title">${t.title}</div>
+          <div class="track-concept">${t.concept}</div>
+        </div>
+        <div class="video-wrap">
+          <video id="vid-${t.id}" playsinline webkit-playsinline controls preload="metadata" poster="${t.poster}">
+            <source src="${t.video}" type="video/mp4">
+            브라우저가 비디오 재생을 지원하지 않습니다.
+          </video>
+        </div>
+        <div class="action-bar">
+          <a href="${t.video}" class="direct-link" target="_blank">🎥 전체화면 영상 열기</a>
+          <div style="display:flex; gap:6px;">
+            <a href="${t.mp3}" class="direct-link" target="_blank">🎵 MP3</a>
+            <a href="${t.m4a}" class="direct-link" target="_blank">🎧 M4A</a>
+          </div>
+        </div>
+      `;
+      container.appendChild(card);
+
+      const vid = card.querySelector("video");
+      vid.addEventListener("play", () => {
+        if (currentVideo && currentVideo !== vid) {
+          currentVideo.pause();
+        }
+        currentVideo = vid;
+        document.querySelectorAll(".track-card").forEach(c => c.classList.remove("active"));
+        card.classList.add("active");
+      });
+      vid.addEventListener("ended", () => {
+        card.classList.remove("active");
+      });
+    });
+  </script>
+<div style="max-width:820px;margin:48px auto 24px;padding:12px 16px;border-top:1px solid rgba(128,128,128,.28);font:13px/1.6 -apple-system,'Apple SD Gothic Neo',sans-serif;color:#8a8a8a;">주소를 아는 사람은 열람할 수 있는 페이지입니다 · 2026-11-17 이후 자동 삭제</div>
+</body>
+</html>

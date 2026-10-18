@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>K-Couture 9곡 BGM 플레이어 (화보 비디오 & 오디오)</title>
+  <style>
+    :root {
+      --bg: #090a0f;
+      --card: #14161f;
+      --card-border: rgba(255, 255, 255, 0.08);
+      --accent: #d4af37;
+      --accent-hover: #f3cf5e;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+      min-height: 100vh;
+      padding: 16px 12px 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap {
+      width: 100%;
+      max-width: 520px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    header {
+      text-align: center;
+      padding: 10px 0 6px;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--accent);
+      background: rgba(212, 175, 55, 0.12);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 8px;
+    }
+    h1 {
+      font-size: 21px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .sub {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    /* Important tip banner */
+    .tip-banner {
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.05));
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-size: 12px;
+      line-height: 1.5;
+      color: #f1f5f9;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+    .tip-icon {
+      font-size: 18px;
+      flex-shrink: 0;
+      line-height: 1.2;
+    }
+
+    /* Track Card */
+    .track-card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+      transition: border-color 0.2s;
+    }
+    .track-card.active {
+      border-color: var(--accent);
+      box-shadow: 0 0 24px rgba(212, 175, 55, 0.25);
+    }
+
+    .track-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .track-tag {
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+    }
+    .track-time {
+      font-size: 11px;
+      font-family: monospace;
+      color: var(--muted);
+      background: rgba(255,255,255,0.06);
+      padding: 2px 8px;
+      border-radius: 6px;
+    }
+
+    .track-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .track-concept {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.35;
+    }
+
+    /* Video player */
+    .video-wrap {
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #000;
+      position: relative;
+      aspect-ratio: 9 / 16;
+      max-height: 480px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Action bar */
+    .action-bar {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 6px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .direct-link {
+      font-size: 11px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 6px 10px;
+      background: rgba(212, 175, 55, 0.1);
+      border-radius: 8px;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: background 0.15s;
+    }
+    .direct-link:active {
+      background: rgba(212, 175, 55, 0.25);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      font-size: 11px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="badge">BGM Rotating Pool · Batch #1 (9곡)</div>
+      <h1>K-Couture 화보 & 오디오 플레이어</h1>
+      <p class="sub">쇼츠 20초 맞춤형 9개 회전 BGM · 패션 에디토리얼 화보 연동</p>
+    </header>
+
+    <div class="tip-banner">
+      <div class="tip-icon">🔊</div>
+      <div>
+        <strong>모바일 무음 모드 안내:</strong> 아이폰의 측면 무음(진동) 스위치가 켜져 있으면 일반 오디오는 소리가 차단됩니다. 아래 <strong>화보 영상(▶)을 터치</strong>하시면 무음 스위치와 무관하게 스피커로 생생하게 소리가 출력됩니다.
+      </div>
+    </div>
+
+    <!-- Track List -->
+    <div id="tracks-container"></div>
+
+    <footer>
+      스튜디오 디비전 · K-Couture Runway & Fashion Editorial · Batch #1
+    </footer>
+  </div>
+
+  <script>
+    const tracks = [
+      {
+        id: 1,
+        title: "01. Midnight Seoul Chill",
+        concept: "보그 코리아 스튜디오 커버 화보 · 감각적인 로파이 칠홉 비트",
+        video: "video/track_01.mp4",
+        poster: "posters/poster_01.jpg",
+        mp3: "audio/track_01.mp3",
+        m4a: "audio/track_01.m4a"
+      },
+      {
+        id: 2,
+        title: "02. Modern Gat & Jade Sunglass",
+        concept: "모던 갓 & 선글라스 옥 갓끈 주얼리 화보 · 딥 베이스 그루브",
+        video: "video/track_02.mp4",
+        poster: "posters/poster_02.jpg",
+        mp3: "audio/track_02.mp3",
+        m4a: "audio/track_02.m4a"
+      },
+      {
+        id: 3,
+        title: "03. Nacre Lacquer Luxury Clutch",
+        concept: "나전칠기 자개 하드케이스 클러치백 디테일 · 어반 다운템포",
+        video: "video/track_03.mp4",
+        poster: "posters/poster_03.jpg",
+        mp3: "audio/track_03.mp3",
+        m4a: "audio/track_03.m4a"
+      },
+      {
+        id: 4,
+        title: "04. Imperial Dragon Crossbody",
+        concept: "궁중 용보 3D 자수 레더 크로스백 · 시크 로파이 재즈 비트",
+        video: "video/track_04.mp4",
+        poster: "posters/poster_04.jpg",
+        mp3: "audio/track_04.mp3",
+        m4a: "audio/track_04.m4a"
+      },
+      {
+        id: 5,
+        title: "05. Midnight Velvet Tuxedo Dopo",
+        concept: "미드나잇 벨벳 턱시도 도포 오트쿠튀르 · 센슈얼 보사노바 비트",
+        video: "video/track_05.mp4",
+        poster: "posters/poster_05.jpg",
+        mp3: "audio/track_05.mp3",
+        m4a: "audio/track_05.m4a"
+      },
+      {
+        id: 6,
+        title: "06. Cropped Jeogori Leather Biker",
+        concept: "크롭 저고리 레더 라이더 자켓 · 스무스 로즈 & 웜 스네어",
+        video: "video/track_06.mp4",
+        poster: "posters/poster_06.jpg",
+        mp3: "audio/track_06.mp3",
+        m4a: "audio/track_06.m4a"
+      },
+      {
+        id: 7,
+        title: "07. Coachella Ethereal Stage Dopo",
+        concept: "코첼라 화이트 실크 후드 도포 스테이지 · 퓨처 빈티지 테이프 비트",
+        video: "video/track_07.mp4",
+        poster: "posters/poster_07.jpg",
+        mp3: "audio/track_07.mp3",
+        m4a: "audio/track_07.m4a"
+      },
+      {
+        id: 8,
+        title: "08. Cyber Neon Dancheong Stage",
+        concept: "사이버 네온 단청 코르셋 스테이지 룩 · 네오 소울 일렉트릭 피아노",
+        video: "video/track_08.mp4",
+        poster: "posters/poster_08.jpg",
+        mp3: "audio/track_08.mp3",
+        m4a: "audio/track_08.m4a"
+      },
+      {
+        id: 9,
+        title: "09. Royal Crimson Dragon Finale",
+        concept: "월드투어 피날레 엠퍼러 크림슨 로열 코트 · 앰비언트 미니멀 펄스",
+        video: "video/track_09.mp4",
+        poster: "posters/poster_09.jpg",
+        mp3: "audio/track_09.mp3",
+        m4a: "audio/track_09.m4a"
+      }
+    ];
+
+    const container = document.getElementById("tracks-container");
+    let currentVideo = null;
+
+    tracks.forEach(t => {
+      const card = document.createElement("div");
+      card.className = "track-card";
+      card.id = `card-${t.id}`;
+      card.innerHTML = `
+        <div class="track-header">
+          <span class="track-tag">TRACK ${String(t.id).padStart(2, '0')}</span>
+          <span class="track-time">00:20 (쇼츠 맞춤)</span>
+        </div>
+        <div>
+          <div class="track-title">${t.title}</div>
+          <div class="track-concept">${t.concept}</div>
+        </div>
+        <div class="video-wrap">
+          <video id="vid-${t.id}" playsinline webkit-playsinline controls preload="metadata" poster="${t.poster}">
+            <source src="${t.video}" type="video/mp4">
+            브라우저가 비디오 재생을 지원하지 않습니다.
+          </video>
+        </div>
+        <div class="action-bar">
+          <a href="${t.video}" class="direct-link" target="_blank">🎥 전체화면 영상 열기</a>
+          <div style="display:flex; gap:6px;">
+            <a href="${t.mp3}" class="direct-link" target="_blank">🎵 MP3</a>
+            <a href="${t.m4a}" class="direct-link" target="_blank">🎧 M4A</a>
+          </div>
+        </div>
+      `;
+      container.appendChild(card);
+
+      const vid = card.querySelector("video");
+      vid.addEventListener("play", () => {
+        if (currentVideo && currentVideo !== vid) {
+          currentVideo.pause();
+        }
+        currentVideo = vid;
+        document.querySelectorAll(".track-card").forEach(c => c.classList.remove("active"));
+        card.classList.add("active");
+      });
+      vid.addEventListener("ended", () => {
+        card.classList.remove("active");
+      });
+    });
+  </script>
+<div style="max-width:820px;margin:48px auto 24px;padding:12px 16px;border-top:1px solid rgba(128,128,128,.28);font:13px/1.6 -apple-system,'Apple SD Gothic Neo',sans-serif;color:#8a8a8a;">주소를 아는 사람은 열람할 수 있는 페이지입니다 · 2026-11-17 이후 자동 삭제</div>
+</body>
+</html>

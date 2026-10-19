@@ -537,14 +537,6 @@
       "bytes": 24808872
     },
     {
-      "slug": "2026-10-10-channel-status-cccaa5b92d19",
-      "title": "channel-status",
-      "published": "2026-10-18",
-      "expires": "없음",
-      "files": 5,
-      "bytes": 296140
-    },
-    {
       "slug": "2026-10-18-k-couture-화보-k-아이템-디테일-마스터-2794c5d0365c",
       "title": "K-Couture 화보 & K-아이템 디테일 마스터",
       "published": "2026-10-18",
@@ -607,6 +599,14 @@
       "expires": "2026-11-18",
       "files": 3,
       "bytes": 3539438
+    },
+    {
+      "slug": "2026-10-10-channel-status-cccaa5b92d19",
+      "title": "channel-status",
+      "published": "2026-10-19",
+      "expires": "없음",
+      "files": 5,
+      "bytes": 312549
     }
   ]
 }

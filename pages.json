@@ -601,14 +601,6 @@
       "bytes": 3539438
     },
     {
-      "slug": "2026-10-10-channel-status-cccaa5b92d19",
-      "title": "channel-status",
-      "published": "2026-10-19",
-      "expires": "없음",
-      "files": 5,
-      "bytes": 312549
-    },
-    {
       "slug": "2026-10-19-꼬미랑-서연이-산책-편-r2-영상-검토-edfba081f7d5",
       "title": "꼬미랑 서연이 산책 편 R2 영상 검토",
       "published": "2026-10-19",
@@ -815,6 +807,14 @@
       "expires": "없음",
       "files": 3,
       "bytes": 3849716
+    },
+    {
+      "slug": "2026-10-10-channel-status-cccaa5b92d19",
+      "title": "channel-status",
+      "published": "2026-10-20",
+      "expires": "없음",
+      "files": 5,
+      "bytes": 320654
     }
   ]
 }

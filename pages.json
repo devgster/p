@@ -809,14 +809,6 @@
       "bytes": 3849716
     },
     {
-      "slug": "2026-10-10-channel-status-cccaa5b92d19",
-      "title": "channel-status",
-      "published": "2026-10-20",
-      "expires": "없음",
-      "files": 5,
-      "bytes": 320654
-    },
-    {
       "slug": "2026-10-20-꼬미랑-서연이-손-쓰다듬기-r8-검토-f2d59b5a3fff",
       "title": "꼬미랑 서연이 손 쓰다듬기 R8 검토",
       "published": "2026-10-20",
@@ -879,6 +871,14 @@
       "expires": "2026-11-20",
       "files": 34,
       "bytes": 77834638
+    },
+    {
+      "slug": "2026-10-10-channel-status-cccaa5b92d19",
+      "title": "channel-status",
+      "published": "2026-10-21",
+      "expires": "없음",
+      "files": 5,
+      "bytes": 328753
     }
   ]
 }

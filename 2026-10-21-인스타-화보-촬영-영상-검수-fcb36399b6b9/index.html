@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="robots" content="noindex, nofollow, noarchive">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>인스타 화보 촬영 영상 검수 페이지 (Google Flow 1080p)</title>
+<title>인스타 화보 촬영 영상 검수 페이지 (한복 화보 + 트위드 화보)</title>
 <style>
   :root {
     --bg: #0f1115;
@@ -44,29 +44,29 @@
   }
   h1 { font-size: clamp(20px, 4vw, 26px); font-weight: 800; margin-bottom: 8px; }
   .subtitle { color: var(--muted); font-size: 14px; }
-  .tabs {
+  .jump-nav {
     display: flex;
-    gap: 10px;
-    margin-bottom: 24px;
+    gap: 12px;
+    margin-bottom: 28px;
     flex-wrap: wrap;
   }
-  .tab-btn {
+  .jump-btn {
     background: var(--card);
-    color: var(--text);
-    border: 1px solid var(--border);
+    color: #fff;
+    border: 1px solid var(--accent);
     padding: 12px 18px;
     border-radius: 12px;
     font-size: 14px;
     font-weight: 700;
-    cursor: pointer;
+    text-decoration: none;
   }
-  .tab-btn.active {
-    background: var(--accent);
-    color: #0f1115;
-    border-color: var(--accent);
+  .sec-banner {
+    background: rgba(244, 114, 182, 0.1);
+    border-left: 5px solid var(--accent);
+    padding: 16px 20px;
+    border-radius: 10px;
+    margin: 36px 0 20px;
   }
-  .section { display: none; }
-  .section.active { display: block; }
   .master-box {
     background: #141824;
     border: 2px solid var(--accent2);
@@ -77,7 +77,7 @@
   }
   .master-video {
     width: 100%;
-    max-width: 380px;
+    max-width: 360px;
     aspect-ratio: 9/16;
     border-radius: 12px;
     background: #000;
@@ -90,7 +90,7 @@
     padding: 20px;
     margin-bottom: 22px;
     display: grid;
-    grid-template-columns: 220px 260px 260px 1fr;
+    grid-template-columns: 220px 250px 250px 1fr;
     gap: 18px;
     align-items: start;
   }
@@ -148,135 +148,30 @@
     <span class="badge">GOOGLE FLOW (Veo 3.1 - Fast · 1080p) EXTERNAL REVIEW</span>
     <h1>인스타그램 화보 촬영 영상 외부 검수 페이지</h1>
     <p class="subtitle">
-      ① <strong>컨셉 B (4컷 영상 완성 🟢)</strong>: 인스타 속 풀 착장(트위드 자켓 + 블랙 골지 니트 소매/밑단 + 블랙 플리츠 미니스커트 + 블랙 니삭스 + 블랙 메리제인 구두)을 20대 초반 예쁜 모델이 입고 화보 촬영한 영상<br>
-      ② <strong>컨셉 A (5컷)</strong>: 인스타 사진 속 주인공 본인이 고급 한복 5종을 입고 화보 촬영하는 영상
+      탭 전환 없이 한 페이지에서 <strong>① 인스타 속 사람이 한복 입은 화보 (5컷)</strong>와 <strong>② 반대로 인스타 속 옷을 20대 모델이 입은 화보 (4컷)</strong>를 모두 바로 확인하실 수 있습니다.
     </p>
   </header>
 
-  <div class="tabs">
-    <button class="tab-btn active" onclick="showTab('tab-tweed', this)">✨ 컨셉 B: 인스타 풀 착장 × 20대 초반 예쁜 모델 화보 (4컷 영상 완료 🟢)</button>
-    <button class="tab-btn" onclick="showTab('tab-hanbok', this)">🌸 컨셉 A: 사진 속 모델 본인 × 한복 5종 화보 (5컷)</button>
+  <div class="jump-nav">
+    <a class="jump-btn" href="#sec-hanbok">🌸 1. 인스타 속 사람이 한복 입은 화보 바로가기 (5컷 중 2컷 영상 생성 완료 (나머지 3컷 순차 생성 중⏳))</a>
+    <a class="jump-btn" href="#sec-tweed" style="border-color:#60a5fa;">✨ 2. 인스타 속 옷(트위드 풀착장) × 20대 모델 화보 바로가기 (4컷 전체 완료 🟢)</a>
   </div>
 
-  <!-- TAB B: TWEED FULL OUTFIT -->
-  <div id="tab-tweed" class="section active">
+  <!-- SECTION 1: USER MODEL IN HANBOK (AT THE VERY TOP!) -->
+  <div id="sec-hanbok">
+    <div class="sec-banner">
+      <h2>🌸 1. 인스타 사진 속 주인공 본인이 한복 입고 촬영한 화보 영상 (5컷)</h2>
+      <p style="color:var(--muted);font-size:14px;margin-top:4px;">상태: <strong>5컷 중 2컷 영상 생성 완료 (나머지 3컷 순차 생성 중⏳)</strong> (인스타 사진 속 주인공의 얼굴 이목구비, 왼쪽 볼 점, 시스루뱅 반묶음 헤어 100% 유지)</p>
+    </div>
+
     <div class="master-box">
-      <h3>🎬 컨셉 B 마스터 통합 영상 (인스타 풀 착장 × 20대 모델 화보 4컷 연속 재생 · 17초)</h3>
-      <p style="color:var(--muted);font-size:13px;margin-top:4px;">1080 × 1920 · Google Flow (Veo 3.1 - Fast) 생성본</p>
-      <video controls playsinline preload="metadata" poster="tweed_c01.jpg" class="master-video">
-        <source src="tweed_master.mp4" type="video/mp4">
+      <h3>🎬 컨셉 A: 인스타 주인공 한복 화보 연속 재생 영상 (2컷 병합본)</h3>
+      <video controls playsinline preload="metadata" poster="user_hanbok_c01.jpg" class="master-video">
+        <source src="hanbok_master.mp4" type="video/mp4">
       </video>
       <div style="margin-top:12px;">
-        <a class="dl-btn" href="tweed_master.mp4" download>⬇️ 컨셉 B 마스터 통합 영상(MP4) 다운로드</a>
+        <a class="dl-btn" href="hanbok_master.mp4" download>⬇️ 한복 화보 통합 영상(MP4) 다운로드</a>
       </div>
-    </div>
-
-    <!-- Cut B1 -->
-    <div class="cut-card">
-      <div class="media-card">
-        <img src="ref_outfit_1.jpg" alt="인스타 착장 원본 1">
-        <div class="media-caption">인스타 착장 원본 #1</div>
-      </div>
-      <div class="media-card">
-        <img src="tweed_c01.jpg" alt="키프레임 B1">
-        <div class="media-caption">시작 키프레임 (B-01)</div>
-      </div>
-      
-        <div class="media-card">
-          <video controls playsinline preload="metadata" poster="tweed_c01.jpg">
-            <source src="tweed_c01.mp4" type="video/mp4">
-          </video>
-          <div class="media-caption">🎬 Google Flow 1080p 영상 (B-01) <a href="tweed_c01.mp4" download style="color:#60a5fa;margin-left:6px;">[MP4 다운로드]</a></div>
-        </div>
-      <div class="cut-info">
-        <h3>Cut B-01. 벚꽃 데크 난간 3/4 정면 화보</h3>
-        <div class="cut-meta">1080×1920 · Veo 3.1 - Fast · 트위드 자켓 + 블랙 골지 니트 커프스/밑단 + 블랙 플리츠 스커트</div>
-        <p class="desc">원본 첫 번째 사진과 동일한 구도에서 21세 모델이 난간에 두 손을 얹고 봄 햇살 아래 포즈를 취하며 미소 짓는 화보 영상입니다.</p>
-      </div>
-    </div>
-
-    <!-- Cut B2 -->
-    <div class="cut-card">
-      <div class="media-card">
-        <img src="ref_outfit_2.jpg" alt="인스타 착장 원본 2">
-        <div class="media-caption">인스타 착장 원본 #2 (전신)</div>
-      </div>
-      <div class="media-card">
-        <img src="tweed_c02.jpg" alt="키프레임 B2">
-        <div class="media-caption">시작 키프레임 (B-02)</div>
-      </div>
-      
-        <div class="media-card">
-          <video controls playsinline preload="metadata" poster="tweed_c02.jpg">
-            <source src="tweed_c02.mp4" type="video/mp4">
-          </video>
-          <div class="media-caption">🎬 Google Flow 1080p 영상 (B-02) <a href="tweed_c02.mp4" download style="color:#60a5fa;margin-left:6px;">[MP4 다운로드]</a></div>
-        </div>
-      <div class="cut-info">
-        <h3>Cut B-02. 벚꽃 데크 전신 풀샷 (니삭스 & 메리제인 구두)</h3>
-        <div class="cut-meta">1080×1920 · Veo 3.1 - Fast · 머리부터 발끝까지 풀 착장 전신</div>
-        <p class="desc">크롭 트위드 자켓, 블랙 니트 이너, 블랙 플리츠 미니스커트, 무릎 아래 블랙 니삭스, 블랙 메리제인 스트랩 구두까지 풀 착장을 보여주며 돌아보는 전신 화보 영상입니다.</p>
-      </div>
-    </div>
-
-    <!-- Cut B3 -->
-    <div class="cut-card">
-      <div class="media-card">
-        <div class="ref-pair">
-          <img src="ref_outfit_1.jpg" alt="원본1">
-          <img src="ref_outfit_2.jpg" alt="원본2">
-        </div>
-        <div class="media-caption">인스타 풀 착장 레퍼런스</div>
-      </div>
-      <div class="media-card">
-        <img src="tweed_c03.jpg" alt="키프레임 B3">
-        <div class="media-caption">시작 키프레임 (B-03)</div>
-      </div>
-      
-        <div class="media-card">
-          <video controls playsinline preload="metadata" poster="tweed_c03.jpg">
-            <source src="tweed_c03.mp4" type="video/mp4">
-          </video>
-          <div class="media-caption">🎬 Google Flow 1080p 영상 (B-03) <a href="tweed_c03.mp4" download style="color:#60a5fa;margin-left:6px;">[MP4 다운로드]</a></div>
-        </div>
-      <div class="cut-info">
-        <h3>Cut B-03. 서울 호리존 스튜디오 전신 룩북 컷</h3>
-        <div class="cut-meta">1080×1920 · Veo 3.1 - Fast · 스튜디오 호리존 & Profoto 소프트박스</div>
-        <p class="desc">크림색 스튜디오 호리존에서 동일한 풀 착장을 입은 모델이 자연스럽게 포즈를 취하며 촬영하는 상업 패션 화보 영상입니다.</p>
-      </div>
-    </div>
-
-    <!-- Cut B4 -->
-    <div class="cut-card">
-      <div class="media-card">
-        <img src="ref_outfit_3.jpg" alt="인스타 착장 원본 3">
-        <div class="media-caption">인스타 착장 원본 #3 (반묶음 번)</div>
-      </div>
-      <div class="media-card">
-        <img src="tweed_c04.jpg" alt="키프레임 B4">
-        <div class="media-caption">시작 키프레임 (B-04)</div>
-      </div>
-      
-        <div class="media-card">
-          <video controls playsinline preload="metadata" poster="tweed_c04.jpg">
-            <source src="tweed_c04.mp4" type="video/mp4">
-          </video>
-          <div class="media-caption">🎬 Google Flow 1080p 영상 (B-04) <a href="tweed_c04.mp4" download style="color:#60a5fa;margin-left:6px;">[MP4 다운로드]</a></div>
-        </div>
-      <div class="cut-info">
-        <h3>Cut B-04. 벚꽃 데크 난간 뒤돌아보는 피날레 컷</h3>
-        <div class="cut-meta">1080×1920 · Veo 3.1 - Fast · 반묶음 미니 번 헤어 & 풀 착장 후면 3/4 샷</div>
-        <p class="desc">원본 세 번째 사진처럼 반묶음 미니 번 헤어와 풀 착장 뒷태를 보여주며 난간에 기대어 서서 카메라를 향해 고개를 돌려 미소 짓는 피날레 영상입니다.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- TAB A: USER MODEL IN HANBOK -->
-  <div id="tab-hanbok" class="section">
-    
-    <div class="master-box" style="border-color:#f59e0b;">
-      <h3>⏳ 컨셉 A (사진 속 모델의 한복 화보 5컷) — 현재 Google Flow에서 순차 생성 중입니다</h3>
-      <p style="color:#d1d5db;font-size:14px;margin-top:6px;">아래 5컷의 완성된 키프레임으로 Google Flow(Veo 3.1 - Fast) 영상을 생성 중이며, 완료 즉시 이 페이지 URL에 영상이 자동 업데이트됩니다.</p>
     </div>
 
     <!-- Cut A1 -->
@@ -293,14 +188,16 @@
         <div class="media-caption">시작 키프레임 (A-01)</div>
       </div>
       
-        <div class="media-card">
-          <img src="user_hanbok_c01.jpg" alt="Google Flow 1080p 영상 (A-01)">
-          <div class="media-caption">🖼️ Google Flow 1080p 영상 (A-01) (Flow 영상 생성 진행 중⏳)</div>
+        <div class="media-card" style="border-color:#34d399;">
+          <video controls playsinline preload="metadata" poster="user_hanbok_c01.jpg">
+            <source src="user_hanbok_c01.mp4" type="video/mp4">
+          </video>
+          <div class="media-caption" style="color:#34d399;">🟢 🎬 Flow 1080p 영상 (A-01) <a href="user_hanbok_c01.mp4" download style="color:#60a5fa;margin-left:6px;">[MP4 받기]</a></div>
         </div>
       <div class="cut-info">
         <h3>Cut A-01. 봄 벚꽃길 — 연분홍 자수 보(補) 당의 & 비취옥색 치마 화보</h3>
         <div class="cut-meta">사진 속 주인공 얼굴 100% 유지 · 봄 벚꽃 야외 화보</div>
-        <p class="desc">사진 속 주인공이 연분홍 실크 저고리(자주색 고름·끝동, 가슴 원형 자수 보)와 옥색 주름 치마를 입고 벚꽃 아래에서 미소 짓는 화보입니다.</p>
+        <p class="desc">사진 속 주인공이 연분홍 실크 저고리(자주색 고름·끝동, 가슴 원형 자수 보)와 옥색 주름 치마를 입고 벚꽃 아래에서 미소 짓는 화보 영상입니다.</p>
       </div>
     </div>
 
@@ -318,14 +215,16 @@
         <div class="media-caption">시작 키프레임 (A-02)</div>
       </div>
       
-        <div class="media-card">
-          <img src="user_hanbok_c02.jpg" alt="Google Flow 1080p 영상 (A-02)">
-          <div class="media-caption">🖼️ Google Flow 1080p 영상 (A-02) (Flow 영상 생성 진행 중⏳)</div>
+        <div class="media-card" style="border-color:#34d399;">
+          <video controls playsinline preload="metadata" poster="user_hanbok_c02.jpg">
+            <source src="user_hanbok_c02.mp4" type="video/mp4">
+          </video>
+          <div class="media-caption" style="color:#34d399;">🟢 🎬 Flow 1080p 영상 (A-02) <a href="user_hanbok_c02.mp4" download style="color:#60a5fa;margin-left:6px;">[MP4 받기]</a></div>
         </div>
       <div class="cut-info">
         <h3>Cut A-02. 자연광 호리존 스튜디오 — 아이보리 금박 자수 당의 & 쌍노리개</h3>
         <div class="cut-meta">사진 속 주인공 얼굴 100% 유지 · 스튜디오 호리존 화보</div>
-        <p class="desc">크림색 호리존 배경지 앞에서 아이보리 당의와 연분홍·민트 쌍노리개를 착용한 주인공이 단아하게 포즈를 취하는 스튜디오 화보입니다.</p>
+        <p class="desc">크림색 호리존 배경지 앞에서 아이보리 당의와 연분홍·민트 쌍노리개를 착용한 주인공이 단아하게 포즈를 취하는 스튜디오 화보 영상입니다.</p>
       </div>
     </div>
 
@@ -344,8 +243,8 @@
       </div>
       
         <div class="media-card">
-          <img src="user_hanbok_c03.jpg" alt="Google Flow 1080p 영상 (A-03)">
-          <div class="media-caption">🖼️ Google Flow 1080p 영상 (A-03) (Flow 영상 생성 진행 중⏳)</div>
+          <img src="user_hanbok_c03.jpg" alt="Flow 1080p 영상 (A-03)">
+          <div class="media-caption">⏳ Flow 1080p 영상 (A-03) (4분 간격 순차 생성 중)</div>
         </div>
       <div class="cut-info">
         <h3>Cut A-03. 벚꽃 핀 고택 한옥 마당 — 비취 연두 저고리 & 연보라 주름치마</h3>
@@ -369,8 +268,8 @@
       </div>
       
         <div class="media-card">
-          <img src="user_hanbok_c04.jpg" alt="Google Flow 1080p 영상 (A-04)">
-          <div class="media-caption">🖼️ Google Flow 1080p 영상 (A-04) (Flow 영상 생성 진행 중⏳)</div>
+          <img src="user_hanbok_c04.jpg" alt="Flow 1080p 영상 (A-04)">
+          <div class="media-caption">⏳ Flow 1080p 영상 (A-04) (4분 간격 순차 생성 중)</div>
         </div>
       <div class="cut-info">
         <h3>Cut A-04. 채광 한옥 스튜디오 — 모카로즈 명주 저고리 & 전통 보자기함</h3>
@@ -394,8 +293,8 @@
       </div>
       
         <div class="media-card">
-          <img src="user_hanbok_c05.jpg" alt="Google Flow 1080p 영상 (A-05)">
-          <div class="media-caption">🖼️ Google Flow 1080p 영상 (A-05) (Flow 영상 생성 진행 중⏳)</div>
+          <img src="user_hanbok_c05.jpg" alt="Flow 1080p 영상 (A-05)">
+          <div class="media-caption">⏳ Flow 1080p 영상 (A-05) (4분 간격 순차 생성 중)</div>
         </div>
       <div class="cut-info">
         <h3>Cut A-05. 봄날 벚꽃 정원 — 연분홍 시스루 오간자 저고리 & 버터크림 치마</h3>
@@ -404,15 +303,126 @@
       </div>
     </div>
   </div>
+
+  <!-- SECTION 2: TWEED FULL OUTFIT -->
+  <div id="sec-tweed">
+    <div class="sec-banner" style="border-left-color:#60a5fa;background:rgba(96,165,250,0.1);">
+      <h2>✨ 2. 반대로 인스타 속 풀 착장을 20대 초반 예쁜 모델이 입고 촬영한 화보 영상 (4컷 전체 완료 🟢)</h2>
+      <p style="color:var(--muted);font-size:14px;margin-top:4px;">트위드 자켓 + 블랙 골지 니트 소매/밑단 + 블랙 플리츠 미니스커트 + 블랙 니삭스 + 블랙 메리제인 구두 100% 반영</p>
+    </div>
+
+    <div class="master-box">
+      <h3>🎬 컨셉 B 마스터 통합 영상 (인스타 풀 착장 × 20대 모델 화보 4컷 연속 재생 · 17초)</h3>
+      <video controls playsinline preload="metadata" poster="tweed_c01.jpg" class="master-video">
+        <source src="tweed_master.mp4" type="video/mp4">
+      </video>
+      <div style="margin-top:12px;">
+        <a class="dl-btn" href="tweed_master.mp4" download>⬇️ 컨셉 B 마스터 통합 영상(MP4) 다운로드</a>
+      </div>
+    </div>
+
+    <!-- Cut B1 -->
+    <div class="cut-card">
+      <div class="media-card">
+        <img src="ref_outfit_1.jpg" alt="인스타 착장 원본 1">
+        <div class="media-caption">인스타 착장 원본 #1</div>
+      </div>
+      <div class="media-card">
+        <img src="tweed_c01.jpg" alt="키프레임 B1">
+        <div class="media-caption">시작 키프레임 (B-01)</div>
+      </div>
+      
+        <div class="media-card" style="border-color:#34d399;">
+          <video controls playsinline preload="metadata" poster="tweed_c01.jpg">
+            <source src="tweed_c01.mp4" type="video/mp4">
+          </video>
+          <div class="media-caption" style="color:#34d399;">🟢 🎬 Flow 1080p 영상 (B-01) <a href="tweed_c01.mp4" download style="color:#60a5fa;margin-left:6px;">[MP4 받기]</a></div>
+        </div>
+      <div class="cut-info">
+        <h3>Cut B-01. 벚꽃 데크 난간 3/4 정면 화보</h3>
+        <div class="cut-meta">1080×1920 · Veo 3.1 - Fast · 트위드 자켓 + 블랙 골지 니트 커프스/밑단 + 블랙 플리츠 스커트</div>
+        <p class="desc">원본 첫 번째 사진과 동일한 구도에서 21세 모델이 난간에 두 손을 얹고 봄 햇살 아래 포즈를 취하며 미소 짓는 화보 영상입니다.</p>
+      </div>
+    </div>
+
+    <!-- Cut B2 -->
+    <div class="cut-card">
+      <div class="media-card">
+        <img src="ref_outfit_2.jpg" alt="인스타 착장 원본 2">
+        <div class="media-caption">인스타 착장 원본 #2 (전신)</div>
+      </div>
+      <div class="media-card">
+        <img src="tweed_c02.jpg" alt="키프레임 B2">
+        <div class="media-caption">시작 키프레임 (B-02)</div>
+      </div>
+      
+        <div class="media-card" style="border-color:#34d399;">
+          <video controls playsinline preload="metadata" poster="tweed_c02.jpg">
+            <source src="tweed_c02.mp4" type="video/mp4">
+          </video>
+          <div class="media-caption" style="color:#34d399;">🟢 🎬 Flow 1080p 영상 (B-02) <a href="tweed_c02.mp4" download style="color:#60a5fa;margin-left:6px;">[MP4 받기]</a></div>
+        </div>
+      <div class="cut-info">
+        <h3>Cut B-02. 벚꽃 데크 전신 풀샷 (니삭스 & 메리제인 구두)</h3>
+        <div class="cut-meta">1080×1920 · Veo 3.1 - Fast · 머리부터 발끝까지 풀 착장 전신</div>
+        <p class="desc">크롭 트위드 자켓, 블랙 니트 이너, 블랙 플리츠 미니스커트, 무릎 아래 블랙 니삭스, 블랙 메리제인 스트랩 구두까지 풀 착장을 보여주며 돌아보는 전신 화보 영상입니다.</p>
+      </div>
+    </div>
+
+    <!-- Cut B3 -->
+    <div class="cut-card">
+      <div class="media-card">
+        <div class="ref-pair">
+          <img src="ref_outfit_1.jpg" alt="원본1">
+          <img src="ref_outfit_2.jpg" alt="원본2">
+        </div>
+        <div class="media-caption">인스타 풀 착장 레퍼런스</div>
+      </div>
+      <div class="media-card">
+        <img src="tweed_c03.jpg" alt="키프레임 B3">
+        <div class="media-caption">시작 키프레임 (B-03)</div>
+      </div>
+      
+        <div class="media-card" style="border-color:#34d399;">
+          <video controls playsinline preload="metadata" poster="tweed_c03.jpg">
+            <source src="tweed_c03.mp4" type="video/mp4">
+          </video>
+          <div class="media-caption" style="color:#34d399;">🟢 🎬 Flow 1080p 영상 (B-03) <a href="tweed_c03.mp4" download style="color:#60a5fa;margin-left:6px;">[MP4 받기]</a></div>
+        </div>
+      <div class="cut-info">
+        <h3>Cut B-03. 서울 호리존 스튜디오 전신 룩북 컷</h3>
+        <div class="cut-meta">1080×1920 · Veo 3.1 - Fast · 스튜디오 호리존 & Profoto 소프트박스</div>
+        <p class="desc">크림색 스튜디오 호리존에서 동일한 풀 착장을 입은 모델이 자연스럽게 포즈를 취하며 촬영하는 상업 패션 화보 영상입니다.</p>
+      </div>
+    </div>
+
+    <!-- Cut B4 -->
+    <div class="cut-card">
+      <div class="media-card">
+        <img src="ref_outfit_3.jpg" alt="인스타 착장 원본 3">
+        <div class="media-caption">인스타 착장 원본 #3 (반묶음 번)</div>
+      </div>
+      <div class="media-card">
+        <img src="tweed_c04.jpg" alt="키프레임 B4">
+        <div class="media-caption">시작 키프레임 (B-04)</div>
+      </div>
+      
+        <div class="media-card" style="border-color:#34d399;">
+          <video controls playsinline preload="metadata" poster="tweed_c04.jpg">
+            <source src="tweed_c04.mp4" type="video/mp4">
+          </video>
+          <div class="media-caption" style="color:#34d399;">🟢 🎬 Flow 1080p 영상 (B-04) <a href="tweed_c04.mp4" download style="color:#60a5fa;margin-left:6px;">[MP4 받기]</a></div>
+        </div>
+      <div class="cut-info">
+        <h3>Cut B-04. 벚꽃 데크 난간 뒤돌아보는 피날레 컷</h3>
+        <div class="cut-meta">1080×1920 · Veo 3.1 - Fast · 반묶음 미니 번 헤어 & 풀 착장 후면 3/4 샷</div>
+        <p class="desc">원본 세 번째 사진처럼 반묶음 미니 번 헤어와 풀 착장 뒷태를 보여주며 난간에 기대어 서서 카메라를 향해 고개를 돌려 미소 짓는 피날레 영상입니다.</p>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script>
-function showTab(tabId, btn) {
-  document.querySelectorAll('.section').forEach(el => el.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
-  document.getElementById(tabId).classList.add('active');
-  btn.classList.add('active');
-}
 const videos = Array.from(document.querySelectorAll('video'));
 videos.forEach(v => {
   v.addEventListener('play', () => videos.forEach(o => { if (o !== v) o.pause(); }));

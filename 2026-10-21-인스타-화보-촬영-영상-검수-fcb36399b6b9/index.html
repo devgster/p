@@ -170,7 +170,7 @@
 
     
     <div class="master-box" style="border-color:#a855f7;">
-      <h3>🎬 지그재그 오브넬 니트 × 20대 아이돌 모델 화보 마스터 통합 영상 (5컷 연속 재생)</h3>
+      <h3>🎬 지그재그 오브넬 니트 × 20대 아이돌 모델 화보 마스터 통합 영상 (5컷 연속 재생 · 🎵 BGM 포함)</h3>
       <video controls playsinline preload="metadata" poster="zigzag_c01.jpg" class="master-video">
         <source src="zigzag_master.mp4" type="video/mp4">
       </video>
@@ -308,7 +308,7 @@
     </div>
 
     <div class="master-box">
-      <h3>🎬 인스타 주인공 한복 화보 마스터 통합 영상 (5컷 연속 재생 · 21초)</h3>
+      <h3>🎬 인스타 주인공 한복 화보 마스터 통합 영상 (5컷 연속 재생 · 21초 · 🎵 BGM 포함)</h3>
       <video controls playsinline preload="metadata" poster="user_hanbok_c01.jpg" class="master-video">
         <source src="hanbok_master.mp4" type="video/mp4">
       </video>
@@ -449,7 +449,13 @@
 <script>
 const videos = Array.from(document.querySelectorAll('video'));
 videos.forEach(v => {
-  v.addEventListener('play', () => videos.forEach(o => { if (o !== v) o.pause(); }));
+  v.muted = false;
+  v.volume = 1.0;
+  v.addEventListener('play', () => {
+    v.muted = false;
+    v.volume = 1.0;
+    videos.forEach(o => { if (o !== v) o.pause(); });
+  });
 });
 </script>
 <div style="max-width:820px;margin:48px auto 24px;padding:12px 16px;border-top:1px solid rgba(128,128,128,.28);font:13px/1.6 -apple-system,'Apple SD Gothic Neo',sans-serif;color:#8a8a8a;">주소를 아는 사람은 열람할 수 있는 페이지입니다 · 2026-11-21 이후 자동 삭제</div>

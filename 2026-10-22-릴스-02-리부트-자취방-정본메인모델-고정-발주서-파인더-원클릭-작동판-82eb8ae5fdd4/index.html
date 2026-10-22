@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Style A (율 3QA3xSLwuXM 포맷) — 자취방 정본 + 메인모델 고정 룩북 발주서</title>
+<style>
+  :root {
+    --bg: #0f1115;
+    --card: #181b22;
+    --border: #2a2f3a;
+    --accent: #f472b6;
+    --accent2: #60a5fa;
+    --green: #34d399;
+    --amber: #fbbf24;
+    --text: #f3f4f6;
+    --muted: #9ca3af;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 32px 20px 80px;
+  }
+  .container { max-width: 1280px; margin: 0 auto; }
+  header {
+    background: linear-gradient(135deg, #1e1b2e 0%, #151922 100%);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 28px;
+  }
+  .badge {
+    display: inline-block;
+    background: rgba(244, 114, 182, 0.15);
+    color: var(--accent);
+    border: 1px solid rgba(244, 114, 182, 0.35);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 999px;
+    margin-bottom: 10px;
+  }
+  h1 { font-size: 26px; font-weight: 800; margin-bottom: 8px; }
+  .subtitle { color: var(--muted); font-size: 14px; }
+  .flow-banner {
+    margin-top: 18px;
+    padding: 16px 20px;
+    background: rgba(96, 165, 250, 0.12);
+    border: 1px solid rgba(96, 165, 250, 0.35);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .finder-banner {
+    margin-top: 12px;
+    padding: 16px 20px;
+    background: rgba(52, 211, 153, 0.12);
+    border: 1px solid rgba(52, 211, 153, 0.4);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .flow-link, .finder-btn {
+    background: #2563eb;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .finder-btn { background: #059669; }
+  .finder-btn.secondary { background: #374151; }
+  .ending-box {
+    background: var(--card);
+    border: 2px solid var(--green);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 32px;
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+  @media (max-width: 960px) {
+    .ending-box { grid-template-columns: 1fr; }
+  }
+  .slide-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 12px;
+  }
+  .cut-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 24px;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+  @media (max-width: 960px) {
+    .cut-card { grid-template-columns: 1fr; }
+  }
+  .img-box {
+    background: #0b0d11;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 10px;
+    text-align: center;
+  }
+  .img-box img, .img-box video {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+    margin-bottom: 8px;
+  }
+  .img-label {
+    font-size: 13px;
+    color: var(--amber);
+    font-weight: 800;
+  }
+  .cut-info h3 {
+    font-size: 19px;
+    margin-bottom: 6px;
+    color: #fff;
+  }
+  .cut-meta {
+    font-size: 13px;
+    color: var(--accent2);
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+  .desc {
+    font-size: 14px;
+    color: #d1d5db;
+    margin-bottom: 14px;
+  }
+  .prompt-box {
+    background: #0b0d11;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px;
+    font-family: "SFMono-Regular", Consolas, monospace;
+    font-size: 13px;
+    color: #e5e7eb;
+    margin-bottom: 12px;
+    white-space: pre-wrap;
+  }
+  .btn-row { display: flex; gap: 10px; flex-wrap: wrap; }
+  .copy-btn, .dl-btn {
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .dl-btn { background: #059669; }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <span class="badge">STYLE A 완벽 고정판 — 자취방 정본 고정 + 메인 모델(169cm 정본) 고정 + 파일명 1.png~5.png</span>
+    <h1>릴스 02 리부트 발주서 — 오브넬 마틴 브이넥 스냅 가디건 (홈 피팅룸 버전)</h1>
+    <p class="subtitle">
+      • <strong>방 정본 + 메인 모델 100% 고정</strong>: 침대·이불·러그·창문·오른쪽 책상/스툴이 5컷 내내 1mm도 안 움직이며, 우리 <strong>메인 모델(큰 세미아웃 눈매 + 흑발 웨이브 반묶음 헤어)</strong>로 고정 완료<br>
+      • <strong>검색 최적화 파일명 (`1.png` ~ `5.png`)</strong>: 파일 추가 창에서 숫자 <strong><code>1</code>, <code>2</code>, <code>3</code>, <code>4</code>, <code>5</code></strong>만 치면 바로 나옵니다!
+    </p>
+
+    <div class="finder-banner">
+      <div>
+        <strong>📂 키프레임 폴더 (`1.png` ~ `5.png` 전용):</strong>
+        <code id="kf-path" style="background:#0b0d11;padding:4px 8px;border-radius:6px;margin-left:6px;color:#34d399;">/Users/devgster/Documents/antigravity/brave-tesla/flow_production/keyframes</code>
+      </div>
+      <div class="btn-row">
+        <button class="finder-btn" onclick="openFinder(this)">📂 로컬 파인더 열기 (원클릭 실행)</button>
+        <button class="finder-btn secondary" onclick="copyText('kf-path', this)">📋 폴더 경로 복사 (Cmd+Shift+G용)</button>
+      </div>
+    </div>
+
+    <div class="flow-banner">
+      <div>
+        <strong>🔗 Google Flow 설정:</strong>
+        <span style="color:var(--muted); font-size:13px; margin-left:6px;">Veo 3.1 - Fast · 프레임(시작) · 9:16 세로 · 8초 · 1080p 다운로드</span>
+      </div>
+      <a class="flow-link" href="https://flow.google.com/project/8dae01de-d731-4aad-86d1-1547e832d58b" target="_blank">🚀 Google Flow 프로젝트 열기</a>
+    </div>
+  </header>
+
+  <!-- 5컷 한눈에 보기 비교 보드 -->
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px;margin-bottom:28px;">
+    <div style="font-size:14px;font-weight:700;margin-bottom:10px;color:#34d399;">✅ 자취방 정본 + 메인 모델(169cm 정본) 5컷 일관성 고정 확인 (`1.png` ~ `5.png`)</div>
+    <img src="styleA_locked_5cuts_board.jpg" style="width:100%;border-radius:10px;display:block;">
+  </div>
+
+  <!-- 완성된 엔딩 3장 이미지 슬라이드 섹션 -->
+  <div class="ending-box">
+    <div class="img-box">
+      <video src="styleA_ending_3slides_6s.mp4" controls autoplay muted playsinline loop></video>
+      <div class="img-label">✅ 완성된 엔딩 6초 (정지 이미지 3장 × 2초 + 심플 전환)</div>
+    </div>
+    <div>
+      <span class="badge" style="background:rgba(52,211,153,0.15);color:#34d399;border-color:#34d399;">✅ 제작 완료 (Flow 생성 불필요)</span>
+      <h2 style="font-size:21px;margin-bottom:8px;">마지막 엔딩 구간 — 키별 착샷 정지 이미지 3장 슬라이드 (158cm → 163cm → 169cm, 각 2초)</h2>
+      <p class="desc">말씀하신 대로 마지막 키별 비교는 <strong>정지 착샷 이미지 3장을 각 2.0초씩(총 6초) 보여주고, 잔상 없이 깔끔하고 심플하게 넘어가는 0.15초 슬라이드 전환(slideleft)</strong>으로 완성해 두었습니다.</p>
+      <div class="slide-row">
+        <div class="img-box"><img src="slide_158cm.jpg"><div class="img-label">158cm (2.0초 표시)</div></div>
+        <div class="img-box"><img src="slide_163cm.jpg"><div class="img-label">163cm (2.0초 표시)</div></div>
+        <div class="img-box"><img src="slide_169cm.jpg"><div class="img-label">169cm (2.0초 표시)</div></div>
+      </div>
+    </div>
+  </div>
+
+  <h2 style="margin-bottom:16px;">🔥 앞부분 홈 룩북 5컷 Google Flow 발주서 (참조 이미지 검색어: <code>1</code>, <code>2</code>, <code>3</code>, <code>4</code>, <code>5</code>)</h2>
+
+  <!-- Cut 1 -->
+  <div class="cut-card">
+    <div class="img-box">
+      <img src="1.png" alt="1.png">
+      <div class="img-label">🔍 검색 파일명: 1.png</div>
+    </div>
+    <div class="cut-info">
+      <h3>Cut 01 (`1.png`). [그레이 가디건 + 데님 전신 거울셀카] 밑단 핏 잡아보며 좌우로 살짝 핏 체크</h3>
+      <div class="cut-meta">합성될 자막: "보풀 쉽게 올라오는 재질 아니고 / 엄청 탄탄하고 부드러운 재질이에요!"</div>
+      <div class="prompt-box" id="p-sa-1">Vertical 9:16 home try-on haul mirror-selfie video shot on a static iPhone 15 Pro in a Korean studio bedroom. The slim 22-year-old Korean woman stands in white crew socks on the grey striped rug in front of her unmade white bed, holding her iPhone in front of her lower face looking at the screen. With her right hand she lightly tugs and smooths the bottom hem of the melange-grey V-neck snap cardigan over her white tee and wide blue jeans while shifting her weight naturally from foot to foot to check the fit in the mirror. Real-time 24fps natural movement, no camera zoom, no slow motion.</div>
+      <div class="btn-row">
+        <a class="dl-btn" href="1.png" download="1.png">⬇️ 1.png 다운로드</a>
+        <button class="copy-btn" onclick="copyText('p-sa-1', this)">📋 Cut 1 프롬프트 복사</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cut 2 -->
+  <div class="cut-card">
+    <div class="img-box">
+      <img src="2.png" alt="2.png">
+      <div class="img-label">🔍 검색 파일명: 2.png</div>
+    </div>
+    <div class="cut-info">
+      <h3>Cut 02 (`2.png`). [그레이 가디건 반신 줌인] 소매 시보리 & 탄탄한 니트 원단 만져보기</h3>
+      <div class="cut-meta">합성될 자막: "화이트 이너티랑 소매 배색처럼 입어도 / 부해 보이는 느낌 없이 핏이 딱 예뻐요!"</div>
+      <div class="prompt-box" id="p-sa-2">Vertical 9:16 home try-on mirror-selfie video in the same Korean bedroom. Framed from head to mid-thigh, the 22-year-old Korean woman holds her iPhone covering her lower face with one hand while her other hand gently pinches, stretches, and pats the ribbed sleeve cuff and fine knit fabric of the melange-grey snap cardigan to show how soft and sturdy the material is, turning her shoulders slightly in the mirror. Real-time 24fps natural movement, no zoom, no slow motion.</div>
+      <div class="btn-row">
+        <a class="dl-btn" href="2.png" download="2.png">⬇️ 2.png 다운로드</a>
+        <button class="copy-btn" onclick="copyText('p-sa-2', this)">📋 Cut 2 프롬프트 복사</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cut 3 -->
+  <div class="cut-card">
+    <div class="img-box">
+      <img src="3.png" alt="3.png">
+      <div class="img-label">🔍 검색 파일명: 3.png (🐶 강아지 등장)</div>
+    </div>
+    <div class="cut-info">
+      <h3>Cut 03 (`3.png`). [그레이 가디건 + 미니스커트 전신 + 🐶 뒤쪽 침대 옆 강아지 걸어다님]</h3>
+      <div class="cut-meta">합성될 자막: "미니스커트에 매치하면 여리여리한 무드고 / 품이 적당해서 활동하기도 엄청 편해요"</div>
+      <div class="prompt-box" id="p-sa-3">Vertical 9:16 home try-on mirror-selfie video in the same Korean bedroom. The 22-year-old Korean woman stands in white crew socks on the bedroom rug wearing the melange-grey V-neck snap cardigan and charcoal mini skirt, holding her iPhone in front of her lower face while pivoting her torso slightly side-to-side to check the skirt and cardigan silhouette in the mirror. Behind her on the left near the white bed, the small fluffy white Maltese dog trots casually across the rug and wags its tail naturally. Real-time 24fps natural home video, no camera zoom, no slow motion.</div>
+      <div class="btn-row">
+        <a class="dl-btn" href="3.png" download="3.png">⬇️ 3.png 다운로드</a>
+        <button class="copy-btn" onclick="copyText('p-sa-3', this)">📋 Cut 3 프롬프트 복사</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cut 4 -->
+  <div class="cut-card">
+    <div class="img-box">
+      <img src="4.png" alt="4.png">
+      <div class="img-label">🔍 검색 파일명: 4.png (🐶 강아지 등장)</div>
+    </div>
+    <div class="cut-info">
+      <h3>Cut 04 (`4.png`). [딥네이비 가디건 + 크림 와이드 팬츠 전신 + 🐶 강아지 러그 위 맴돌기]</h3>
+      <div class="cut-meta">합성될 자막: "네이비 컬러는 크림 와이드 팬츠랑 입어봤는데 / 차르르 떨어져서 출근룩·하객룩으로 딱이에요!"</div>
+      <div class="prompt-box" id="p-sa-4">Vertical 9:16 home try-on mirror-selfie video in the same Korean bedroom. The 22-year-old Korean woman stands in white crew socks on the rug wearing the deep-navy V-neck snap cardigan, black stone pendant necklace, and cream-ivory wide trousers. Holding her iPhone in front of her lower face, she slips her right hand casually into the trouser pocket and shifts her stance to show how the wide pants drape, while the small fluffy white Maltese dog sniffs and walks around the edge of the rug behind her near the bed. Real-time 24fps natural movement, no zoom, no slow motion.</div>
+      <div class="btn-row">
+        <a class="dl-btn" href="4.png" download="4.png">⬇️ 4.png 다운로드</a>
+        <button class="copy-btn" onclick="copyText('p-sa-4', this)">📋 Cut 4 프롬프트 복사</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cut 5 -->
+  <div class="cut-card">
+    <div class="img-box">
+      <img src="5.png" alt="5.png">
+      <div class="img-label">🔍 검색 파일명: 5.png</div>
+    </div>
+    <div class="cut-info">
+      <h3>Cut 05 (`5.png`). [딥네이비 가디건 반신 줌인] 은장 스냅 단추 & 펜던트 핏 보여주기</h3>
+      <div class="cut-meta">합성될 자막: "은장 스냅 단추랑 펜던트가 포인트 돼서 / 단독으로 입어도 밋밋하지 않고 예뻐요"</div>
+      <div class="prompt-box" id="p-sa-5">Vertical 9:16 home try-on mirror-selfie video in the same Korean bedroom. Framed from head to mid-thigh, the 22-year-old Korean woman wears the deep-navy V-neck snap cardigan with the black stone cord pendant and cream wide trousers. Holding her iPhone covering her lower face, she lightly touches the silver snap buttons at her waist with her left hand and turns slightly to show the slim waist and shoulder line in the mirror. Real-time 24fps natural movement, no zoom, no slow motion.</div>
+      <div class="btn-row">
+        <a class="dl-btn" href="5.png" download="5.png">⬇️ 5.png 다운로드</a>
+        <button class="copy-btn" onclick="copyText('p-sa-5', this)">📋 Cut 5 프롬프트 복사</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openFinder(btn) {
+  const orig = btn.innerText;
+  btn.innerText = '📂 파인더 여는 중...';
+  fetch('http://127.0.0.1:18765/open?dir=keyframes')
+    .then(r => r.json())
+    .then(() => {
+      btn.innerText = '✅ 파인더 열림 완료!';
+      btn.style.background = '#059669';
+      setTimeout(() => { btn.innerText = orig; }, 1800);
+    })
+    .catch(() => {
+      const pathText = document.getElementById('kf-path').innerText;
+      navigator.clipboard.writeText(pathText);
+      btn.innerText = '📋 경로 복사됨 (Cmd+Shift+G)';
+      setTimeout(() => { btn.innerText = orig; }, 2200);
+    });
+}
+function copyText(id, btn) {
+  const text = document.getElementById(id).innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    const orig = btn.innerText;
+    btn.innerText = '✅ 복사 완료!';
+    btn.style.background = '#059669';
+    setTimeout(() => {
+      btn.innerText = orig;
+      btn.style.background = '#2563eb';
+    }, 1800);
+  });
+}
+</script>
+<div style="max-width:820px;margin:48px auto 24px;padding:12px 16px;border-top:1px solid rgba(128,128,128,.28);font:13px/1.6 -apple-system,'Apple SD Gothic Neo',sans-serif;color:#8a8a8a;">주소를 아는 사람은 열람할 수 있는 페이지입니다 · 2026-11-21 이후 자동 삭제</div>
+</body>
+</html>

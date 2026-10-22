@@ -857,14 +857,6 @@
       "bytes": 3425827
     },
     {
-      "slug": "2026-10-10-channel-status-cccaa5b92d19",
-      "title": "channel-status",
-      "published": "2026-10-21",
-      "expires": "없음",
-      "files": 5,
-      "bytes": 328753
-    },
-    {
       "slug": "2026-10-21-역사를-짓다-어린이대공원-단성사-영상-검토-069602a73cdd",
       "title": "역사를 짓다 · 어린이대공원·단성사 최종 편집 검토",
       "published": "2026-10-22",
@@ -1015,6 +1007,14 @@
       "expires": "2026-11-21",
       "files": 7,
       "bytes": 922191
+    },
+    {
+      "slug": "2026-10-10-channel-status-cccaa5b92d19",
+      "title": "channel-status",
+      "published": "2026-10-22",
+      "expires": "없음",
+      "files": 5,
+      "bytes": 336694
     }
   ]
 }

@@ -18,11 +18,18 @@ const HistoryModel = (() => {
   }
   return [...rows].sort((a,b)=>a[0].localeCompare(b[0]));
  }
- return {id,day,finite,daily};
+ function rowTime(row){
+  const stamps=[...row.values()].map(r=>new Date(r.observed_at).getTime()).filter(Number.isFinite).sort((a,b)=>a-b);
+  if(!stamps.length)return '미확인';
+  const clock=t=>new Date(t+9*3600000).toISOString().slice(11,19);
+  const first=clock(stamps[0]),last=clock(stamps[stamps.length-1]);
+  return first===last?first:`${first}–${last}`;
+ }
+ return {id,day,finite,daily,rowTime};
 })();
 if(typeof module!=='undefined')module.exports=HistoryModel;
 if(typeof document!=='undefined'){
- const $=id=>document.getElementById(id), {id,day,finite,daily}=HistoryModel;
+ const $=id=>document.getElementById(id), {id,day,finite,daily,rowTime}=HistoryModel;
  const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  const fmt=v=>finite(v)?v.toLocaleString('ko-KR'):'—';
  const time=t=>new Date(t).toLocaleString('ko-KR',{timeZone:'Asia/Seoul',hour12:false});
@@ -45,8 +52,8 @@ if(typeof document!=='undefined'){
   $(target).innerHTML=svg+'</svg>';
  }
  function table(){
-  const ds=days();$('table-note').textContent=`${ds.length}일 · 전체 ${records.length}개 계정 · 각 셀의 시각은 해당 날짜 실제 수집 시각(KST) · 좌우로 스크롤하세요.`;
-  $('history-table').innerHTML=`<caption>날짜별 구독자·팔로워 / 조회수 / 쇼츠 참여 조회수</caption><thead><tr><th rowspan="2" scope="col">날짜 (KST)</th>${records.map((r,i)=>`<th colspan="3" scope="colgroup"><span class="swatch" style="background:${colors[i%colors.length]}"></span> ${esc(name(r))}</th>`).join('')}</tr><tr>${records.map(r=>`<th scope="col">${r.platform==='youtube'?'구독자':'팔로워'}</th><th scope="col">조회수</th><th scope="col">${r.platform==='youtube'?'쇼츠 참여 · 90일':'쇼츠 참여 · 해당 없음'}</th>`).join('')}</tr></thead><tbody>${[...ds].reverse().map(([d,m])=>`<tr><th scope="row">${d}</th>${records.map(r=>{const p=m.get(id(r));return ['audience','views','engaged'].map(k=>`<td>${fmt(p?.[key(r,k)])}${p&&k==='audience'?`<small>${new Date(p.observed_at).toLocaleTimeString('ko-KR',{timeZone:'Asia/Seoul',hour12:false})}</small>`:''}</td>`).join('');}).join('')}</tr>`).join('')}</tbody>`;
+  const ds=days();$('table-note').textContent=`${ds.length}일 · 전체 ${records.length}개 계정 · 날짜 아래 조회시간(KST) · 시각이 다르면 범위 표시 · 좌우로 스크롤하세요.`;
+  $('history-table').innerHTML=`<caption>날짜별 구독자·팔로워 / 조회수 / 쇼츠 참여 조회수</caption><thead><tr><th rowspan="2" scope="col">날짜 / 조회시간 (KST)</th>${records.map((r,i)=>`<th colspan="3" scope="colgroup"><span class="swatch" style="background:${colors[i%colors.length]}"></span> ${esc(name(r))}</th>`).join('')}</tr><tr>${records.map(r=>`<th scope="col">${r.platform==='youtube'?'구독자':'팔로워'}</th><th scope="col">조회수</th><th scope="col">${r.platform==='youtube'?'쇼츠 참여 · 90일':'쇼츠 참여 · 해당 없음'}</th>`).join('')}</tr></thead><tbody>${[...ds].reverse().map(([d,m])=>`<tr><th scope="row">${d}<small>${esc(rowTime(m))}</small></th>${records.map(r=>{const p=m.get(id(r));return ['audience','views','engaged'].map(k=>`<td>${fmt(p?.[key(r,k)])}</td>`).join('');}).join('')}</tr>`).join('')}</tbody>`;
  }
  function render(){chart('audience','audience-chart');chart('views','views-chart');chart('engaged','engaged-chart');table();}
  function legend(){ $('legend').innerHTML=records.map((r,i)=>`<button data-id="${esc(id(r))}" aria-pressed="${selected.has(id(r))}"><span class="swatch" style="background:${colors[i%colors.length]}"></span>${esc(name(r))}</button>`).join('');}

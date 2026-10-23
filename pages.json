@@ -1041,14 +1041,6 @@
       "bytes": 13309388
     },
     {
-      "slug": "2026-10-10-channel-status-cccaa5b92d19",
-      "title": "channel-status",
-      "published": "2026-10-23",
-      "expires": "없음",
-      "files": 10,
-      "bytes": 377862
-    },
-    {
       "slug": "2026-10-23-키오스크-편-세트-81ef2724cf6a",
       "title": "키오스크 편 세트",
       "published": "2026-10-23",
@@ -1071,6 +1063,14 @@
       "expires": "2026-11-22",
       "files": 3,
       "bytes": 96536740
+    },
+    {
+      "slug": "2026-10-10-channel-status-cccaa5b92d19",
+      "title": "channel-status",
+      "published": "2026-10-23",
+      "expires": "없음",
+      "files": 10,
+      "bytes": 385898
     }
   ]
 }

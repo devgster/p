@@ -1009,14 +1009,6 @@
       "bytes": 922191
     },
     {
-      "slug": "2026-10-10-channel-status-cccaa5b92d19",
-      "title": "channel-status",
-      "published": "2026-10-22",
-      "expires": "없음",
-      "files": 5,
-      "bytes": 344782
-    },
-    {
       "slug": "2026-10-23-도윤이-붕어빵-편-제작-전-검토-1ddd2b5c8404",
       "title": "도윤이 붕어빵 편 제작 전 검토",
       "published": "2026-10-23",
@@ -1039,6 +1031,14 @@
       "expires": "2026-11-22",
       "files": 3,
       "bytes": 12577984
+    },
+    {
+      "slug": "2026-10-10-channel-status-cccaa5b92d19",
+      "title": "channel-status",
+      "published": "2026-10-23",
+      "expires": "없음",
+      "files": 8,
+      "bytes": 367445
     }
   ]
 }

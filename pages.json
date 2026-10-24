@@ -1113,14 +1113,6 @@
       "bytes": 102922
     },
     {
-      "slug": "2026-10-10-channel-status-cccaa5b92d19",
-      "title": "channel-status",
-      "published": "2026-10-24",
-      "expires": "없음",
-      "files": 10,
-      "bytes": 410827
-    },
-    {
       "slug": "2026-10-24-아빠-왔다-편-검수-c9afc19ae97b",
       "title": "아빠 왔다 편 검수",
       "published": "2026-10-24",
@@ -1135,6 +1127,14 @@
       "expires": "2026-11-23",
       "files": 4,
       "bytes": 86473224
+    },
+    {
+      "slug": "2026-10-10-channel-status-cccaa5b92d19",
+      "title": "channel-status",
+      "published": "2026-10-24",
+      "expires": "없음",
+      "files": 10,
+      "bytes": 419244
     }
   ]
 }

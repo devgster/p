@@ -1065,20 +1065,20 @@
       "bytes": 96536740
     },
     {
-      "slug": "2026-10-10-channel-status-cccaa5b92d19",
-      "title": "channel-status",
-      "published": "2026-10-23",
-      "expires": "없음",
-      "files": 10,
-      "bytes": 385898
-    },
-    {
       "slug": "2026-10-23-국밥집동물병원-세트-2446a345b556",
       "title": "국밥집·동물병원 세트",
       "published": "2026-10-23",
       "expires": "2026-11-22",
       "files": 3,
       "bytes": 4351185
+    },
+    {
+      "slug": "2026-10-10-channel-status-cccaa5b92d19",
+      "title": "channel-status",
+      "published": "2026-10-24",
+      "expires": "없음",
+      "files": 10,
+      "bytes": 394405
     }
   ]
 }

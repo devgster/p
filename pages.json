@@ -1073,14 +1073,6 @@
       "bytes": 4351185
     },
     {
-      "slug": "2026-10-10-channel-status-cccaa5b92d19",
-      "title": "channel-status",
-      "published": "2026-10-24",
-      "expires": "없음",
-      "files": 10,
-      "bytes": 394405
-    },
-    {
       "slug": "2026-10-24-도윤이-제작-영상-10-24-34e8e43208ef",
       "title": "도윤이 제작 영상 10-24",
       "published": "2026-10-24",
@@ -1119,6 +1111,14 @@
       "expires": "2026-11-23",
       "files": 3,
       "bytes": 102922
+    },
+    {
+      "slug": "2026-10-10-channel-status-cccaa5b92d19",
+      "title": "channel-status",
+      "published": "2026-10-24",
+      "expires": "없음",
+      "files": 10,
+      "bytes": 410827
     }
   ]
 }

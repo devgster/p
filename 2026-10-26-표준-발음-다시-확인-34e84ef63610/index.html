@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>표준 발음 다시 확인</title>
+<style>
+:root{--bg:#f7f6f3;--card:#fff;--ink:#1d1d1f;--sub:#6b6b70;--line:#e3e1dc;--ok:#1f8a4c;--mid:#9a6700}
+@media (prefers-color-scheme:dark){:root{--bg:#141416;--card:#1e1e21;--ink:#f2f2f4;--sub:#a3a3aa;--line:#2f2f34;--ok:#4cc27e;--mid:#e0a23a}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.65 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard",sans-serif}
+main{max-width:880px;margin:0 auto;padding:20px 16px 60px}h1{font-size:21px;margin:4px 0 6px}h2{font-size:17px;margin:24px 0 8px}
+.lead{color:var(--sub);margin:0 0 12px}.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px}
+video{width:100%;border-radius:8px;display:block;background:#000}.cap{font-size:13px;margin:6px 0 0}
+.ok{color:var(--ok)}.mid{color:var(--mid)}ul{padding-left:20px;margin:6px 0}li{margin:4px 0}
+@media (max-width:560px){.two{grid-template-columns:1fr}}
+</style></head><body><main>
+<h1>«떠» 대사 표준 발음으로 다시 — 카페 쟁반 · 마트 통역</h1>
+<p class="lead">대사가 바뀐 컷만 다시 뽑았습니다(시작 그림·나머지 컷 그대로). 등록본 교체는 대표님이 보시고 정하십니다.</p>
+<div class="two">
+<div class="card"><video src="cafe.mp4" controls playsinline preload="metadata" poster="cafe.jpg"></video>
+<p class="cap"><b>카페 쟁반 (R8 · 25.2초)</b><br>3컷 «컵도 다 치웠떠요!» → <span class="ok">«컵도 다 치웠어요!»</span> · 도윤 500Hz</p></div>
+<div class="card"><video src="mart.mp4" controls playsinline preload="metadata" poster="mart.jpg"></video>
+<p class="cap"><b>마트 통역 (R11 · 18.8초)</b><br>1컷 «이거 듀세요!» → <span class="ok">«이거 주세요!»</span>(첫 화면 제목 글씨도) · 5컷 «사준다 그랬떠요!» → <span class="ok">«사준다 그랬어요!»</span></p></div>
+</div>
+<h2>같이 고친 것</h2>
+<ul>
+<li class="ok">파이프라인: 초안이 대사·화면 글씨만 바뀌면 시작 그림을 앞 판 그대로 이어받고, 바뀐 컷만 H3 를 다시 뽑습니다.</li>
+<li class="ok">카페 3컷 첫 재발주가 컷 중간에 클로즈업으로 튀었습니다 — 시작 그림 검사를 통과해 버려서, D6 에 «컷 안 장면 튐» 검사(0.25초 간격 이웃 프레임 비교)를 추가하고 한 번 더 뽑았습니다.</li>
+<li class="mid">아빠 왔다~(«엄마 왔떠?» → «엄마 왔어?»)는 편당 비용 한도($5)에 걸려 아직 못 뽑았습니다(누적 $4.97 + 1컷 약 $0.06).</li>
+</ul>
+</main><div style="max-width:820px;margin:48px auto 24px;padding:12px 16px;border-top:1px solid rgba(128,128,128,.28);font:13px/1.6 -apple-system,'Apple SD Gothic Neo',sans-serif;color:#8a8a8a;">주소를 아는 사람은 열람할 수 있는 페이지입니다 · 2026-11-25 이후 자동 삭제</div>
+</body></html>

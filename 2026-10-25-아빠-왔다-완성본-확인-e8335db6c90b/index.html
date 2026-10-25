@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>아빠 왔다 완성본 확인</title>
+<style>
+:root{--bg:#f7f6f3;--card:#fff;--ink:#1d1d1f;--sub:#6b6b70;--line:#e3e1dc;--ok:#1f8a4c;--bad:#b3261e;--mid:#9a6700}
+@media (prefers-color-scheme:dark){:root{--bg:#141416;--card:#1e1e21;--ink:#f2f2f4;--sub:#a3a3aa;--line:#2f2f34;--ok:#4cc27e;--bad:#ff8a80;--mid:#e0a23a}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.65 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard",sans-serif}
+main{max-width:880px;margin:0 auto;padding:20px 16px 60px}h1{font-size:21px;margin:4px 0 6px}h2{font-size:17px;margin:24px 0 8px}
+.lead{color:var(--sub);margin:0 0 12px}.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px}
+.hero{max-width:360px;margin:0 auto}
+video,.card img,.wide img{width:100%;border-radius:8px;display:block;background:#000}.cap{font-size:13px;margin:6px 0 0}
+.ok{color:var(--ok)}.bad{color:var(--bad)}.mid{color:var(--mid)}
+ul{padding-left:20px;margin:6px 0}li{margin:4px 0}
+.tbl{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:14px}td,th{border-bottom:1px solid var(--line);padding:6px 8px;text-align:left;white-space:nowrap}
+</style></head><body><main>
+<h1>아빠 왔다~ 완성본 (R28) — 확인 부탁</h1>
+<p class="lead">19.9초 · 5컷 · 정식 Omni(목소리 그대로) · 등록 안 함 — 대표님이 보시고 정하십니다.</p>
+<div class="card hero"><video src="final.mp4" controls playsinline preload="metadata" poster="poster.jpg"></video></div>
+
+<h2>원인: 프롬프트가 아니라 «씨앗(seed) 42 고정»</h2>
+<ul>
+<li>터진 편 시절(10-10~15)은 작업마다 씨앗이 달랐습니다(171작업 171씨앗). 지금은 162작업 중 151개가 같은 씨앗 42였습니다.</li>
+<li>씨앗이 같으면 지시문을 고쳐도 H3가 같은 그림을 다시 냅니다. 그래서 1컷 턱 넘기·5컷 옆 방문이 몇 번을 고쳐도 반복됐습니다. 시작 그림에서 벗어난 비율도 16% → 38%로 늘었습니다.</li>
+<li>같은 지시문에 씨앗만 바꾸자 1컷은 턱 위에서 멈췄고, 5컷은 방문이 사라졌습니다. → 작업마다 다른 씨앗을 쓰도록 코드에 고정했습니다(시험 2개 추가).</li>
+<li>4컷은 씨앗 세 개 모두 같은 구도로 나와 다른 원인이었습니다. 명세에는 «아빠 허리 위», 시작 그림에는 «아빠 전신»으로 서로 어긋나 있어서, 명세를 시작 그림에 맞췄습니다.</li>
+</ul>
+
+<h2>고친 3컷 (왼쪽 시작 그림 · 오른쪽 영상)</h2>
+<p class="cap"><b>1컷 «엄마다! 엄마 왔떠?»</b> <span class="ok">나무 바닥 끝 턱 위에서 두 발로 멈춤 — 타일로 안 내려옴</span></p>
+<div class="two"><div class="card"><img src="kC01.jpg"></div><div class="card"><img src="vC01.jpg"></div></div>
+<p class="cap"><b>4컷 «엄마가 맛있는 거 사온다 그랬는데…»</b> <span class="ok">시작 그림 구도 그대로(아빠 전신 뒷모습·도윤 턱 위)</span></p>
+<div class="two"><div class="card"><img src="kC04.jpg"></div><div class="card"><img src="vC04.jpg"></div></div>
+<p class="cap"><b>5컷 «그럼 다시 회사 가서 야근이나 해야겠다…»</b> <span class="ok">현관문 옆 방문 없음 · 시작 그림 구도 그대로</span></p>
+<div class="two"><div class="card"><img src="kC05.jpg"></div><div class="card"><img src="vC05.jpg"></div></div>
+
+<h2>대표님이 봐 주셔야 할 것</h2>
+<ul>
+<li class="mid">5컷 아빠 표정이 «시무룩»보다 웃는 쪽입니다(씁쓸한 웃음으로 볼지).</li>
+<li class="mid">도윤이 목소리 높이: 3컷 327Hz · 4컷 291Hz — 경고선 330Hz 아래입니다(1컷 444Hz). 직접 들어 봐 주세요.</li>
+<li class="mid">4컷 전사에 «사온다<b>고</b> 그랬는데»로 «고»가 한 글자 더 들립니다.</li>
+<li class="mid">3·4컷(현관에서 거실 쪽을 보는 컷) 왼쪽 가장자리에 흰 수납장이 보입니다. 현관 기준이면 신발장은 반대쪽이어야 해서 거울처럼 뒤집혔을 수 있습니다(지난판부터 같은 시작 그림).</li>
+</ul>
+
+<h2>컷별 측정</h2>
+<div class="tbl"><table>
+<tr><th>컷</th><th>판</th><th>말하는 사람</th><th>음높이</th><th>전사</th></tr>
+<tr><td>1</td><td>R23 새 씨앗</td><td>도윤</td><td>444Hz</td><td>엄마다! 엄마 왔어?</td></tr>
+<tr><td>2</td><td>R15</td><td>아빠</td><td>193Hz</td><td>아빠 왔다~</td></tr>
+<tr><td>3</td><td>R15</td><td>도윤</td><td>327Hz</td><td>엄마가 아니네 아빠 다시 가</td></tr>
+<tr><td>4</td><td>R28 명세 수정</td><td>도윤</td><td>291Hz</td><td>엄마가 맛있는 거 사온다고 그랬는데</td></tr>
+<tr><td>5</td><td>R25 새 씨앗</td><td>아빠</td><td>140Hz</td><td>그럼 다시 회사 가서 야근이나 해야겠다</td></tr>
+</table></div>
+
+<h2>1초 간격 전체</h2><div class="wide"><img src="sheet.jpg"></div>
+<h2>썸네일(지난판 시안)</h2><div class="card hero"><img src="thumb.jpg"></div>
+</main><div style="max-width:820px;margin:48px auto 24px;padding:12px 16px;border-top:1px solid rgba(128,128,128,.28);font:13px/1.6 -apple-system,'Apple SD Gothic Neo',sans-serif;color:#8a8a8a;">주소를 아는 사람은 열람할 수 있는 페이지입니다 · 2026-11-24 이후 자동 삭제</div>
+</body></html>

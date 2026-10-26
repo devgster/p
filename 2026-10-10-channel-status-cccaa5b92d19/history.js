@@ -35,7 +35,7 @@ if(typeof document!=='undefined'){
  const time=t=>new Date(t).toLocaleString('ko-KR',{timeZone:'Asia/Seoul',hour12:false});
  const colors=['#df4545','#397ee6','#9a66e0','#cc761b','#cf51a1','#497e9c','#a18120','#7c73d4','#e76d54','#638ec7','#ad62b3','#888888'];
  let records=[],allDays=[],selected=new Set(),completed='';
- const name=r=>`${r.platform==='youtube'?'YT':'IG'} · ${r.label||r.title||r.username}`;
+ const name=r=>`${r.platform==='youtube'?'YT':'IG'} · ${r.label||r.title||r.username}${r.production_status==='paused'?' (제작 중단)':''}`;
  const key=(r,metric)=>metric==='audience'?(r.platform==='youtube'?'subscribers':'followers'):metric==='views'?'total_views':'shorts_engaged_views_90d';
  function days(){const n=Number($('days').value);return n?allDays.filter(([d])=>d>=day(new Date(completed).getTime()-(n-1)*86400000)):allDays;}
  function chart(metric,target){

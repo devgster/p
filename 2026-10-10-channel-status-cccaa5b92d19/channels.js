@@ -21,7 +21,7 @@ function render(){
   const rows = records.filter(r=>r.platform===p), known = rows.filter(r=>typeof r[k]==='number');
   return `<article><small>${title}</small><strong>${known.length ? number(known.reduce((a,r)=>a+r[k],0)) : '미확인'}</strong><small>${known.length}/${rows.length}개 계정 확인${known.length < rows.length ? ' · 확인된 값만 합산' : ''}</small></article>`;
  }).join('');
- const cardMarkup = r => `<article class="card"><span class="badge">${r.platform === 'youtube' ? '▶ YOUTUBE · 유튜브' : '◎ INSTAGRAM · 인스타그램'}</span><h3>${esc(r.label || r.title || r.username)}</h3><div class="stats">${fields(r).map(k=>stat(r,k)).join('')}</div>${r.studio_pending ? '<p class="warn">수익 창출 지표는 Studio 확인 대기 · 참여 조회수로 대체하지 않습니다.</p>' : ''}${r.error || r.engaged_error || r.watch_error ? '<p class="warn">일부 지표 미확인 · 계정 연결 또는 원본 응답 확인 필요</p>' : ''}</article>`;
+ const cardMarkup = r => `<article class="card"><span class="badge">${r.platform === 'youtube' ? '▶ YOUTUBE · 유튜브' : '◎ INSTAGRAM · 인스타그램'}</span><h3>${esc(r.label || r.title || r.username)}</h3>${r.production_status === 'paused' ? '<p class="badge">제작 중단 · 지표·이력 유지</p>' : ''}<div class="stats">${fields(r).map(k=>stat(r,k)).join('')}</div>${r.studio_pending ? '<p class="warn">수익 창출 지표는 Studio 확인 대기 · 참여 조회수로 대체하지 않습니다.</p>' : ''}${r.error || r.engaged_error || r.watch_error ? '<p class="warn">일부 지표 미확인 · 계정 연결 또는 원본 응답 확인 필요</p>' : ''}</article>`;
  $('cards').innerHTML = ['youtube','instagram'].map(p=>{
   const rows=visible().filter(r=>r.platform===p);if(!rows.length)return '';
   const youtube=p==='youtube';

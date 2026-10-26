@@ -1209,14 +1209,6 @@
       "bytes": 13851580
     },
     {
-      "slug": "2026-10-10-channel-status-cccaa5b92d19",
-      "title": "channel-status",
-      "published": "2026-10-25",
-      "expires": "없음",
-      "files": 10,
-      "bytes": 435764
-    },
-    {
       "slug": "2026-10-25-마트-통역-편-확인-2-8e8554853bc5",
       "title": "마트 통역 편 확인 2",
       "published": "2026-10-25",
@@ -1231,6 +1223,14 @@
       "expires": "2026-11-25",
       "files": 5,
       "bytes": 28865355
+    },
+    {
+      "slug": "2026-10-10-channel-status-cccaa5b92d19",
+      "title": "channel-status",
+      "published": "2026-10-26",
+      "expires": "없음",
+      "files": 10,
+      "bytes": 443985
     }
   ]
 }

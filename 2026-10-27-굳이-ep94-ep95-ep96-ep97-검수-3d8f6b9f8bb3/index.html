@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+<meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>굳이 알아야 할까? EP94 ~ EP97 마스터 검수 페이지</title>
+  <style>
+    :root {
+      --bg: #0b0e14;
+      --card: #151a24;
+      --border: #262f40;
+      --accent: #00e5ff;
+      --yellow: #ffd600;
+      --green: #00e676;
+      --text: #f0f4f8;
+      --muted: #9aa5b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Apple SD Gothic Neo", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+      padding: 20px 14px 60px;
+    }
+    .container { max-width: 1120px; margin: 0 auto; }
+    header {
+      background: linear-gradient(135deg, #131b2e 0%, #1a253a 100%);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px 20px;
+      margin-bottom: 24px;
+    }
+    header h1 { font-size: 1.45rem; margin-bottom: 8px; color: #fff; }
+    header p { color: var(--muted); font-size: 0.95rem; }
+    .badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .badge {
+      background: rgba(0, 230, 118, 0.14);
+      color: var(--green);
+      border: 1px solid rgba(0, 230, 118, 0.4);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+    .nav-tabs {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      margin-bottom: 20px;
+      padding-bottom: 4px;
+    }
+    .nav-tabs a {
+      text-decoration: none;
+      color: var(--text);
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 8px 14px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+    .nav-tabs a:hover { border-color: var(--accent); color: var(--accent); }
+    .ep-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px 18px;
+      margin-bottom: 28px;
+    }
+    .ep-header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 14px;
+      margin-bottom: 18px;
+    }
+    .ep-tag {
+      display: inline-block;
+      background: var(--yellow);
+      color: #000;
+      font-weight: 800;
+      font-size: 0.8rem;
+      padding: 3px 9px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+    }
+    .ep-title { font-size: 1.25rem; font-weight: 800; margin-bottom: 6px; }
+    .ep-meta { font-size: 0.88rem; color: var(--muted); }
+    .main-grid {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+    @media (max-width: 780px) {
+      .main-grid { grid-template-columns: 1fr; }
+    }
+    .video-box {
+      background: #000;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .video-box video {
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      display: block;
+      background: #000;
+    }
+    .thumbs-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .thumb-item {
+      background: #0e131c;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 10px;
+      text-align: center;
+    }
+    .thumb-item span {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+    .thumb-item img {
+      width: 100%;
+      border-radius: 8px;
+      display: block;
+    }
+    .frames-title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--accent);
+    }
+    .frames-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+    }
+    @media (max-width: 640px) {
+      .frames-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    .frame-item {
+      background: #0e131c;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      text-align: center;
+    }
+    .frame-item img { width: 100%; display: block; }
+    .frame-item small {
+      display: block;
+      padding: 4px;
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+    .pin-box {
+      margin-top: 14px;
+      background: rgba(0, 229, 255, 0.07);
+      border-left: 3px solid var(--accent);
+      padding: 10px 12px;
+      border-radius: 6px;
+      font-size: 0.88rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🎬 [굳이 알아야 할까?] EP94 · EP95 · EP96 · EP97 최종 마스터 검수</h1>
+      <p>4편 모두 사실 확인(GPT+Gemini) 통과 · 3D A/B 키프레임 · Google Flow(Veo 3.1 Fast 1080p) · G1~G5 전 품질 게이트 0건 통과 완료</p>
+      <div class="badges">
+        <span class="badge">✅ 사실 확인 (GPT + Gemini) 4편 전원 PASS</span>
+        <span class="badge">✅ G1~G5 품질 게이트 결격 0건 (PASS)</span>
+        <span class="badge">✅ 썸네일 무스포일러 · 4:5 세이프존 100%</span>
+        <span class="badge">⏸️ 대표님 승인 대기 (ready_for_owner.json)</span>
+      </div>
+    </header>
+
+    <nav class="nav-tabs">
+      <a href="#ep94">EP94 에스컬레이터 브러시 (67.1s)</a>
+      <a href="#ep95">EP95 자동차 머플러 격벽 (68.7s)</a>
+      <a href="#ep96">EP96 지하철 안전문 센서 (63.4s)</a>
+      <a href="#ep97">EP97 방음벽 상단 원통 (70.7s)</a>
+    </nav>
+
+    <!-- EP94 -->
+    <section class="ep-card" id="ep94">
+      <div class="ep-header">
+        <span class="ep-tag">EP94 · 67.08초 · 13컷</span>
+        <div class="ep-title">에스컬레이터 계단 양옆엔 왜 구두솔 같은 브러시를 달아 놓았을까? #쇼츠</div>
+        <div class="ep-meta">썸네일 카피: <strong>왜 솔이 달려 있을까?</strong> / 신발 닦으라고 단 게 아닙니다 · 규격: 승강기 안전기준 스커트가드 틈새(한쪽 4mm 이하) 및 스커트 디플렉터</div>
+      </div>
+      <div class="main-grid">
+        <div class="video-box">
+          <video controls playsinline preload="metadata" poster="ep94/thumbnail_9x16.jpg">
+            <source src="ep94/ep94.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div>
+          <div class="thumbs-row">
+            <div class="thumb-item">
+              <span>9:16 마스터 썸네일</span>
+              <img src="ep94/thumbnail_9x16.jpg" alt="EP94 9:16 Thumbnail" />
+            </div>
+            <div class="thumb-item">
+              <span>4:5 모바일 피드 크롭 검증</span>
+              <img src="ep94/thumbnail_4x5.jpg" alt="EP94 4:5 Thumbnail" />
+            </div>
+          </div>
+          <div class="frames-title">📸 구간별 실기 검증 프레임 (5지점 · 하단 30% 자막 여백 확인)</div>
+          <div class="frames-grid">
+            <div class="frame-item"><img src="ep94/check_01.jpg" alt="EP94 01" /><small>01 훅 (3.0s)</small></div>
+            <div class="frame-item"><img src="ep94/check_02.jpg" alt="EP94 02" /><small>02 구조 (7.4s)</small></div>
+            <div class="frame-item"><img src="ep94/check_03.jpg" alt="EP94 03" /><small>03 작동 (33.5s)</small></div>
+            <div class="frame-item"><img src="ep94/check_04.jpg" alt="EP94 04" /><small>04 대비 (50.3s)</small></div>
+            <div class="frame-item"><img src="ep94/check_05.jpg" alt="EP94 05" /><small>05 아웃트로 (64.1s)</small></div>
+          </div>
+          <div class="pin-box">
+            💬 <strong>고정 댓글:</strong> 에스컬레이터 타실 때 가장자리 검은 솔에 신발이 스쳐서 발을 안쪽으로 옮겨 본 적 있으신가요?
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EP95 -->
+    <section class="ep-card" id="ep95">
+      <div class="ep-header">
+        <span class="ep-tag">EP95 · 68.68초 · 13컷</span>
+        <div class="ep-title">자동차 뒤쪽 아래 머플러는 어떻게 엔진 배기 소음을 줄여 줄까? #쇼츠</div>
+        <div class="ep-meta">썸네일 카피: <strong>왜 큰 통을 달았을까?</strong> / 연기만 빼는 통이 아닙니다 · 원리: 다단 격벽 팽창실 + 다공관 반사 간섭 + 공명실 + 흡음재</div>
+      </div>
+      <div class="main-grid">
+        <div class="video-box">
+          <video controls playsinline preload="metadata" poster="ep95/thumbnail_9x16.jpg">
+            <source src="ep95/ep95.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div>
+          <div class="thumbs-row">
+            <div class="thumb-item">
+              <span>9:16 마스터 썸네일</span>
+              <img src="ep95/thumbnail_9x16.jpg" alt="EP95 9:16 Thumbnail" />
+            </div>
+            <div class="thumb-item">
+              <span>4:5 모바일 피드 크롭 검증</span>
+              <img src="ep95/thumbnail_4x5.jpg" alt="EP95 4:5 Thumbnail" />
+            </div>
+          </div>
+          <div class="frames-title">📸 구간별 실기 검증 프레임 (5지점 · 하단 30% 자막 여백 확인)</div>
+          <div class="frames-grid">
+            <div class="frame-item"><img src="ep95/check_01.jpg" alt="EP95 01" /><small>01 훅 (3.0s)</small></div>
+            <div class="frame-item"><img src="ep95/check_02.jpg" alt="EP95 02" /><small>02 구조 (8.6s)</small></div>
+            <div class="frame-item"><img src="ep95/check_03.jpg" alt="EP95 03" /><small>03 작동 (34.3s)</small></div>
+            <div class="frame-item"><img src="ep95/check_04.jpg" alt="EP95 04" /><small>04 대비 (51.5s)</small></div>
+            <div class="frame-item"><img src="ep95/check_05.jpg" alt="EP95 05" /><small>05 아웃트로 (65.7s)</small></div>
+          </div>
+          <div class="pin-box">
+            💬 <strong>고정 댓글:</strong> 자동차 뒤쪽 아래에 매달린 둥근 금속 통 안이 이렇게 미로처럼 나뉘어 있을 거라고 생각해 보신 적 있으신가요?
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EP96 -->
+    <section class="ep-card" id="ep96">
+      <div class="ep-header">
+        <span class="ep-tag">EP96 · 63.36초 · 12컷</span>
+        <div class="ep-title">지하철 안전문은 가방이 끼면 어떻게 알아채고 다시 열릴까? #쇼츠</div>
+        <div class="ep-meta">썸네일 카피: <strong>어떻게 바로 열릴까?</strong> / 누군가 보고 여는 게 아닙니다 · 원리: 구동 모터 부하 전류 + 회전 엔코더 속도 편차 + 광학 센서 이중 감지</div>
+      </div>
+      <div class="main-grid">
+        <div class="video-box">
+          <video controls playsinline preload="metadata" poster="ep96/thumbnail_9x16.jpg">
+            <source src="ep96/ep96.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div>
+          <div class="thumbs-row">
+            <div class="thumb-item">
+              <span>9:16 마스터 썸네일</span>
+              <img src="ep96/thumbnail_9x16.jpg" alt="EP96 9:16 Thumbnail" />
+            </div>
+            <div class="thumb-item">
+              <span>4:5 모바일 피드 크롭 검증</span>
+              <img src="ep96/thumbnail_4x5.jpg" alt="EP96 4:5 Thumbnail" />
+            </div>
+          </div>
+          <div class="frames-title">📸 구간별 실기 검증 프레임 (5지점 · 하단 30% 자막 여백 확인)</div>
+          <div class="frames-grid">
+            <div class="frame-item"><img src="ep96/check_01.jpg" alt="EP96 01" /><small>01 훅 (3.0s)</small></div>
+            <div class="frame-item"><img src="ep96/check_02.jpg" alt="EP96 02" /><small>02 구조 (8.6s)</small></div>
+            <div class="frame-item"><img src="ep96/check_03.jpg" alt="EP96 03" /><small>03 작동 (31.7s)</small></div>
+            <div class="frame-item"><img src="ep96/check_04.jpg" alt="EP96 04" /><small>04 대비 (47.5s)</small></div>
+            <div class="frame-item"><img src="ep96/check_05.jpg" alt="EP96 05" /><small>05 아웃트로 (60.4s)</small></div>
+          </div>
+          <div class="pin-box">
+            💬 <strong>고정 댓글:</strong> 지하철 타실 때 안전문이 닫히다가 다시 스르륵 열리는 모습을 본 적 있으신가요?
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EP97 -->
+    <section class="ep-card" id="ep97">
+      <div class="ep-header">
+        <span class="ep-tag">EP97 · 70.68초 · 13컷</span>
+        <div class="ep-title">도로 옆 일부 방음벽 꼭대기엔 왜 둥근 원통을 얹어 두었을까? #쇼츠</div>
+        <div class="ep-meta">썸네일 카피: <strong>왜 원통을 얹었을까?</strong> / 멋 내려고 얹은 게 아닙니다 · 원리: 상단 모서리 회절(Diffraction) 저감장치 (다공 흡음형 · 경로차 간섭형)</div>
+      </div>
+      <div class="main-grid">
+        <div class="video-box">
+          <video controls playsinline preload="metadata" poster="ep97/thumbnail_9x16.jpg">
+            <source src="ep97/ep97.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div>
+          <div class="thumbs-row">
+            <div class="thumb-item">
+              <span>9:16 마스터 썸네일</span>
+              <img src="ep97/thumbnail_9x16.jpg" alt="EP97 9:16 Thumbnail" />
+            </div>
+            <div class="thumb-item">
+              <span>4:5 모바일 피드 크롭 검증</span>
+              <img src="ep97/thumbnail_4x5.jpg" alt="EP97 4:5 Thumbnail" />
+            </div>
+          </div>
+          <div class="frames-title">📸 구간별 실기 검증 프레임 (5지점 · 하단 30% 자막 여백 확인)</div>
+          <div class="frames-grid">
+            <div class="frame-item"><img src="ep97/check_01.jpg" alt="EP97 01" /><small>01 훅 (3.0s)</small></div>
+            <div class="frame-item"><img src="ep97/check_02.jpg" alt="EP97 02" /><small>02 구조 (8.9s)</small></div>
+            <div class="frame-item"><img src="ep97/check_03.jpg" alt="EP97 03" /><small>03 작동 (35.3s)</small></div>
+            <div class="frame-item"><img src="ep97/check_04.jpg" alt="EP97 04" /><small>04 대비 (53.0s)</small></div>
+            <div class="frame-item"><img src="ep97/check_05.jpg" alt="EP97 05" /><small>05 아웃트로 (67.7s)</small></div>
+          </div>
+          <div class="pin-box">
+            💬 <strong>고정 댓글:</strong> 아파트나 고속도로 옆을 지나실 때 방음벽 꼭대기에 둥근 통이 얹혀 있는 걸 보신 적 있으신가요?
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+<div style="max-width:820px;margin:48px auto 24px;padding:12px 16px;border-top:1px solid rgba(128,128,128,.28);font:13px/1.6 -apple-system,'Apple SD Gothic Neo',sans-serif;color:#8a8a8a;">주소를 아는 사람은 열람할 수 있는 페이지입니다 · 2026-11-26 이후 자동 삭제</div>
+</body>
+</html>

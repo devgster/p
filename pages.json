@@ -1225,14 +1225,6 @@
       "bytes": 28865355
     },
     {
-      "slug": "2026-10-10-channel-status-cccaa5b92d19",
-      "title": "channel-status",
-      "published": "2026-10-26",
-      "expires": "없음",
-      "files": 10,
-      "bytes": 460765
-    },
-    {
       "slug": "2026-10-26-굳이-ep91-ep92-ep93-검수-24ad3fef4843",
       "title": "굳이-ep91-ep92-ep93-검수",
       "published": "2026-10-26",
@@ -1247,6 +1239,14 @@
       "expires": "2026-11-25",
       "files": 6,
       "bytes": 13840297
+    },
+    {
+      "slug": "2026-10-10-channel-status-cccaa5b92d19",
+      "title": "channel-status",
+      "published": "2026-10-26",
+      "expires": "없음",
+      "files": 10,
+      "bytes": 469150
     }
   ]
 }

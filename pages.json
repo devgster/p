@@ -1329,14 +1329,6 @@
       "bytes": 15124023
     },
     {
-      "slug": "2026-10-10-channel-status-cccaa5b92d19",
-      "title": "channel-status",
-      "published": "2026-10-28",
-      "expires": "없음",
-      "files": 10,
-      "bytes": 494206
-    },
-    {
       "slug": "2026-10-28-도윤-마스크팩-편-확인-e1b7ed4e646a",
       "title": "도윤 마스크팩 편 확인",
       "published": "2026-10-28",
@@ -1351,6 +1343,14 @@
       "expires": "2026-11-27",
       "files": 4,
       "bytes": 13393177
+    },
+    {
+      "slug": "2026-10-10-channel-status-cccaa5b92d19",
+      "title": "channel-status",
+      "published": "2026-10-28",
+      "expires": "없음",
+      "files": 10,
+      "bytes": 502368
     }
   ]
 }

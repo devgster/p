@@ -1393,20 +1393,20 @@
       "bytes": 11490186
     },
     {
-      "slug": "2026-10-10-channel-status-cccaa5b92d19",
-      "title": "channel-status",
-      "published": "2026-10-29",
-      "expires": "없음",
-      "files": 10,
-      "bytes": 518921
-    },
-    {
       "slug": "2026-10-29-2026-10-29-도윤-결혼식장-응가-편-확인-v2-741034029da6",
       "title": "2026-10-29 도윤 결혼식장 응가 편 확인 v2",
       "published": "2026-10-29",
       "expires": "2026-11-28",
       "files": 12,
       "bytes": 14922781
+    },
+    {
+      "slug": "2026-10-10-channel-status-cccaa5b92d19",
+      "title": "channel-status",
+      "published": "2026-10-30",
+      "expires": "없음",
+      "files": 10,
+      "bytes": 527341
     }
   ]
 }

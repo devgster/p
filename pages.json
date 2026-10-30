@@ -1401,14 +1401,6 @@
       "bytes": 14922781
     },
     {
-      "slug": "2026-10-10-channel-status-cccaa5b92d19",
-      "title": "channel-status",
-      "published": "2026-10-30",
-      "expires": "없음",
-      "files": 10,
-      "bytes": 527341
-    },
-    {
       "slug": "2026-10-30-2026-10-30-도윤-과일가게-아빠-소개-편-확인-0bcf56cd723e",
       "title": "2026-10-30 도윤 과일가게 아빠 소개 편 확인",
       "published": "2026-10-30",
@@ -1447,6 +1439,14 @@
       "expires": "2026-11-29",
       "files": 11,
       "bytes": 11663320
+    },
+    {
+      "slug": "2026-10-10-channel-status-cccaa5b92d19",
+      "title": "channel-status",
+      "published": "2026-10-30",
+      "expires": "없음",
+      "files": 10,
+      "bytes": 535275
     }
   ]
 }

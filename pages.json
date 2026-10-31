@@ -1441,14 +1441,6 @@
       "bytes": 11663320
     },
     {
-      "slug": "2026-10-10-channel-status-cccaa5b92d19",
-      "title": "channel-status",
-      "published": "2026-10-30",
-      "expires": "없음",
-      "files": 10,
-      "bytes": 535275
-    },
-    {
       "slug": "2026-10-30-카페-나이스-시작-그림-다시-65fe5f9f2995",
       "title": "카페 나이스 시작 그림 다시",
       "published": "2026-10-30",
@@ -1471,6 +1463,14 @@
       "expires": "2026-11-30",
       "files": 3,
       "bytes": 423672
+    },
+    {
+      "slug": "2026-10-10-channel-status-cccaa5b92d19",
+      "title": "channel-status",
+      "published": "2026-10-31",
+      "expires": "없음",
+      "files": 10,
+      "bytes": 543739
     }
   ]
 }

@@ -1465,14 +1465,6 @@
       "bytes": 423672
     },
     {
-      "slug": "2026-10-10-channel-status-cccaa5b92d19",
-      "title": "channel-status",
-      "published": "2026-10-31",
-      "expires": "없음",
-      "files": 10,
-      "bytes": 543739
-    },
-    {
       "slug": "2026-10-31-도윤-카페-나이스-넷째-확인-cacc1e657b35",
       "title": "도윤 카페 나이스 넷째 확인",
       "published": "2026-10-31",
@@ -1487,6 +1479,14 @@
       "expires": "2026-11-30",
       "files": 8,
       "bytes": 14372809
+    },
+    {
+      "slug": "2026-10-10-channel-status-cccaa5b92d19",
+      "title": "channel-status",
+      "published": "2026-10-31",
+      "expires": "없음",
+      "files": 10,
+      "bytes": 551800
     }
   ]
 }

@@ -1481,20 +1481,20 @@
       "bytes": 14372809
     },
     {
-      "slug": "2026-10-10-channel-status-cccaa5b92d19",
-      "title": "channel-status",
-      "published": "2026-10-31",
-      "expires": "없음",
-      "files": 10,
-      "bytes": 551800
-    },
-    {
       "slug": "2026-10-31-도윤-동물병원-사람-세-마리-확인-v2-05c95e719940",
       "title": "도윤 동물병원 사람 세 마리 확인 v2",
       "published": "2026-10-31",
       "expires": "2026-11-30",
       "files": 9,
       "bytes": 14514968
+    },
+    {
+      "slug": "2026-10-10-channel-status-cccaa5b92d19",
+      "title": "channel-status",
+      "published": "2026-11-01",
+      "expires": "없음",
+      "files": 10,
+      "bytes": 560331
     }
   ]
 }

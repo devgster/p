@@ -1561,20 +1561,20 @@
       "bytes": 14748023
     },
     {
-      "slug": "2026-10-10-channel-status-cccaa5b92d19",
-      "title": "channel-status",
-      "published": "2026-11-06",
-      "expires": "없음",
-      "files": 10,
-      "bytes": 691757
-    },
-    {
       "slug": "2026-11-06-도윤이-공룡-목욕하다-바닥을-적신-두-살-도윤이가-닦을-사람을-정한-방법-587d68ef64cf",
       "title": "도윤이 공룡 목욕하다 바닥을 적신 두 살 도윤이가 닦을 사람을 정한 방법 (AUTO-261106-0833 R14) 확인",
       "published": "2026-11-06",
       "expires": "2026-12-06",
       "files": 11,
       "bytes": 16128366
+    },
+    {
+      "slug": "2026-10-10-channel-status-cccaa5b92d19",
+      "title": "channel-status",
+      "published": "2026-11-06",
+      "expires": "없음",
+      "files": 10,
+      "bytes": 700436
     }
   ]
 }

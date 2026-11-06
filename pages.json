@@ -1529,14 +1529,6 @@
       "bytes": 10591019
     },
     {
-      "slug": "2026-10-10-channel-status-cccaa5b92d19",
-      "title": "channel-status",
-      "published": "2026-11-05",
-      "expires": "없음",
-      "files": 10,
-      "bytes": 682745
-    },
-    {
       "slug": "2026-11-06-도윤이-엄마-머리에서-거미줄-찾은-두-살-r8-확인-1febb6a83da5",
       "title": "도윤이 엄마 머리에서 거미줄 찾은 두 살 R8 확인",
       "published": "2026-11-06",
@@ -1567,6 +1559,14 @@
       "expires": "2026-12-06",
       "files": 12,
       "bytes": 14748023
+    },
+    {
+      "slug": "2026-10-10-channel-status-cccaa5b92d19",
+      "title": "channel-status",
+      "published": "2026-11-06",
+      "expires": "없음",
+      "files": 10,
+      "bytes": 691757
     }
   ]
 }
